@@ -8,21 +8,21 @@ export function NavigationLoading() {
   if (!isNavigating) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/20 backdrop-blur-[2px]">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/35 backdrop-blur-[2px]">
       <div className="relative flex flex-col items-center">
         {/* Glow backdrop */}
-        <div className="absolute -inset-10 rounded-full bg-emerald-400/20 blur-3xl" />
+        <div className="absolute -inset-10 rounded-full bg-[color-mix(in_srgb,var(--qurai-green)_20%,transparent)] blur-3xl" />
 
         {/* Spinner rings */}
         <div className="relative">
-          <div className="absolute inset-0 h-16 w-16 animate-[spin_3s_linear_infinite] rounded-full border-2 border-dashed border-emerald-200/80" />
-          <div className="absolute -inset-2 h-20 w-20 animate-[spin_2s_linear_infinite_reverse] rounded-full border-2 border-dotted border-emerald-300/60" />
+          <div className="absolute inset-0 h-16 w-16 animate-[spin_3s_linear_infinite] rounded-full border-2 border-dashed border-[var(--qurai-border-strong)]" />
+          <div className="absolute -inset-2 h-20 w-20 animate-[spin_2s_linear_infinite_reverse] rounded-full border-2 border-dotted border-[color-mix(in_srgb,var(--qurai-green)_55%,transparent)]" />
 
           {/* Icon container with pulse */}
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-xl bg-white shadow-lg">
+          <div className="qurai-card relative flex h-16 w-16 items-center justify-center rounded-xl">
             <svg
               viewBox="0 0 24 24"
-              className="h-8 w-8 animate-pulse text-emerald-600"
+              className="h-8 w-8 animate-pulse text-[var(--qurai-green)]"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -36,7 +36,7 @@ export function NavigationLoading() {
           </div>
         </div>
 
-        <p className="mt-4 text-sm font-medium text-emerald-800">Memuat...</p>
+        <p className="mt-4 text-sm font-medium text-[var(--qurai-green)]">Memuat...</p>
       </div>
     </div>
   );

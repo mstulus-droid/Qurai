@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { parseNotes } from "@/lib/parse-notes";
 import { useNavigation } from "@/components/navigation-provider";
 import { MarkdownText } from "@/components/markdown-text";
@@ -40,14 +40,14 @@ export function VerseReaderCard({
   const { startNavigation } = useNavigation();
   const { prefs, setSize, tokens } = useReadingPrefs();
 
-  function goToVerse(targetVerseId: number | null) {
+  const goToVerse = useCallback((targetVerseId: number | null) => {
     if (!targetVerseId) {
       return;
     }
 
     startNavigation();
     router.push(`/ayat/${targetVerseId}`);
-  }
+  }, [router, startNavigation]);
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -73,77 +73,77 @@ export function VerseReaderCard({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [previousVerseId, nextVerseId]);
+  }, [goToVerse, previousVerseId, nextVerseId]);
 
   const notes = [
     {
       label: "Kritik",
       text: critique,
-      border: "border-slate-400",
-      bg: "bg-slate-50",
-      labelColor: "text-slate-500",
+      border: "border-[var(--qurai-border-strong)]",
+      bg: "bg-[color-mix(in_srgb,var(--qurai-surface-strong)_86%,transparent)]",
+      labelColor: "text-[var(--qurai-green)]",
     },
     {
       label: "Logical Fallacy",
       text: logicalFallacies,
-      border: "border-amber-400",
-      bg: "bg-amber-50/70",
-      labelColor: "text-amber-700",
+      border: "border-[var(--qurai-gold)]",
+      bg: "bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]",
+      labelColor: "text-[var(--qurai-gold)]",
     },
     {
       label: "Moral Concern",
       text: moralConcerns,
       border: "border-rose-400",
-      bg: "bg-rose-50/70",
+      bg: "bg-rose-950/10",
       labelColor: "text-rose-700",
     },
     {
       label: "Scientific Error",
       text: scientificErrors,
       border: "border-cyan-400",
-      bg: "bg-cyan-50/70",
+      bg: "bg-cyan-950/10",
       labelColor: "text-cyan-700",
     },
     {
       label: "Contradiction",
       text: contradictions,
       border: "border-violet-400",
-      bg: "bg-violet-50/70",
+      bg: "bg-violet-950/10",
       labelColor: "text-violet-700",
     },
   ].filter((n) => n.text);
   const noteCount = notes.length;
 
   return (
-    <section className="rounded-[2rem] bg-white p-5 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.35)] sm:p-8">
+    <section className="qurai-card rounded-[2rem] p-5 sm:p-8">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        <p className="qurai-label">
           Bacaan
         </p>
         <ReadingSizeToggle value={prefs.size} onChange={setSize} />
       </div>
 
       {asbabunNuzul ? (
-        <div className="mb-6 reading-measure rounded-[1.25rem] bg-amber-50/70 p-4 ring-1 ring-amber-100">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">
+        <div className="qurai-muted-card mb-6 reading-measure rounded-[1.25rem] p-4">
+          <p className="text-xs font-semibold uppercase text-[var(--qurai-gold)]">
             Asbabun Nuzul
           </p>
-          <p className="font-serif-reading mt-2 whitespace-pre-wrap text-sm leading-7 text-slate-700">
+          <p className="font-serif-reading mt-2 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
             <MarkdownText text={asbabunNuzul} />
           </p>
         </div>
       ) : null}
 
       <div className="mb-5 reading-measure">
-        <p className="text-sm leading-7 text-slate-700">
-          <span className="mr-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+        <p className="text-sm leading-7 text-[var(--qurai-muted)]">
+          <span className="mr-2 text-xs font-semibold uppercase text-[var(--qurai-green)]">
             Topik
           </span>
           <MarkdownText text={topic || "Belum ada ringkasan topik untuk ayat ini."} />
         </p>
       </div>
 
-      <div className="flex items-stretch overflow-hidden rounded-[1.5rem] ring-1 ring-slate-200 bg-[linear-gradient(180deg,#faf8f1_0%,#ffffff_100%)] paper-texture">
+      <div className="qurai-reading-card paper-texture flex items-stretch overflow-hidden rounded-[1.5rem]">
         <button
           type="button"
           onClick={() => goToVerse(previousVerseId)}
@@ -151,8 +151,8 @@ export function VerseReaderCard({
           aria-label="Ayat sebelumnya"
           className={`flex shrink-0 items-center justify-center px-2 transition sm:px-4 ${
             previousVerseId
-              ? "text-slate-400 hover:bg-slate-100/40 hover:text-slate-700"
-              : "cursor-not-allowed text-slate-200"
+              ? "text-[var(--qurai-muted)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] hover:text-[var(--qurai-green)]"
+              : "cursor-not-allowed text-[var(--qurai-quiet)]"
           }`}
         >
           <svg
@@ -163,10 +163,10 @@ export function VerseReaderCard({
           </svg>
         </button>
 
-        <div className="min-w-0 flex-1 border-x border-slate-100/60 px-4 py-5 sm:px-6">
+        <div className="min-w-0 flex-1 border-x border-[var(--qurai-border)] px-4 py-5 sm:px-6">
           <div className="reading-measure">
             <p
-              className={`font-arabic text-right text-slate-950 ${tokens.arabic}`}
+              className={`qurai-arabic-text font-arabic text-right ${tokens.arabic}`}
             >
               {arabicText}
             </p>
@@ -180,16 +180,16 @@ export function VerseReaderCard({
               </svg>
             </div>
             <p
-              className={`font-serif-reading mt-1 text-slate-700 ${tokens.translation}`}
+              className={`font-serif-reading mt-1 text-[var(--qurai-text)] ${tokens.translation}`}
             >
               <MarkdownText text={translation} />
             </p>
             {catatanDepag ? (
-              <div className="mt-5 rounded-[1.25rem] bg-amber-50/60 p-4 ring-1 ring-amber-100/80">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700">
+              <div className="qurai-muted-card mt-5 rounded-[1.25rem] p-4">
+                <p className="text-[10px] font-semibold uppercase text-[var(--qurai-gold)]">
                   Catatan Depag
                 </p>
-                <p className="font-serif-reading mt-1 whitespace-pre-wrap text-sm leading-7 text-slate-700">
+                <p className="font-serif-reading mt-1 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
                   <MarkdownText text={catatanDepag} />
                 </p>
               </div>
@@ -204,8 +204,8 @@ export function VerseReaderCard({
           aria-label="Ayat berikutnya"
           className={`flex shrink-0 items-center justify-center px-2 transition sm:px-4 ${
             nextVerseId
-              ? "text-slate-400 hover:bg-slate-100/40 hover:text-slate-700"
-              : "cursor-not-allowed text-slate-200"
+              ? "text-[var(--qurai-muted)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] hover:text-[var(--qurai-green)]"
+              : "cursor-not-allowed text-[var(--qurai-quiet)]"
           }`}
         >
           <svg
@@ -227,7 +227,7 @@ export function VerseReaderCard({
                 <p className={`text-[10px] font-semibold uppercase tracking-wider ${notes[0].labelColor}`}>
                   {notes[0].label}
                 </p>
-                <div className="font-serif-reading mt-1 text-sm leading-6 text-slate-700">
+                <div className="font-serif-reading mt-1 text-sm leading-6 text-[var(--qurai-muted)]">
                   <NoteContent text={notes[0].text} />
                 </div>
               </div>
@@ -242,7 +242,7 @@ export function VerseReaderCard({
                   <p className={`text-[10px] font-semibold uppercase tracking-wider ${note.labelColor}`}>
                     {note.label}
                   </p>
-                  <p className="font-serif-reading mt-1 text-sm leading-6 text-slate-700">
+                  <p className="font-serif-reading mt-1 text-sm leading-6 text-[var(--qurai-muted)]">
                     <MarkdownText text={note.text} />
                   </p>
                 </div>
@@ -262,7 +262,7 @@ export function VerseReaderCard({
                     <p className={`text-[10px] font-semibold uppercase tracking-wider ${note.labelColor}`}>
                       {note.label}
                     </p>
-                    <div className="font-serif-reading mt-1 text-sm leading-6 text-slate-700">
+                    <div className="font-serif-reading mt-1 text-sm leading-6 text-[var(--qurai-muted)]">
                       <NoteContent text={note.text} />
                     </div>
                   </div>

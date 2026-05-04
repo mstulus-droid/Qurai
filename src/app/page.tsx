@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { NavLink } from "@/components/nav-link";
 import { CommitInfoPopup } from "@/components/commit-info-popup";
+import { ThemedWordmark, ThemeToggle } from "@/components/theme-toggle";
 import { redirect } from "next/navigation";
 import { DatabaseUnavailable } from "@/app/database-unavailable";
 import { HomeFooter } from "@/app/home-footer";
@@ -46,15 +46,13 @@ function RevelationBadge({ kind, size = "md" }: { kind: RevelationKind; size?: "
   const dotSize = size === "sm" ? "h-1 w-1" : "h-1.5 w-1.5";
   return (
     <span
-      className={`inline-flex shrink-0 items-center font-semibold uppercase ring-1 ${sizeClasses} ${
-        isMakkiyah
-          ? "bg-amber-50 text-amber-800 ring-amber-200"
-          : "bg-emerald-50 text-emerald-800 ring-emerald-200"
+      className={`revelation-badge inline-flex shrink-0 items-center font-semibold uppercase ${sizeClasses} ${
+        isMakkiyah ? "revelation-badge-makkiyah" : "revelation-badge-madaniyah"
       }`}
     >
       <span
         className={`rounded-full ${dotSize} ${
-          isMakkiyah ? "bg-amber-500" : "bg-emerald-500"
+          isMakkiyah ? "bg-[var(--qurai-gold)]" : "bg-[var(--qurai-green)]"
         }`}
         aria-hidden
       />
@@ -96,25 +94,23 @@ export default async function Home({ searchParams }: HomePageProps) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top_left,#ece8db,transparent_24%),linear-gradient(180deg,#f3efe5_0%,#ece5d8_46%,#e7dfd2_100%)] px-4 py-5 text-slate-900 sm:px-6 sm:py-8 lg:px-10">
+    <main className="qurai-shell flex min-h-screen flex-col px-4 py-5 text-[var(--qurai-text)] sm:px-6 sm:py-8 lg:px-10">
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-4">
         <section className="px-1 pt-1">
-          <div className="flex flex-col items-center justify-center gap-3 text-center">
-            <CommitInfoPopup surahStats={surahStats}>
-              <div className="relative block h-[72px] w-[260px] sm:h-[88px] sm:w-[320px]">
-                <Image
-                  src="/brand/qurai-wordmark-dark.png"
-                  alt="Qurai"
-                  fill
-                  priority
-                  sizes="(max-width: 640px) 260px, 320px"
-                  className="object-contain"
-                />
-              </div>
-            </CommitInfoPopup>
-            <p className="max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-              Sebuah arsip baca untuk tafsir, kritik, dan kontradiksi.
-            </p>
+          <div className="flex items-start justify-between gap-4">
+            <div className="w-[68px]" aria-hidden="true" />
+            <div className="flex flex-col items-center justify-center gap-4 text-center">
+              <CommitInfoPopup surahStats={surahStats}>
+                <div className="relative block h-[72px] w-[260px] drop-shadow-[0_24px_58px_rgba(46,176,62,0.16)] sm:h-[88px] sm:w-[320px]">
+                  <ThemedWordmark
+                    priority
+                    sizes="(max-width: 640px) 260px, 320px"
+                    className="object-contain"
+                  />
+                </div>
+              </CommitInfoPopup>
+            </div>
+            <ThemeToggle />
           </div>
         </section>
 
@@ -127,56 +123,56 @@ export default async function Home({ searchParams }: HomePageProps) {
             meaning: surah.meaning,
           }))}
           list={
-            <div className="divide-y divide-slate-200">
+            <div className="divide-y divide-[var(--qurai-border)]">
               {surahs.map((surah) => {
                 const kind = classifyRevelation(surah.revelationPlace);
                 return (
                   <NavLink
                     key={surah.id}
                     href={`/surat/${surah.id}`}
-                    className="block px-4 py-3 transition hover:bg-[#f7f4ed] sm:px-5"
+                    className="block px-4 py-3 transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] sm:px-5"
                   >
                     <div className="hidden grid-cols-[64px_minmax(0,1fr)_minmax(140px,auto)] items-center gap-4 md:grid">
-                      <span className="text-sm font-semibold text-slate-800">
+                      <span className="font-mono text-sm font-semibold text-[var(--qurai-quiet)]">
                         {surah.id}
                       </span>
                       <div className="min-w-0">
-                        <p className="truncate text-lg font-semibold text-slate-950">
+                        <p className="truncate text-lg font-semibold text-[var(--qurai-text)]">
                           {surah.nameLatin}
-                          <span className="ml-1 text-sm font-normal text-slate-500">
+                          <span className="ml-1 text-sm font-normal text-[var(--qurai-muted)]">
                             ({surah.meaning})
                           </span>
                         </p>
                         <div className="mt-0.5 flex items-center gap-2">
                           {kind ? <RevelationBadge kind={kind} size="sm" /> : null}
-                          <span className="text-sm text-slate-500">{surah.verseCount} ayat</span>
+                          <span className="text-sm text-[var(--qurai-muted)]">{surah.verseCount} ayat</span>
                         </div>
                       </div>
                       <div className="min-w-0 text-right">
-                        <p className="font-arabic truncate text-3xl text-slate-950">
+                        <p className="qurai-arabic-text font-arabic truncate text-3xl">
                           {surah.nameArabic}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-3 md:hidden">
-                      <span className="w-7 shrink-0 text-sm font-semibold text-slate-800">
+                      <span className="w-7 shrink-0 font-mono text-sm font-semibold text-[var(--qurai-quiet)]">
                         {surah.id}
                       </span>
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-base font-semibold text-slate-950">
+                        <p className="truncate text-base font-semibold text-[var(--qurai-text)]">
                           {surah.nameLatin}
-                          <span className="ml-1 text-xs font-normal text-slate-500">
+                          <span className="ml-1 text-xs font-normal text-[var(--qurai-muted)]">
                             ({surah.meaning})
                           </span>
                         </p>
                         <div className="mt-0.5 flex items-center gap-2">
                           {kind ? <RevelationBadge kind={kind} size="sm" /> : null}
-                          <span className="text-xs text-slate-500">{surah.verseCount} ayat</span>
+                          <span className="text-xs text-[var(--qurai-muted)]">{surah.verseCount} ayat</span>
                         </div>
                       </div>
                       <div className="min-w-0">
-                        <p className="font-arabic truncate text-3xl text-slate-950">
+                        <p className="qurai-arabic-text font-arabic truncate text-3xl">
                           {surah.nameArabic}
                         </p>
                       </div>

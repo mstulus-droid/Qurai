@@ -77,7 +77,7 @@ export function SurahTopicPanel({ topics }: SurahTopicPanelProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="fixed right-3 top-1/2 z-40 -translate-y-1/2 rounded-full border border-emerald-200/60 bg-white/90 p-2 text-emerald-700 shadow-[0_8px_30px_rgba(16,185,129,0.15)] backdrop-blur transition hover:bg-white hover:shadow-[0_12px_40px_rgba(16,185,129,0.22)]"
+        className="qurai-icon-button fixed right-3 top-1/2 z-40 -translate-y-1/2 rounded-full p-2 shadow-[0_8px_30px_rgba(16,185,129,0.15)] backdrop-blur"
         aria-label="Daftar topik"
         title="Daftar topik"
       >
@@ -92,7 +92,7 @@ export function SurahTopicPanel({ topics }: SurahTopicPanelProps) {
       {/* Backdrop */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 bg-slate-950/20 backdrop-blur-[1px] transition-opacity ${
+        className={`fixed inset-0 z-40 bg-black/35 backdrop-blur-[1px] transition-opacity ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-hidden={!isOpen}
@@ -100,14 +100,14 @@ export function SurahTopicPanel({ topics }: SurahTopicPanelProps) {
 
       {/* Panel */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-[min(85vw,22rem)] border-l border-emerald-100 bg-white/95 shadow-[0_0_60px_-20px_rgba(15,23,42,0.35)] backdrop-blur transition-transform duration-300 ${
+        className={`fixed right-0 top-0 z-50 h-full w-[min(85vw,22rem)] border-l border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-bg-soft)_94%,transparent)] shadow-[0_0_60px_-20px_rgba(0,0,0,0.55)] backdrop-blur transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isOpen}
       >
         <div className="flex h-full flex-col">
-          <div className="border-b border-emerald-100 px-5 py-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
+          <div className="border-b border-[var(--qurai-border)] px-5 py-4">
+            <p className="qurai-label">
               Topik dalam Surat
             </p>
           </div>
@@ -117,7 +117,7 @@ export function SurahTopicPanel({ topics }: SurahTopicPanelProps) {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-r-full border border-l-0 border-emerald-200 bg-white p-2 text-emerald-700 shadow-[0_4px_20px_rgba(16,185,129,0.15)] transition hover:bg-emerald-50"
+              className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-r-full border border-l-0 border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] p-2 text-[var(--qurai-green)] shadow-[0_4px_20px_rgba(16,185,129,0.15)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)]"
               aria-label="Tutup panel"
               title="Tutup panel"
             >
@@ -141,8 +141,8 @@ export function SurahTopicPanel({ topics }: SurahTopicPanelProps) {
                       onClick={() => scrollToTopic(topic.id)}
                       className={`rounded-xl px-4 py-3 text-left text-sm font-medium transition ${
                         isActive
-                          ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200"
-                          : "text-slate-700 hover:bg-slate-50"
+                          ? "bg-[color-mix(in_srgb,var(--qurai-green)_14%,transparent)] text-[var(--qurai-green)] ring-1 ring-[var(--qurai-border-strong)]"
+                          : "text-[var(--qurai-muted)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_8%,transparent)]"
                       }`}
                     >
                       {topic.startAyah === topic.endAyah

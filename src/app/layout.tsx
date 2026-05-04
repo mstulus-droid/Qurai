@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import { InitialSplash } from "@/app/initial-splash";
 import { NavigationProvider } from "@/components/navigation-provider";
 import { NavigationLoading } from "@/components/navigation-loading";
+import { ThemeController } from "@/components/theme-toggle";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -36,7 +37,14 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Qurai",
   description:
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
@@ -69,7 +77,8 @@ export default function RootLayout({
       lang="id"
       className={`${manrope.variable} ${plexMono.variable} ${scheherazade.variable} ${sourceSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-stone-50 text-slate-950">
+      <body className="dark-mode min-h-full flex flex-col">
+        <ThemeController />
         <Suspense fallback={null}>
           <NavigationProvider>
             <InitialSplash />

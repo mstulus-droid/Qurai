@@ -183,14 +183,14 @@ export function SurahSearchControl({
         <button
           type="button"
           aria-label="Tutup pencarian surat"
-          className="fixed inset-0 z-[70] bg-slate-950/45 backdrop-blur-[1px]"
+          className="fixed inset-0 z-[70] bg-black/50 backdrop-blur-[1px]"
           onClick={() => setOpen(false)}
         />
       ) : null}
       <div
         data-surah-search-panel="true"
         style={mobilePanelStyle}
-        className={`z-[71] overflow-hidden rounded-[1.25rem] border border-white/10 bg-slate-950/95 p-2 text-left shadow-[0_24px_60px_-30px_rgba(15,23,42,0.8)] backdrop-blur ${
+        className={`z-[71] overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-bg-soft)_95%,transparent)] p-2 text-left shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur ${
           isMobile
             ? "fixed inset-x-4"
             : `absolute w-[min(18rem,calc(100vw-2rem))] max-sm:left-0 max-sm:right-auto sm:right-0 ${
@@ -198,7 +198,7 @@ export function SurahSearchControl({
               }`
         }`}
       >
-        <p className="px-2 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+        <p className="qurai-label px-2 py-2">
           Cari Surat
         </p>
         <div className="px-2 pb-2">
@@ -215,7 +215,7 @@ export function SurahSearchControl({
               }
             }}
             placeholder="Nomor, nama, atau arti surat"
-            className="w-full rounded-[0.9rem] border border-white/10 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-slate-400"
+            className="w-full rounded-[0.9rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] px-3 py-2 text-sm text-[var(--qurai-text)] outline-none placeholder:text-[var(--qurai-quiet)]"
           />
         </div>
         <div className="max-h-72 overflow-y-auto px-2 pb-2 pr-1 max-sm:max-h-[min(22rem,calc(100dvh-7rem))]">
@@ -228,17 +228,17 @@ export function SurahSearchControl({
                   setOpen(false);
                   setQuery("");
                 }}
-                className="rounded-[0.95rem] border border-white/10 px-3 py-3 transition hover:bg-white/10"
+                className="rounded-[0.95rem] border border-[var(--qurai-border)] px-3 py-3 transition hover:border-[var(--qurai-border-strong)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)]"
               >
-                <p className="text-sm font-semibold text-white">
+                <p className="text-sm font-semibold text-[var(--qurai-text)]">
                   {surah.id}. {surah.nameLatin}
                 </p>
-                <p className="mt-1 text-xs text-slate-300">{surah.meaning}</p>
+                <p className="mt-1 text-xs text-[var(--qurai-muted)]">{surah.meaning}</p>
               </NavLink>
             ))}
           </div>
           {query.trim() && filteredSurahs.length === 0 ? (
-            <p className="px-1 py-3 text-sm text-slate-400">
+            <p className="px-1 py-3 text-sm text-[var(--qurai-muted)]">
               Surat tidak ditemukan.
             </p>
           ) : null}
@@ -254,7 +254,7 @@ export function SurahSearchControl({
         aria-label="Cari surat"
         title="Cari surat"
         onClick={() => setOpen((current) => !current)}
-        className={`inline-flex h-11 items-center justify-center gap-2 rounded-full bg-emerald-400 px-4 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300 ${className}`.trim()}
+        className={`qurai-control-active inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_24%,var(--qurai-surface-strong))] ${className}`.trim()}
       >
         Surat Lain
         <svg

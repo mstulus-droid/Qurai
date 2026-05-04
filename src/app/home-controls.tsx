@@ -47,12 +47,6 @@ export function HomeControls({
     }
   }, [openPanel]);
 
-  useEffect(() => {
-    if (openPanel !== "search") {
-      setSearchQuery("");
-    }
-  }, [openPanel]);
-
   function normalizeValue(value: string) {
     return value
       .toLowerCase()
@@ -108,6 +102,9 @@ export function HomeControls({
 
   function togglePanel(panel: "search" | "jump") {
     const next = openPanel === panel ? null : panel;
+    if (next !== "search") {
+      setSearchQuery("");
+    }
     onPanelChange(next);
     if (!next) {
       onResetSearch?.();
@@ -128,15 +125,15 @@ export function HomeControls({
   }
 
   return (
-    <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(246,242,235,0.94))] p-4 backdrop-blur sm:p-6">
+    <div className="p-4 backdrop-blur sm:p-6">
       <div className="flex flex-wrap items-center justify-center gap-2">
         <button
           type="button"
           onClick={() => togglePanel("search")}
           className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
             openPanel === "search"
-              ? "bg-[#171717] text-white"
-              : "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50"
+              ? "qurai-control-active"
+              : "qurai-control text-[var(--qurai-muted)]"
           }`}
         >
           Cari Kata
@@ -146,15 +143,15 @@ export function HomeControls({
           onClick={() => togglePanel("jump")}
           className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
             openPanel === "jump"
-              ? "bg-[#171717] text-white"
-              : "border border-slate-300 bg-white text-slate-800 hover:bg-slate-50"
+              ? "qurai-control-active"
+              : "qurai-control text-[var(--qurai-muted)]"
           }`}
         >
           Lompat Cepat
         </button>
         <a
           href="/bookmark"
-          className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
+          className="qurai-control rounded-full px-4 py-2 text-sm font-semibold text-[var(--qurai-muted)] transition"
         >
           Bookmark
         </a>
@@ -163,22 +160,22 @@ export function HomeControls({
       {openPanel === "search" ? (
         <form
           onSubmit={handleSearchSubmit}
-          className="mt-4 rounded-[1.5rem] bg-[#171717] p-4 text-white shadow-[0_18px_50px_-36px_rgba(15,23,42,0.8)]"
+          className="mt-4 rounded-[1.5rem] border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-bg-soft)_86%,transparent)] p-4 text-[var(--qurai-text)] shadow-[0_18px_50px_-36px_rgba(0,0,0,0.8)]"
         >
           <div className="flex flex-col gap-3 sm:flex-row">
-            <div className="flex min-w-0 flex-1 items-center gap-2 rounded-[1rem] bg-white px-4 py-3">
+            <div className="flex min-w-0 flex-1 items-center gap-2 rounded-[1rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] px-4 py-3">
               <input
                 ref={searchInputRef}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari tema, kritik, logical fallacy, atau terjemahan"
-                className="min-w-0 flex-1 bg-transparent text-base text-slate-800 outline-none placeholder:text-slate-400"
+                className="min-w-0 flex-1 bg-transparent text-base text-[var(--qurai-text)] outline-none placeholder:text-[var(--qurai-quiet)]"
               />
               {searchQuery ? (
                 <button
                   type="button"
                   onClick={handleClearSearch}
-                  className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-500 transition hover:bg-slate-300 hover:text-slate-700"
+                  className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--qurai-text)_12%,transparent)] text-[var(--qurai-muted)] transition hover:text-[var(--qurai-text)]"
                   aria-label="Hapus"
                 >
                   <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -190,7 +187,7 @@ export function HomeControls({
             <button
               type="submit"
               disabled={isSearching}
-              className="rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300 disabled:opacity-60"
+              className="rounded-full border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_24%,transparent)] px-5 py-3 text-sm font-semibold text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_32%,transparent)] disabled:opacity-60"
             >
               {isSearching ? "Mencari..." : "Cari"}
             </button>
@@ -201,16 +198,16 @@ export function HomeControls({
       {openPanel === "jump" ? (
         <form
           onSubmit={handleJumpSubmit}
-          className="mt-4 rounded-[1.5rem] bg-[#faf7ef] p-4 ring-1 ring-amber-100"
+          className="mt-4 rounded-[1.5rem] border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-gold)_8%,var(--qurai-surface))] p-4"
         >
           <div className="grid gap-3 sm:grid-cols-[1.2fr_0.8fr_auto]">
-            <div className="flex items-center gap-2 rounded-[1rem] border border-slate-200 bg-white px-4 py-3">
+            <div className="flex items-center gap-2 rounded-[1rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] px-4 py-3">
               <input
                 ref={jumpInputRef}
                 value={surahQuery}
                 onChange={(event) => setSurahQuery(event.target.value)}
                 placeholder="Nomor, nama, atau arti surat"
-                className="min-w-0 flex-1 bg-transparent text-base text-slate-800 outline-none placeholder:text-slate-400"
+                className="min-w-0 flex-1 bg-transparent text-base text-[var(--qurai-text)] outline-none placeholder:text-[var(--qurai-quiet)]"
               />
               {surahQuery ? (
                 <button
@@ -219,7 +216,7 @@ export function HomeControls({
                     setSurahQuery("");
                     jumpInputRef.current?.focus();
                   }}
-                  className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-500 transition hover:bg-slate-300 hover:text-slate-700"
+                  className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--qurai-text)_12%,transparent)] text-[var(--qurai-muted)] transition hover:text-[var(--qurai-text)]"
                   aria-label="Hapus"
                 >
                   <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -228,19 +225,19 @@ export function HomeControls({
                 </button>
               ) : null}
             </div>
-            <div className="flex items-center gap-2 rounded-[1rem] border border-slate-200 bg-white px-4 py-3">
+            <div className="flex items-center gap-2 rounded-[1rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] px-4 py-3">
               <input
                 value={ayahQuery}
                 onChange={(event) => setAyahQuery(event.target.value)}
                 inputMode="numeric"
                 placeholder="Nomor ayat"
-                className="min-w-0 flex-1 bg-transparent text-base text-slate-800 outline-none placeholder:text-slate-400"
+                className="min-w-0 flex-1 bg-transparent text-base text-[var(--qurai-text)] outline-none placeholder:text-[var(--qurai-quiet)]"
               />
               {ayahQuery ? (
                 <button
                   type="button"
                   onClick={() => setAyahQuery("")}
-                  className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-500 transition hover:bg-slate-300 hover:text-slate-700"
+                  className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--qurai-text)_12%,transparent)] text-[var(--qurai-muted)] transition hover:text-[var(--qurai-text)]"
                   aria-label="Hapus"
                 >
                   <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -251,14 +248,14 @@ export function HomeControls({
             </div>
             <button
               type="submit"
-              className="rounded-full bg-[#171717] px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:w-fit"
+              className="rounded-full border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_16%,var(--qurai-surface-strong))] px-5 py-3 text-sm font-semibold text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_24%,var(--qurai-surface-strong))] sm:w-fit"
             >
               Lompat
             </button>
           </div>
 
           {surahQuery.trim() ? (
-            <div className="mt-3 rounded-[1rem] bg-white/70 p-2 ring-1 ring-amber-100">
+            <div className="mt-3 rounded-[1rem] border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_70%,transparent)] p-2">
               <div className="grid gap-2">
                 {filteredSurahs.length > 0 ? (
                   filteredSurahs.map((surah) => (
@@ -266,20 +263,20 @@ export function HomeControls({
                       key={surah.id}
                       type="button"
                       onClick={() => setSurahQuery(surah.nameLatin)}
-                      className="flex items-center justify-between rounded-[0.9rem] px-3 py-2 text-left transition hover:bg-white"
+                      className="flex items-center justify-between rounded-[0.9rem] px-3 py-2 text-left transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)]"
                     >
                       <div className="min-w-0">
-                        <p className="truncate text-sm font-semibold text-slate-900">
+                        <p className="truncate text-sm font-semibold text-[var(--qurai-text)]">
                           {surah.id}. {surah.nameLatin}
                         </p>
-                        <p className="truncate text-xs text-slate-500">
+                        <p className="truncate text-xs text-[var(--qurai-muted)]">
                           {surah.meaning}
                         </p>
                       </div>
                     </button>
                   ))
                 ) : (
-                  <p className="px-3 py-2 text-sm text-slate-500">
+                  <p className="px-3 py-2 text-sm text-[var(--qurai-muted)]">
                     Tidak ada surat yang cocok.
                   </p>
                 )}

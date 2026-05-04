@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const STORAGE_KEY = "qurai-reading-prefs";
 
@@ -64,11 +64,7 @@ function writePrefs(prefs: Prefs) {
 }
 
 export function useReadingPrefs() {
-  const [prefs, setPrefs] = useState<Prefs>(DEFAULT_PREFS);
-
-  useEffect(() => {
-    setPrefs(readPrefs());
-  }, []);
+  const [prefs, setPrefs] = useState<Prefs>(() => readPrefs());
 
   const setSize = (size: Prefs["size"]) => {
     const next = { size };
@@ -100,7 +96,7 @@ export function ReadingSizeToggle({
     <div
       role="radiogroup"
       aria-label="Ukuran teks bacaan"
-      className="inline-flex items-center gap-1 rounded-full bg-slate-100/80 p-1 ring-1 ring-slate-200"
+      className="inline-flex items-center gap-1 rounded-full border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_72%,transparent)] p-1"
     >
       {sizes.map((s) => {
         const active = s.key === value;
@@ -114,8 +110,8 @@ export function ReadingSizeToggle({
             onClick={() => onChange(s.key)}
             className={`h-7 w-7 rounded-full text-[11px] font-semibold transition ${
               active
-                ? "bg-slate-900 text-white shadow-sm"
-                : "text-slate-600 hover:bg-white"
+                ? "bg-[color-mix(in_srgb,var(--qurai-green)_22%,transparent)] text-[var(--qurai-text)] shadow-sm"
+                : "text-[var(--qurai-muted)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] hover:text-[var(--qurai-green)]"
             }`}
           >
             {s.label}

@@ -31,8 +31,8 @@ export function VerseAnalysisDisclosures({
           content: critique,
           icon: <span className="text-lg leading-none">✍️</span>,
           buttonClass:
-            "border-slate-300 bg-white text-slate-700 hover:bg-slate-50",
-          panelClass: "bg-slate-50 text-slate-700 ring-slate-200",
+            "border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] text-[var(--qurai-muted)] hover:border-[var(--qurai-border-strong)] hover:text-[var(--qurai-green)]",
+          panelClass: "bg-[color-mix(in_srgb,var(--qurai-surface-strong)_82%,transparent)] text-[var(--qurai-muted)] ring-[var(--qurai-border)]",
         }
       : null,
     logicalFallacies
@@ -42,8 +42,8 @@ export function VerseAnalysisDisclosures({
           content: logicalFallacies,
           icon: <span className="text-lg leading-none">🤔</span>,
           buttonClass:
-            "border-amber-200 bg-amber-50 text-amber-800 hover:bg-amber-100",
-          panelClass: "bg-amber-50 text-slate-700 ring-amber-100",
+            "border-[var(--qurai-gold)] bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)] text-[var(--qurai-gold)] hover:bg-[color-mix(in_srgb,var(--qurai-gold)_16%,transparent)]",
+          panelClass: "bg-[color-mix(in_srgb,var(--qurai-gold)_8%,var(--qurai-surface))] text-[var(--qurai-muted)] ring-[var(--qurai-border)]",
         }
       : null,
     moralConcerns
@@ -53,8 +53,8 @@ export function VerseAnalysisDisclosures({
           content: moralConcerns,
           icon: <span className="text-lg leading-none">😈</span>,
           buttonClass:
-            "border-rose-200 bg-rose-50 text-rose-800 hover:bg-rose-100",
-          panelClass: "bg-rose-50 text-slate-700 ring-rose-100",
+            "border-rose-400/35 bg-rose-950/10 text-rose-300 hover:bg-rose-950/20",
+          panelClass: "bg-rose-950/10 text-[var(--qurai-muted)] ring-rose-400/25",
         }
       : null,
     scientificErrors
@@ -64,8 +64,8 @@ export function VerseAnalysisDisclosures({
           content: scientificErrors,
           icon: <span className="text-lg leading-none">🔬</span>,
           buttonClass:
-            "border-cyan-200 bg-cyan-50 text-cyan-800 hover:bg-cyan-100",
-          panelClass: "bg-cyan-50 text-slate-700 ring-cyan-100",
+            "border-cyan-400/35 bg-cyan-950/10 text-cyan-300 hover:bg-cyan-950/20",
+          panelClass: "bg-cyan-950/10 text-[var(--qurai-muted)] ring-cyan-400/25",
         }
       : null,
     contradictions
@@ -75,8 +75,8 @@ export function VerseAnalysisDisclosures({
           content: contradictions,
           icon: <span className="text-lg leading-none">⚡</span>,
           buttonClass:
-            "border-violet-200 bg-violet-50 text-violet-800 hover:bg-violet-100",
-          panelClass: "bg-violet-50 text-slate-700 ring-violet-100",
+            "border-violet-400/35 bg-violet-950/10 text-violet-300 hover:bg-violet-950/20",
+          panelClass: "bg-violet-950/10 text-[var(--qurai-muted)] ring-violet-400/25",
         }
       : null,
   ].filter(Boolean);
@@ -101,7 +101,7 @@ export function VerseAnalysisDisclosures({
               type="button"
               onClick={() => setOpenPanel((current) => (current === item.key ? null : item.key))}
               className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition ${item.buttonClass} ${
-                isOpen ? "ring-2 ring-offset-2 ring-offset-white ring-current/20" : ""
+                isOpen ? "ring-2 ring-current/20" : ""
               }`}
               aria-label={item.label}
               title={item.label}
@@ -133,9 +133,9 @@ export function VerseAnalysisDisclosures({
               ) : null}
             </p>
             {notes.length === 1 ? (
-              <div className="whitespace-pre-wrap text-slate-700"><MarkdownText text={notes[0]} /></div>
+              <div className="whitespace-pre-wrap text-[var(--qurai-muted)]"><MarkdownText text={notes[0]} /></div>
             ) : (
-              <ol className="list-decimal space-y-2 pl-4 text-slate-700">
+              <ol className="list-decimal space-y-2 pl-4 text-[var(--qurai-muted)]">
                 {notes.slice(0, 5).map((note, idx) => (
                   <li key={idx} className="whitespace-pre-wrap"><MarkdownText text={note} /></li>
                 ))}

@@ -47,12 +47,12 @@ export function SurahStickyTitle({
       }`}
       aria-hidden={!isVisible}
     >
-      <div className="bg-[radial-gradient(circle_at_top_right,#17412f,transparent_35%),linear-gradient(180deg,#0f172a_0%,#16212f_100%)] px-5 py-3 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.75)] sm:px-8 lg:px-12">
+      <div className="border-b border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-bg-soft)_88%,transparent)] px-5 py-3 shadow-[0_18px_40px_-28px_rgba(0,0,0,0.75)] backdrop-blur sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl text-center">
           <button
             type="button"
             onClick={scrollToHeader}
-            className="pointer-events-auto block w-full truncate text-base font-semibold tracking-[0.08em] text-white"
+            className="pointer-events-auto block w-full truncate text-base font-semibold text-[var(--qurai-text)]"
           >
             {surahNumber} : {title}
           </button>

@@ -133,7 +133,7 @@ export function SurahJumpControl({
         aria-label="Ke ayat"
         title="Ke ayat"
         onClick={() => setOpen((current) => !current)}
-        className={`inline-flex h-11 items-center justify-center gap-2 rounded-full bg-emerald-400 px-4 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300 ${className}`.trim()}
+        className={`qurai-control-active inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_24%,var(--qurai-surface-strong))] ${className}`.trim()}
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current stroke-2">
           <path d="M8 7h8" strokeLinecap="round" />
@@ -145,7 +145,7 @@ export function SurahJumpControl({
 
       {open ? (
         <div
-          className={`absolute right-0 z-50 w-56 overflow-hidden rounded-[1.25rem] border border-white/10 bg-slate-950/95 p-2 text-left shadow-[0_24px_60px_-30px_rgba(15,23,42,0.8)] backdrop-blur ${
+          className={`absolute right-0 z-50 w-56 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-bg-soft)_95%,transparent)] p-2 text-left shadow-[0_24px_60px_-30px_rgba(0,0,0,0.8)] backdrop-blur ${
             menuPosition === "top" ? "bottom-14" : "top-14"
           }`}
         >
@@ -159,8 +159,8 @@ export function SurahJumpControl({
                   onClick={() => jumpToAyah(ayahNumber)}
                   className={`rounded-[0.9rem] border px-2 py-2 text-sm font-semibold transition ${
                     ayahNumber === activeAyah
-                      ? "border-emerald-300 bg-emerald-300 text-slate-950"
-                      : "border-white/10 text-white hover:bg-white/10"
+                      ? "border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_24%,transparent)] text-[var(--qurai-text)]"
+                      : "border-[var(--qurai-border)] text-[var(--qurai-text)] hover:border-[var(--qurai-border-strong)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)]"
                   }`}
                 >
                   {ayahNumber}

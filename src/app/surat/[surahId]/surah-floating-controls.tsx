@@ -66,7 +66,7 @@ export function SurahFloatingControls({
       }`}
       aria-hidden={!shouldShow}
     >
-      <div className="pointer-events-auto grid min-w-[min(100%,28rem)] grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] items-center gap-2 rounded-full border border-slate-200/80 bg-white/95 p-2 shadow-[0_18px_50px_-28px_rgba(15,23,42,0.45)] backdrop-blur">
+      <div className="qurai-surface pointer-events-auto grid min-w-[min(100%,28rem)] grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] items-center gap-2 rounded-full p-2">
         <SurahSearchControl
           surahs={surahs}
           className="w-full justify-center"
@@ -77,7 +77,7 @@ export function SurahFloatingControls({
           href="/"
           aria-label="Kembali ke home"
           title="Kembali ke home"
-          className="inline-flex h-11 w-12 items-center justify-center rounded-full border border-slate-200 text-slate-800 transition hover:bg-slate-50"
+          className="qurai-icon-button inline-flex h-11 w-12 items-center justify-center rounded-full"
         >
           <svg
             viewBox="0 0 24 24"

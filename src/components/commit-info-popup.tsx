@@ -12,27 +12,27 @@ interface CommitInfoPopupProps {
 // Get color based on value position in range (0-100%) for heatmap effect
 function getHeatmapColor(value: number, min: number, max: number): string {
   if (max === min) {
-    return value > 0 ? "bg-orange-200 text-orange-800" : "bg-slate-50 text-slate-400";
+    return value > 0 ? "bg-orange-950/20 text-orange-300" : "bg-[color-mix(in_srgb,var(--qurai-text)_6%,transparent)] text-[var(--qurai-quiet)]";
   }
   
   // Normalize to 0-1 range
   const ratio = (value - min) / (max - min);
   
   if (value === 0) {
-    return "bg-slate-50 text-slate-400";
+    return "bg-[color-mix(in_srgb,var(--qurai-text)_6%,transparent)] text-[var(--qurai-quiet)]";
   }
   
   // Gradient: green (low) -> yellow -> orange -> red (high)
   if (ratio < 0.25) {
-    return "bg-emerald-100 text-emerald-800";
+    return "bg-[color-mix(in_srgb,var(--qurai-green)_14%,transparent)] text-[var(--qurai-green)]";
   } else if (ratio < 0.5) {
-    return "bg-lime-100 text-lime-800";
+    return "bg-lime-950/20 text-lime-300";
   } else if (ratio < 0.75) {
-    return "bg-amber-100 text-amber-800";
+    return "bg-[color-mix(in_srgb,var(--qurai-gold)_16%,transparent)] text-[var(--qurai-gold)]";
   } else if (ratio < 0.9) {
-    return "bg-orange-100 text-orange-800";
+    return "bg-orange-950/20 text-orange-300";
   } else {
-    return "bg-red-100 text-red-800";
+    return "bg-red-950/20 text-red-300";
   }
 }
 
@@ -92,22 +92,22 @@ export function CommitInfoPopup({ children, surahStats }: CommitInfoPopupProps) 
           {/* Backdrop */}
           <div
             onClick={() => setIsOpen(false)}
-            className="fixed inset-0 z-[100] bg-slate-950/40 backdrop-blur-[2px] transition-opacity"
+            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-[2px] transition-opacity"
             aria-hidden="true"
           />
 
           {/* Popup */}
-          <div className="fixed left-1/2 top-1/2 z-[101] flex max-h-[85vh] w-[min(95vw,56rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-[1.25rem] border border-emerald-200/80 bg-white shadow-[0_24px_60px_-20px_rgba(15,23,42,0.4)]">
+          <div className="qurai-card fixed left-1/2 top-1/2 z-[101] flex max-h-[85vh] w-[min(95vw,56rem)] -translate-x-1/2 -translate-y-1/2 flex-col rounded-[1.25rem]">
             {/* Header */}
-            <div className="flex shrink-0 items-center justify-between border-b border-emerald-100 px-5 py-3">
+            <div className="flex shrink-0 items-center justify-between border-b border-[var(--qurai-border)] px-5 py-3">
               <span className="w-8"></span>
-              <span className="text-sm font-semibold text-emerald-800 text-center flex-1">
+              <span className="flex-1 text-center text-sm font-semibold text-[var(--qurai-green)]">
                 Statistik Analisis Surat
               </span>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="rounded-full p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
+                className="rounded-full p-1.5 text-[var(--qurai-muted)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] hover:text-[var(--qurai-green)]"
                 aria-label="Tutup"
               >
                 <svg
@@ -126,46 +126,46 @@ export function CommitInfoPopup({ children, surahStats }: CommitInfoPopupProps) 
             <div className="flex-1 overflow-auto">
               {/* Stats Table */}
               {surahStats && surahStats.length > 0 && (
-                <div className="border-b border-slate-100">
+                <div className="border-b border-[var(--qurai-border)]">
                   <div className="overflow-auto max-h-[60vh]">
                     <table className="w-full text-xs border-collapse">
                       <thead className="sticky top-0 z-20">
-                        <tr className="bg-emerald-50">
-                          <th className="px-3 py-2 text-left font-semibold text-emerald-900 border-b border-emerald-100">
+                        <tr className="bg-[color-mix(in_srgb,var(--qurai-green)_10%,var(--qurai-surface-strong))]">
+                          <th className="border-b border-[var(--qurai-border)] px-3 py-2 text-left font-semibold text-[var(--qurai-green)]">
                             No
                           </th>
-                          <th className="px-3 py-2 text-left font-semibold text-emerald-900 border-b border-emerald-100">
+                          <th className="border-b border-[var(--qurai-border)] px-3 py-2 text-left font-semibold text-[var(--qurai-green)]">
                             Surat
                           </th>
-                          <th className="px-2 py-2 text-center font-semibold text-emerald-900 border-b border-emerald-100">
+                          <th className="border-b border-[var(--qurai-border)] px-2 py-2 text-center font-semibold text-[var(--qurai-green)]">
                             <span title="Logical Fallacies">
                               LF
                             </span>
                           </th>
-                          <th className="px-2 py-2 text-center font-semibold text-emerald-900 border-b border-emerald-100">
+                          <th className="border-b border-[var(--qurai-border)] px-2 py-2 text-center font-semibold text-[var(--qurai-green)]">
                             <span title="Scientific Errors">
                               SE
                             </span>
                           </th>
-                          <th className="px-2 py-2 text-center font-semibold text-emerald-900 border-b border-emerald-100">
+                          <th className="border-b border-[var(--qurai-border)] px-2 py-2 text-center font-semibold text-[var(--qurai-green)]">
                             <span title="Moral Concerns">
                               MC
                             </span>
                           </th>
-                          <th className="px-2 py-2 text-center font-semibold text-emerald-900 border-b border-emerald-100">
+                          <th className="border-b border-[var(--qurai-border)] px-2 py-2 text-center font-semibold text-[var(--qurai-green)]">
                             <span title="Contradiction">
                               CD
                             </span>
                           </th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-100">
+                      <tbody className="divide-y divide-[var(--qurai-border)]">
                         {surahStats.map((stat) => (
-                          <tr key={stat.id} className="hover:bg-slate-50">
-                            <td className="px-3 py-1.5 text-slate-600">
+                          <tr key={stat.id} className="hover:bg-[color-mix(in_srgb,var(--qurai-green)_7%,transparent)]">
+                            <td className="px-3 py-1.5 text-[var(--qurai-muted)]">
                               {stat.id}
                             </td>
-                            <td className="px-3 py-1.5 font-medium text-slate-800">
+                            <td className="px-3 py-1.5 font-medium text-[var(--qurai-text)]">
                               {stat.nameLatin}
                             </td>
                             <td className="px-2 py-1.5 text-center">
@@ -219,14 +219,14 @@ export function CommitInfoPopup({ children, surahStats }: CommitInfoPopupProps) 
                   </div>
 
                   {/* Legend */}
-                  <div className="border-t border-slate-100 bg-slate-50 px-4 py-3 text-[11px] text-slate-500">
+                  <div className="border-t border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_72%,transparent)] px-4 py-3 text-[11px] text-[var(--qurai-muted)]">
                     {/* Scale */}
                     <div className="flex items-center justify-center gap-2">
                       <span className="font-medium">Rendah</span>
                       <span className="inline-flex gap-0.5">
-                        <span className="inline-block h-4 w-4 rounded-sm bg-emerald-100"></span>
+                        <span className="inline-block h-4 w-4 rounded-sm bg-[color-mix(in_srgb,var(--qurai-green)_22%,transparent)]"></span>
                         <span className="inline-block h-4 w-4 rounded-sm bg-lime-100"></span>
-                        <span className="inline-block h-4 w-4 rounded-sm bg-amber-100"></span>
+                        <span className="inline-block h-4 w-4 rounded-sm bg-[color-mix(in_srgb,var(--qurai-gold)_24%,transparent)]"></span>
                         <span className="inline-block h-4 w-4 rounded-sm bg-orange-100"></span>
                         <span className="inline-block h-4 w-4 rounded-sm bg-red-100"></span>
                       </span>
@@ -244,10 +244,10 @@ export function CommitInfoPopup({ children, surahStats }: CommitInfoPopupProps) 
               )}
 
               {/* Version Info - At Bottom */}
-              <div className="bg-slate-50 px-5 py-3">
+              <div className="bg-[color-mix(in_srgb,var(--qurai-surface-strong)_72%,transparent)] px-5 py-3">
                 <button
                   onClick={() => setShowCommitDetail(true)}
-                  className="text-xs text-slate-400 hover:text-emerald-600 transition"
+                  className="text-xs text-[var(--qurai-muted)] transition hover:text-[var(--qurai-green)]"
                   title="Klik untuk melihat detail commit"
                 >
                   Versi: <span className="font-mono">{GIT_INFO.hash}</span>
@@ -261,16 +261,16 @@ export function CommitInfoPopup({ children, surahStats }: CommitInfoPopupProps) 
             <>
               <div
                 onClick={() => setShowCommitDetail(false)}
-                className="fixed inset-0 z-[102] bg-slate-950/20 backdrop-blur-[1px]"
+                className="fixed inset-0 z-[102] bg-black/35 backdrop-blur-[1px]"
                 aria-hidden="true"
               />
-              <div className="fixed left-1/2 top-1/2 z-[103] w-[min(90vw,20rem)] -translate-x-1/2 -translate-y-1/2 rounded-xl border border-slate-200 bg-white p-4 shadow-lg">
+              <div className="qurai-card fixed left-1/2 top-1/2 z-[103] w-[min(90vw,20rem)] -translate-x-1/2 -translate-y-1/2 rounded-xl p-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium text-slate-500">Detail Commit</span>
+                  <span className="text-xs font-medium text-[var(--qurai-muted)]">Detail Commit</span>
                   <button
                     type="button"
                     onClick={() => setShowCommitDetail(false)}
-                    className="rounded-full p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
+                    className="rounded-full p-1 text-[var(--qurai-muted)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] hover:text-[var(--qurai-green)]"
                     aria-label="Tutup"
                   >
                     <svg
@@ -285,16 +285,16 @@ export function CommitInfoPopup({ children, surahStats }: CommitInfoPopupProps) 
                   </button>
                 </div>
                 <div className="mt-3">
-                  <p className="text-sm font-medium text-slate-800">
+                  <p className="text-sm font-medium text-[var(--qurai-text)]">
                     {commitTitle}
                   </p>
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-1 text-xs text-[var(--qurai-muted)]">
                     {formatDate(GIT_INFO.date)}
                   </p>
-                  <p className="mt-2 text-xs text-slate-500">
+                  <p className="mt-2 text-xs text-[var(--qurai-muted)]">
                     Branch: <span className="font-mono">{GIT_INFO.branch}</span>
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-[var(--qurai-muted)]">
                     Hash: <span className="font-mono">{GIT_INFO.hash}</span>
                   </p>
                 </div>

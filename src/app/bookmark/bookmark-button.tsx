@@ -33,8 +33,8 @@ function SubmitButton({
         title={isBookmarked ? "Hapus bookmark" : "Simpan bookmark"}
         className={`inline-flex h-11 w-11 items-center justify-center rounded-full transition ${
           isBookmarked
-            ? "bg-emerald-400 text-slate-950 hover:bg-emerald-300"
-            : "border border-white/15 text-white hover:bg-white/10"
+            ? "border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_28%,transparent)] text-[var(--qurai-text)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_36%,transparent)]"
+            : "qurai-icon-button"
         } disabled:cursor-not-allowed disabled:opacity-70`}
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current stroke-2">
@@ -55,8 +55,8 @@ function SubmitButton({
       disabled={pending}
       className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
         isBookmarked
-          ? "border border-amber-300 bg-amber-50 text-amber-900 hover:bg-amber-100"
-          : "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50"
+          ? "border border-[var(--qurai-gold)] bg-[color-mix(in_srgb,var(--qurai-gold)_12%,transparent)] text-[var(--qurai-gold)] hover:bg-[color-mix(in_srgb,var(--qurai-gold)_18%,transparent)]"
+          : "qurai-control text-[var(--qurai-text)]"
       } disabled:cursor-not-allowed disabled:opacity-70`}
     >
       {pending ? "Memproses..." : isBookmarked ? "Hapus bookmark" : "Simpan bookmark"}
@@ -76,7 +76,7 @@ export function BookmarkButton({
       <input type="hidden" name="verseId" value={verseId} />
       <SubmitButton isBookmarked={isBookmarked} iconOnly={iconOnly} />
       {!iconOnly && state.status !== "idle" ? (
-        <p className="text-sm text-slate-600">{state.message}</p>
+        <p className="text-sm text-[var(--qurai-muted)]">{state.message}</p>
       ) : null}
     </form>
   );

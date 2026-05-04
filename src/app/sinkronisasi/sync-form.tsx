@@ -16,7 +16,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-slate-400"
+      className="rounded-full border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_24%,transparent)] px-5 py-3 text-sm font-semibold text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_34%,transparent)] disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "Menyinkronkan..." : "Sinkronkan dari Excel"}
     </button>
@@ -33,8 +33,8 @@ export function SyncForm() {
         <p
           className={`rounded-[1rem] px-4 py-3 text-sm leading-7 ${
             state.status === "success"
-              ? "bg-emerald-50 text-emerald-900 ring-1 ring-emerald-200"
-              : "bg-rose-50 text-rose-900 ring-1 ring-rose-200"
+              ? "border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] text-[var(--qurai-text)]"
+              : "border border-rose-400/35 bg-rose-950/10 text-rose-200"
           }`}
         >
           {state.message}

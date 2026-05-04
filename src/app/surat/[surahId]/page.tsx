@@ -75,7 +75,7 @@ function buildRevelationOrderText(
           setelah{" "}
           <NavLink
             href={`/surat/${previousByRevelation.id}`}
-            className="font-semibold text-emerald-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+            className="font-semibold text-[var(--qurai-green)] underline decoration-[var(--qurai-border-strong)] underline-offset-4 transition hover:text-[var(--qurai-text)]"
           >
             {previousByRevelation.nameLatin}
           </NavLink>
@@ -87,7 +87,7 @@ function buildRevelationOrderText(
           sebelum{" "}
           <NavLink
             href={`/surat/${nextByRevelation.id}`}
-            className="font-semibold text-emerald-200 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+            className="font-semibold text-[var(--qurai-green)] underline decoration-[var(--qurai-border-strong)] underline-offset-4 transition hover:text-[var(--qurai-text)]"
           >
             {nextByRevelation.nameLatin}
           </NavLink>
@@ -165,7 +165,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
   return (
     <main
       id="surah-reading-root"
-      className="min-h-screen bg-[linear-gradient(180deg,#eef6ef_0%,#f8f4ea_100%)] px-3 py-8 sm:px-8 lg:px-12"
+      className="qurai-page px-3 py-8 sm:px-8 lg:px-12"
     >
       <ReadingProgress targetId="surah-reading-root" />
       <div className="mx-auto flex max-w-6xl flex-col gap-5">
@@ -181,18 +181,18 @@ export default async function SurahDetailPage({ params }: PageProps) {
         <section className="space-y-4">
           <div
             id="surah-header"
-            className="relative z-30 rounded-[2rem] bg-[radial-gradient(circle_at_top_right,#17412f,transparent_35%),linear-gradient(180deg,#0f172a_0%,#16212f_100%)] p-6 text-center text-white shadow-[0_30px_80px_-35px_rgba(15,23,42,0.7)] sm:p-8"
+            className="qurai-hero relative z-30 rounded-[2rem] p-6 text-center sm:p-8"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
+            <p className="qurai-label">
               Surat {surah.id}
             </p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
               {surah.nameLatin}
             </h1>
-            <p className="font-arabic mt-3 text-5xl text-white/90 sm:text-6xl">
+            <p className="qurai-arabic-text font-arabic mt-3 text-5xl sm:text-6xl">
               {surah.nameArabic}
             </p>
-            <div className="mt-4 space-y-2 text-sm leading-7 text-slate-300 sm:text-base">
+            <div className="mt-4 space-y-2 text-sm leading-7 text-[var(--qurai-muted)] sm:text-base">
               <p>
                 {surah.meaning}, terdiri dari {surah.verseCount} ayat dan turun di {surah.revelationPlace}.
               </p>
@@ -215,7 +215,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
                 href="/"
                 aria-label="Kembali ke home"
                 title="Kembali ke home"
-                className="inline-flex h-11 w-12 items-center justify-center rounded-full border border-white/15 text-white transition hover:bg-white/10 sm:w-12"
+                className="qurai-icon-button inline-flex h-11 w-12 items-center justify-center rounded-full sm:w-12"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current stroke-2">
                   <path d="M4 11.5L12 5l8 6.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -251,9 +251,9 @@ export default async function SurahDetailPage({ params }: PageProps) {
               >
                 {group.topic ? (
                   <>
-                    <div className="absolute bottom-8 left-3 top-14 hidden w-px bg-emerald-200 sm:block" />
-                    <div className="absolute bottom-8 left-3 hidden h-px w-5 bg-emerald-200 sm:block" />
-                    <div className="sticky top-12 z-20 mb-3 mx-auto w-fit rounded-[1.25rem] border border-emerald-200/80 bg-emerald-50/92 px-4 py-3 text-center text-sm font-semibold leading-7 text-emerald-950 shadow-[0_12px_34px_-28px_rgba(6,78,59,0.5)] backdrop-blur sm:mx-0 sm:w-auto sm:text-left sm:top-14">
+                    <div className="absolute bottom-8 left-3 top-14 hidden w-px bg-[var(--qurai-border-strong)] sm:block" />
+                    <div className="absolute bottom-8 left-3 hidden h-px w-5 bg-[var(--qurai-border-strong)] sm:block" />
+                    <div className="sticky top-12 z-20 mb-3 mx-auto w-fit rounded-[1.25rem] border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_12%,var(--qurai-surface-strong))] px-4 py-3 text-center text-sm font-semibold leading-7 text-[var(--qurai-text)] shadow-[0_12px_34px_-28px_rgba(0,0,0,0.5)] backdrop-blur sm:mx-0 sm:w-auto sm:text-left sm:top-14">
                       {group.verses[0].ayahNumber === group.verses[group.verses.length - 1].ayahNumber
                         ? <>{group.verses[0].ayahNumber} : <MarkdownText text={group.topic} /></>
                         : <>{group.verses[0].ayahNumber}-{group.verses[group.verses.length - 1].ayahNumber} : <MarkdownText text={group.topic} /></>}
@@ -266,14 +266,14 @@ export default async function SurahDetailPage({ params }: PageProps) {
                     <article
                       key={`${verse.surahId}-${verse.ayahNumber}`}
                       id={`ayat-${verse.ayahNumber}`}
-                      className="scroll-mt-28 rounded-[2rem] bg-white p-4 shadow-[0_20px_60px_-35px_rgba(15,23,42,0.35)] sm:p-6"
+                      className="qurai-card scroll-mt-28 rounded-[2rem] p-4 sm:p-6"
                     >
                       <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-4">
-                        <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-900">
+                        <p className="qurai-label">
                           Ayat {verse.ayahNumber}
                         </p>
                         {!group.topic ? (
-                          <p className="text-sm text-slate-600">
+                          <p className="text-sm text-[var(--qurai-muted)]">
                             <MarkdownText text={verse.topic || "Tanpa topik"} />
                           </p>
                         ) : null}
@@ -281,20 +281,20 @@ export default async function SurahDetailPage({ params }: PageProps) {
 
                       <NavLink
                         href={`/ayat/${verse.id}`}
-                        className="mt-5 block rounded-[1.4rem] bg-[linear-gradient(180deg,#faf8f1_0%,#ffffff_100%)] px-4 py-5 ring-1 ring-slate-200 transition hover:bg-slate-50"
+                        className="qurai-reading-card mt-5 block rounded-[1.4rem] px-4 py-5 transition hover:border-[var(--qurai-border-strong)]"
                       >
-                        <p className="font-arabic text-right text-3xl leading-[2] text-slate-950 sm:text-4xl">
+                        <p className="qurai-arabic-text font-arabic text-right text-3xl leading-[2] sm:text-4xl">
                           {verse.arabicText}
                         </p>
-                        <p className="font-serif-reading mt-4 text-base leading-8 text-slate-700">
+                        <p className="font-serif-reading mt-4 text-base leading-8 text-[var(--qurai-text)]">
                           <MarkdownText text={verse.translation} />
                         </p>
                         {verse.catatanDepag ? (
-                          <div className="mt-4 rounded-[1.25rem] bg-amber-50/60 p-4 ring-1 ring-amber-100/80">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700">
+                          <div className="qurai-muted-card mt-4 rounded-[1.25rem] p-4">
+                            <p className="text-[10px] font-semibold uppercase text-[var(--qurai-gold)]">
                               Catatan Depag
                             </p>
-                            <p className="mt-1 whitespace-pre-wrap text-sm leading-7 text-slate-700">
+                            <p className="mt-1 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
                               <MarkdownText text={verse.catatanDepag} />
                             </p>
                           </div>
@@ -302,11 +302,11 @@ export default async function SurahDetailPage({ params }: PageProps) {
                       </NavLink>
 
                       {verse.asbabunNuzul ? (
-                        <div className="mt-4 border-l-2 border-amber-300 pl-4">
-                          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">
+                        <div className="mt-4 border-l-2 border-[var(--qurai-gold)] pl-4">
+                          <p className="text-xs font-semibold uppercase text-[var(--qurai-gold)]">
                             Asbabun Nuzul
                           </p>
-                          <p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-slate-700">
+                          <p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
                             <MarkdownText text={verse.asbabunNuzul} />
                           </p>
                         </div>

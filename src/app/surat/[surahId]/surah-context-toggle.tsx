@@ -15,13 +15,13 @@ export function SurahContextToggle({ context }: SurahContextToggleProps) {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex w-full flex-col items-center justify-center gap-1 rounded-[1.25rem] border border-white/10 bg-white/8 px-4 py-3 text-center transition hover:bg-white/12 animate-[subtle-pulse_3s_ease-in-out_infinite]"
+        className="flex w-full flex-col items-center justify-center gap-1 rounded-[1.25rem] border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-green)_8%,transparent)] px-4 py-3 text-center transition hover:border-[var(--qurai-border-strong)] animate-[subtle-pulse_3s_ease-in-out_infinite]"
       >
-        <span className="text-sm font-semibold text-emerald-200">
+        <span className="text-sm font-semibold text-[var(--qurai-green)]">
           Konteks & Kritik
         </span>
         <span
-          className={`inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/15 text-white/80 transition-transform duration-300 animate-[hint-bounce_2s_ease-in-out_infinite] ${
+          className={`inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--qurai-border)] text-[var(--qurai-muted)] transition-transform duration-300 animate-[hint-bounce_2s_ease-in-out_infinite] ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -43,7 +43,7 @@ export function SurahContextToggle({ context }: SurahContextToggleProps) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="whitespace-pre-line rounded-[1.25rem] border border-white/10 bg-white/5 px-4 py-3 text-left text-sm leading-7 text-slate-200">
+          <p className="whitespace-pre-line rounded-[1.25rem] border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_72%,transparent)] px-4 py-3 text-left text-sm leading-7 text-[var(--qurai-muted)]">
             <MarkdownText text={context} />
           </p>
         </div>

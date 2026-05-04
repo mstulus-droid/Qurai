@@ -4,7 +4,7 @@ export function BuildStamp() {
   const version = getAppVersionInfo();
 
   return (
-    <p className="text-[11px] leading-5 text-slate-500">
+    <p className="text-[11px] leading-5 text-[var(--qurai-muted)]">
       versi commit {version.commit}
     </p>
   );
