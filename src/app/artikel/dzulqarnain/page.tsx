@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ThemedWordmark } from "@/components/theme-toggle";
+import { ArticleNav } from "@/components/article-nav";
 
 export const metadata: Metadata = {
   title: "Dzulqarnain dan Teks yang Sudah Ada Sebelumnya | Qurai",
@@ -30,27 +30,8 @@ function VerseLink({
 
 export default function DzulqarnainArticle() {
   return (
-    <main className="qurai-page min-h-screen">
-      <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between gap-8 border-b border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-bg)_84%,transparent)] px-5 py-4 backdrop-blur-[18px] sm:px-10 lg:px-14">
-        <Link
-          href="/about"
-          aria-label="Qurai"
-          className="relative block h-[36px] w-[clamp(104px,12vw,150px)]"
-        >
-          <ThemedWordmark sizes="150px" className="object-contain object-left" />
-        </Link>
-        <div className="hidden items-center gap-[clamp(1.2rem,3vw,2.5rem)] font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] sm:flex">
-          <Link href="/" className="transition hover:text-[var(--qurai-green)]">
-            Bedah Quran
-          </Link>
-          <Link
-            href="/artikel"
-            className="transition hover:text-[var(--qurai-gold)]"
-          >
-            Artikel
-          </Link>
-        </div>
-      </nav>
+    <main className="qurai-page min-h-screen bg-fixed">
+      <ArticleNav backHref="/artikel" backLabel="Artikel" />
 
       <article className="mx-auto w-[min(740px,calc(100%_-_1.4rem))] pb-32 pt-32 sm:w-[min(740px,calc(100%_-_2rem))] sm:pt-40">
         <header className="mb-14">

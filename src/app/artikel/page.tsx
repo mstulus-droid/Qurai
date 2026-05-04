@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ThemedWordmark } from "@/components/theme-toggle";
+import { ArticleNav } from "@/components/article-nav";
 
 export const metadata: Metadata = {
   title: "Artikel | Qurai",
@@ -14,33 +14,29 @@ const articles = [
     number: "01",
     title: "Dzulqarnain dan Teks yang Sudah Ada Sebelumnya",
     excerpt:
-      "Orang Yahudi menguji Muhammad dengan satu pertanyaan: ceritakan Dzulqarnain. Jawabannya ada di Al-Kahf. Masalahnya - jawaban itu bukan milik Muhammad seorang.",
+      "Orang Yahudi menguji Muhammad dengan satu pertanyaan: ceritakan Dzulqarnain. Jawabannya ada di Al-Kahf. Masalahnya, jawaban itu bukan milik Muhammad seorang.",
     surah: "Al-Kahf 18:83–98",
     date: "Mei 2026",
     readTime: "8 menit",
+  },
+  {
+    slug: "babi-dan-kencing-unta",
+    number: "02",
+    title: "Babi Matang, Kencing Unta, dan Standar yang Tidak Konsisten",
+    excerpt:
+      "Al-Quran melarang babi atas nama kebersihan. Hadis sahih menganjurkan urin unta sebagai obat. Secara medis, yang dilarang lebih aman dari yang dianjurkan.",
+    surah: "Al-Baqarah 2:173 · Al-Maidah 5:3",
+    date: "Mei 2026",
+    readTime: "7 menit",
   },
 ];
 
 export default function ArtikelPage() {
   return (
-    <main className="qurai-page min-h-screen">
-      <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between gap-8 border-b border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-bg)_84%,transparent)] px-5 py-4 backdrop-blur-[18px] sm:px-10 lg:px-14">
-        <Link
-          href="/about"
-          aria-label="Qurai"
-          className="relative block h-[36px] w-[clamp(104px,12vw,150px)]"
-        >
-          <ThemedWordmark sizes="150px" className="object-contain object-left" />
-        </Link>
-        <div className="hidden items-center gap-[clamp(1.2rem,3vw,2.5rem)] font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] sm:flex">
-          <Link href="/" className="transition hover:text-[var(--qurai-green)]">
-            Bedah Quran
-          </Link>
-          <span className="text-[var(--qurai-gold)]">Artikel</span>
-        </div>
-      </nav>
+    <main className="qurai-page flex min-h-screen flex-col bg-fixed">
+      <ArticleNav />
 
-      <div className="mx-auto w-[min(1120px,calc(100%_-_1.4rem))] px-0 pb-24 pt-32 sm:w-[min(1120px,calc(100%_-_2rem))] sm:pt-36">
+      <div className="mx-auto flex-1 w-[min(1120px,calc(100%_-_1.4rem))] px-0 pb-24 pt-32 sm:w-[min(1120px,calc(100%_-_2rem))] sm:pt-36">
         <div className="mb-16 sm:mb-20">
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
             02 / Artikel
@@ -86,7 +82,7 @@ export default function ArtikelPage() {
         </div>
       </div>
 
-      <footer className="border-t border-[var(--qurai-border)] px-5 py-7 font-mono text-[0.62rem] uppercase text-[var(--qurai-quiet)] sm:px-10 lg:px-14">
+      <footer className="mt-auto border-t border-[var(--qurai-border)] px-5 py-7 font-mono text-[0.62rem] uppercase text-[var(--qurai-quiet)] sm:px-10 lg:px-14">
         Bagian dari{" "}
         <Link
           href="https://rhadzor.id"
