@@ -1,5 +1,4 @@
 import { NavLink } from "@/components/nav-link";
-import { CommitInfoPopup } from "@/components/commit-info-popup";
 import { ThemedWordmark, ThemeToggle } from "@/components/theme-toggle";
 import { redirect } from "next/navigation";
 import { DatabaseUnavailable } from "@/app/database-unavailable";
@@ -100,7 +99,7 @@ export default async function Home({ searchParams }: HomePageProps) {
           <div className="flex items-start justify-between gap-4">
             <div className="w-[68px]" aria-hidden="true" />
             <div className="flex flex-col items-center justify-center gap-4 text-center">
-              <CommitInfoPopup surahStats={surahStats}>
+              <NavLink href="/about" aria-label="Tentang Qurai">
                 <div className="relative block h-[72px] w-[260px] drop-shadow-[0_24px_58px_rgba(46,176,62,0.16)] sm:h-[88px] sm:w-[320px]">
                   <ThemedWordmark
                     priority
@@ -108,7 +107,7 @@ export default async function Home({ searchParams }: HomePageProps) {
                     className="object-contain"
                   />
                 </div>
-              </CommitInfoPopup>
+              </NavLink>
             </div>
             <ThemeToggle />
           </div>
@@ -122,6 +121,7 @@ export default async function Home({ searchParams }: HomePageProps) {
             nameLatin: surah.nameLatin,
             meaning: surah.meaning,
           }))}
+          surahStats={surahStats}
           list={
             <div className="divide-y divide-[var(--qurai-border)]">
               {surahs.map((surah) => {

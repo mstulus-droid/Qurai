@@ -1,15 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { CommitInfoPopup } from "@/components/commit-info-popup";
+import type { SurahStats } from "@/lib/quran-data";
 
 export function HomeStickySection({
   controls,
   list,
   hideList,
+  surahStats,
 }: {
   controls: React.ReactNode;
   list: React.ReactNode;
   hideList?: boolean;
+  surahStats?: SurahStats[];
 }) {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const [isStuck, setIsStuck] = useState(false);
@@ -40,9 +44,11 @@ export function HomeStickySection({
         >
           {controls}
           {!hideList ? (
-            <div className="border-t border-[var(--qurai-border-strong)] bg-[var(--qurai-green-deep)] px-4 py-3 text-center font-mono text-xs font-semibold uppercase text-[#f3f1e8] sm:px-5">
-              Daftar Surat
-            </div>
+            <CommitInfoPopup surahStats={surahStats}>
+              <span className="block w-full border-t border-[var(--qurai-border-strong)] bg-[var(--qurai-green-deep)] px-4 py-3 text-center font-mono text-xs font-semibold uppercase text-[#f3f1e8] transition hover:bg-[color-mix(in_srgb,var(--qurai-green-deep)_88%,black)] sm:px-5">
+                Daftar Surat
+              </span>
+            </CommitInfoPopup>
           ) : null}
         </div>
       </div>

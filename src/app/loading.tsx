@@ -1,29 +1,15 @@
-import Image from "next/image";
+import { ThemedMark } from "@/components/theme-toggle";
 
 export default function Loading() {
   return (
     <div className="qurai-page flex min-h-screen items-center justify-center px-6 py-16">
       <div className="relative flex flex-col items-center text-center">
-        {/* Glow backdrop */}
         <div className="absolute -inset-10 rounded-full bg-[color-mix(in_srgb,var(--qurai-green)_16%,transparent)] blur-3xl" />
-
-        {/* Spinner rings */}
-        <div className="relative">
-          <div className="absolute inset-0 animate-[spin_3s_linear_infinite] rounded-full border-2 border-dashed border-[var(--qurai-border-strong)]" />
-          <div className="absolute -inset-3 animate-[spin_2s_linear_infinite_reverse] rounded-full border-2 border-dotted border-[color-mix(in_srgb,var(--qurai-green)_50%,transparent)]" />
-          <div className="absolute -inset-6 animate-[spin_4s_linear_infinite] rounded-full border border-[var(--qurai-border)]" />
-
-          {/* Icon container with pulse */}
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl animate-[pulse_2s_ease-in-out_infinite]">
-            <Image
-              src="/brand/qurai-app-icon-dark.png"
-              alt="Qurai"
-              width={72}
-              height={72}
-              className="h-16 w-16 object-contain animate-[bounce_2s_ease-in-out_infinite] drop-shadow-[0_6px_20px_rgba(16,185,129,0.35)]"
-              priority
-            />
-          </div>
+        <div className="qurai-loader-mark relative h-24 w-24">
+          <ThemedMark
+            sizes="96px"
+            className="object-contain opacity-75 drop-shadow-[0_12px_32px_rgba(99,207,77,0.24)]"
+          />
         </div>
       </div>
     </div>

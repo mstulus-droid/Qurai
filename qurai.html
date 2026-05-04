@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qurai</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #050806;
+      --bg-soft: #07130c;
+      --surface: rgba(9, 22, 14, 0.78);
+      --surface-strong: #0b1a11;
+      --border: rgba(232, 236, 221, 0.12);
+      --border-strong: rgba(108, 216, 82, 0.26);
+      --text: #f3f1e8;
+      --muted: rgba(243, 241, 232, 0.62);
+      --quiet: rgba(243, 241, 232, 0.42);
+      --green: #63cf4d;
+      --green-deep: #1f7f36;
+      --ink: #020403;
+      --gold: #cdbf91;
+      --copper: #b56447;
+      --shadow: 0 26px 80px rgba(0, 0, 0, 0.42);
+      --max: 1120px;
+    }
+
+    body.light-mode {
+      --bg: #f7f7f2;
+      --bg-soft: #eff3ea;
+      --surface: rgba(255, 255, 250, 0.76);
+      --surface-strong: #ffffff;
+      --border: rgba(14, 27, 17, 0.12);
+      --border-strong: rgba(51, 154, 47, 0.34);
+      --text: #111811;
+      --muted: rgba(17, 24, 17, 0.66);
+      --quiet: rgba(17, 24, 17, 0.44);
+      --green: #35a82f;
+      --green-deep: #1f7f36;
+      --gold: #817044;
+      --shadow: 0 26px 70px rgba(43, 61, 39, 0.14);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        linear-gradient(145deg, rgba(7, 32, 16, 0.84), transparent 38%),
+        linear-gradient(315deg, rgba(85, 34, 25, 0.18), transparent 32%),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+
+    body.light-mode {
+      background:
+        linear-gradient(145deg, rgba(78, 185, 70, 0.16), transparent 38%),
+        linear-gradient(315deg, rgba(205, 191, 145, 0.22), transparent 34%),
+        var(--bg);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.14;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .page-shell {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.2rem clamp(1.25rem, 4vw, 3.5rem);
+      border-bottom: 1px solid transparent;
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(5, 8, 6, 0.84);
+      border-color: var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    body.light-mode nav.scrolled {
+      background: rgba(247, 247, 242, 0.84);
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      width: clamp(104px, 12vw, 150px);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    nav.logo-visible .nav-logo {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .nav-logo img { width: 100%; height: auto; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.2rem, 3vw, 2.5rem);
+      list-style: none;
+      opacity: 0;
+      animation: fadeIn 0.9s 0.45s forwards;
+    }
+
+    .nav-links a {
+      color: var(--quiet);
+      text-decoration: none;
+      font-family: "DM Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
+    .theme-toggle {
+      position: relative;
+      display: inline-block;
+      width: 68px;
+      height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(3, 8, 5, 0.86), rgba(16, 46, 22, 0.78));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 12px 32px rgba(0, 0, 0, 0.18);
+      cursor: pointer;
+      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--border-strong);
+    }
+
+    .theme-toggle::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f0ead2, #63cf4d);
+      box-shadow: 0 0 18px rgba(99, 207, 77, 0.34);
+      transition: transform 0.32s cubic-bezier(.2,.8,.2,1), background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .theme-toggle::after {
+      content: "";
+      position: absolute;
+      inset: 8px 10px;
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent 45%, rgba(255,255,255,0.28));
+      opacity: 0.48;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    body.light-mode .theme-toggle {
+      background: linear-gradient(90deg, rgba(236, 241, 224, 0.86), rgba(255, 255, 255, 0.92));
+      box-shadow: inset 0 0 0 1px rgba(17, 24, 17, 0.04), 0 12px 32px rgba(43, 61, 39, 0.12);
+    }
+
+    body.light-mode .theme-toggle::before {
+      transform: translateX(34px);
+      background: linear-gradient(145deg, #ffffff, #d5d0ba);
+      box-shadow: 0 0 18px rgba(205, 191, 145, 0.36);
+    }
+
+    body.light-mode .theme-toggle::after { opacity: 0.72; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 7rem 0 5rem;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: min(760px, 100%);
+    }
+
+    .hero-label {
+      margin-bottom: 2.2rem;
+      color: var(--quiet);
+      font-family: "DM Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: slideUp 0.9s 0.25s forwards;
+    }
+
+    .hero-wordmark {
+      width: min(690px, 100%);
+      filter: drop-shadow(0 24px 58px rgba(46, 176, 62, 0.16));
+      opacity: 0;
+      animation: slideUp 1s 0.45s forwards;
+    }
+
+    .hero-title-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .hero-tagline {
+      margin-top: 2.4rem;
+      max-width: 52ch;
+      color: var(--muted);
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+      font-style: italic;
+      line-height: 1.55;
+      opacity: 0;
+      animation: slideUp 0.9s 0.7s forwards;
+    }
+
+    .hero-tagline strong {
+      color: var(--text);
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 3rem;
+      opacity: 0;
+      animation: slideUp 0.9s 0.95s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 1.15rem;
+      border: 1px solid var(--border-strong);
+      background: rgba(93, 204, 72, 0.1);
+      color: var(--text);
+      text-decoration: none;
+      font-family: "DM Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(93, 204, 72, 0.18);
+      border-color: rgba(108, 216, 82, 0.48);
+    }
+
+    .btn.secondary {
+      background: rgba(205, 191, 145, 0.08);
+      border-color: rgba(205, 191, 145, 0.22);
+      color: var(--muted);
+    }
+
+    .btn.secondary:hover {
+      background: rgba(205, 191, 145, 0.14);
+      color: var(--text);
+    }
+
+    .section {
+      position: relative;
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 5rem;
+      border-top: 1px solid var(--border);
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      transition: border-color 0.35s ease;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      width: 100%;
+      align-items: center;
+    }
+
+    .section-label {
+      position: sticky;
+      top: 6rem;
+      align-self: start;
+      color: var(--quiet);
+      font-family: "DM Mono", monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .about-body {
+      max-width: 760px;
+      color: var(--muted);
+      font-family: "Playfair Display", serif;
+      font-size: 1.28rem;
+      line-height: 1.9;
+    }
+
+    .about-body strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .about-body p + p { margin-top: 1.4rem; }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .path-card {
+      min-height: 280px;
+      padding: clamp(1.5rem, 3vw, 2.3rem);
+      background: var(--surface);
+      text-decoration: none;
+      transition: background 0.25s ease;
+    }
+
+    .path-card:hover { background: rgba(20, 54, 30, 0.82); }
+
+    body.light-mode .path-card:hover { background: rgba(231, 242, 226, 0.92); }
+
+    .path-num {
+      display: block;
+      margin-bottom: 2.4rem;
+      color: var(--green);
+      font-family: "DM Mono", monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .path-card:nth-child(2) .path-num { color: var(--gold); }
+
+    .path-title {
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .path-desc {
+      max-width: 32ch;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .name-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    .name-mark {
+      width: min(180px, 100%);
+      filter: drop-shadow(0 18px 40px rgba(82, 207, 70, 0.18));
+    }
+
+    .name-copy h2 {
+      margin-bottom: 1rem;
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      font-weight: 400;
+    }
+
+    .name-copy h2 span {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .name-copy p {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.85;
+    }
+
+    .quote {
+      max-width: 820px;
+      padding-left: 2rem;
+      border-left: 2px solid var(--green);
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      font-style: italic;
+      line-height: 1.48;
+    }
+
+    .quote-note {
+      max-width: 720px;
+      margin-top: 1.8rem;
+      padding-left: 2rem;
+      border-left: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+
+    .section-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2rem;
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+      color: var(--quiet);
+      font-family: "DM Mono", monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+    }
+
+    .section-footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .section-footer a:hover { color: var(--green); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        min-height: 100vh;
+        padding-top: 7.5rem;
+      }
+
+      .section-grid,
+      .name-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-label { position: static; }
+      .name-mark { width: 130px; }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.1rem; }
+      .nav-logo { width: 112px; }
+      .nav-links { display: none; }
+      .nav-actions { gap: 0.8rem; }
+
+      .hero {
+        width: min(100% - 1.4rem, var(--max));
+        padding-bottom: 3rem;
+      }
+
+      .hero-label {
+        margin-bottom: 1.4rem;
+        font-size: 0.6rem;
+        letter-spacing: 0;
+      }
+
+      .hero-tagline { font-size: 1.3rem; }
+      .about-body { font-size: 1.12rem; }
+      .path-title { font-size: 2.35rem; }
+      .name-copy h2 { font-size: 2.65rem; }
+      .quote { font-size: 1.68rem; }
+
+      .cta-row,
+      .btn { width: 100%; }
+
+      .path-grid { grid-template-columns: 1fr; }
+
+      .section {
+        width: min(100% - 1.4rem, var(--max));
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 6.4rem 0 3rem;
+      }
+
+      .section-grid { align-items: start; }
+
+      .path-card { min-height: auto; }
+
+      .quote,
+      .quote-note {
+        padding-left: 1.2rem;
+      }
+
+      .section-footer {
+        width: min(100% - 1.4rem, var(--max));
+        bottom: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <nav id="nav" aria-label="Navigasi utama">
+      <a class="nav-logo" href="#" aria-label="Qurai">
+        <img data-logo src="assets/qurai-wordmark-dark.png" alt="Qurai" />
+      </a>
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="/bedah">Bedah Quran</a></li>
+          <li><a href="/artikel">Artikel</a></li>
+        </ul>
+        <button class="theme-toggle" type="button" aria-label="Ganti ke mode terang" aria-pressed="false"></button>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="hero-label">Arsip baca &amp; analisis teks</p>
+          <h1 class="hero-title-text" id="hero-title">Qurai</h1>
+          <img class="hero-wordmark" data-logo src="assets/qurai-wordmark-dark.png" alt="" aria-hidden="true" />
+          <p class="hero-tagline">
+            Tidak terlihat bukan karena gelap, tapi karena <strong>tidak mau melihat.</strong>
+          </p>
+          <div class="cta-row" aria-label="Aksi utama">
+            <a class="btn" href="/bedah">Bedah Quran</a>
+            <a class="btn secondary" href="/artikel">Baca Artikel</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tentang">
+        <div class="section-grid">
+          <div class="section-label">Tentang</div>
+          <div class="about-body">
+            <p>
+              Qurai adalah ruang baca untuk mereka yang <strong>tidak puas berhenti di permukaan teks</strong>. Bukan tempat untuk menyerang, bukan pula tempat untuk membela, melainkan tempat untuk melihat dengan lebih teliti apa yang selama ini berada di zona antara.
+            </p>
+            <p>
+              Antara tafsir resmi dan pertanyaan yang tidak pernah dijawab. Antara keyakinan dan kenyataan. Antara yang diucapkan dan yang tidak.
+            </p>
+            <p>
+              Di sini tersedia dua jalan masuk: <strong>arsip cepat</strong> untuk membaca ayat demi ayat secara kritis, dan <strong>esai mendalam</strong> yang menelusuri satu surat secara utuh.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-label">Jalur</div>
+          <div class="path-grid">
+            <a class="path-card" href="/bedah">
+              <span class="path-num">01 / Bedah Quran</span>
+              <h2 class="path-title">Ayat per Ayat</h2>
+              <p class="path-desc">Telusuri surat dan ayat secara kritis: tafsir, konteks, dan pertanyaan yang jarang diajukan.</p>
+            </a>
+            <a class="path-card" href="/artikel">
+              <span class="path-num">02 / Artikel</span>
+              <h2 class="path-title">Analisis Mendalam</h2>
+              <p class="path-desc">Esai per surat tentang sejarah, logika, dan apa yang tersisa setelah semuanya diperiksa.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-label">Nama</div>
+          <div class="name-row">
+            <img class="name-mark" data-mark src="assets/qurai-mark-dark.png" alt="" aria-hidden="true" />
+            <div class="name-copy">
+              <h2><span>urai</span></h2>
+              <p>
+                Quran sebagai objek kajian, urai sebagai cara kerja: membongkar benang yang kusut, mengikuti lapisan historis, linguistik, dan logisnya sampai pertanyaan menjadi lebih terang.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-grid">
+          <div class="section-label">Filosofi</div>
+          <div>
+            <blockquote class="quote">
+              Tidak terlihat bukan karena gelap,<br>
+              tapi karena tidak mau melihat.
+            </blockquote>
+            <p class="quote-note">
+              Ada zona dalam teks yang selama ini luput dari sorotan. Tidak masuk dalam khotbah Jumat, tidak muncul dalam tafsir populer, tidak diajukan dalam pengajian. Qurai adalah undangan untuk berdiri di zona itu cukup lama agar mata dan nalar sama-sama bekerja.
+            </p>
+          </div>
+        </div>
+        <div class="section-footer">Bagian dari <a href="https://rhadzor.id">rhadzor.id</a></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const nav = document.getElementById("nav");
+    const themeToggle = document.querySelector(".theme-toggle");
+    const logoImages = document.querySelectorAll("[data-logo]");
+    const markImages = document.querySelectorAll("[data-mark]");
+    const heroWordmark = document.querySelector(".hero-wordmark");
+
+    const applyTheme = (theme) => {
+      const isLight = theme === "light";
+      document.body.classList.toggle("light-mode", isLight);
+      logoImages.forEach((image) => {
+        image.src = isLight ? "assets/qurai-wordmark-light.png" : "assets/qurai-wordmark-dark.png";
+      });
+      markImages.forEach((image) => {
+        image.src = isLight ? "assets/qurai-mark-light.png" : "assets/qurai-mark-dark.png";
+      });
+      themeToggle.setAttribute("aria-label", isLight ? "Ganti ke mode gelap" : "Ganti ke mode terang");
+      themeToggle.setAttribute("aria-pressed", String(isLight));
+      localStorage.setItem("qurai-theme", theme);
+    };
+
+    const syncNav = () => {
+      const wordmarkBox = heroWordmark.getBoundingClientRect();
+      nav.classList.toggle("scrolled", window.scrollY > 32);
+      nav.classList.toggle("logo-visible", wordmarkBox.bottom <= 0);
+    };
+
+    applyTheme(localStorage.getItem("qurai-theme") || "dark");
+    syncNav();
+
+    window.addEventListener("scroll", () => {
+      syncNav();
+    });
+
+    window.addEventListener("resize", syncNav);
+
+    themeToggle.addEventListener("click", () => {
+      applyTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>

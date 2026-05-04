@@ -6,6 +6,7 @@ import { HomeControls } from "./home-controls";
 import { HomeStickySection } from "./home-sticky-section";
 import { searchVersesAction, type ScoredVerseRecord } from "./actions";
 import { HighlightedText } from "@/app/highlighted-text";
+import type { SurahStats } from "@/lib/quran-data";
 
 
 type SurahOption = {
@@ -18,6 +19,7 @@ type HomeClientWrapperProps = {
   selectedSurah: string;
   selectedAyat: string;
   surahs: SurahOption[];
+  surahStats: SurahStats[];
   list: React.ReactNode;
 };
 
@@ -81,6 +83,7 @@ export function HomeClientWrapper({
   selectedSurah,
   selectedAyat,
   surahs,
+  surahStats,
   list,
 }: HomeClientWrapperProps) {
   const [openPanel, setOpenPanel] = useState<"search" | "jump" | null>(null);
@@ -108,6 +111,7 @@ export function HomeClientWrapper({
     <div className="flex flex-1 flex-col gap-4">
       <HomeStickySection
         hideList={hasResults || openPanel !== null}
+        surahStats={surahStats}
         controls={
           <HomeControls
             openPanel={openPanel}

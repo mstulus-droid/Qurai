@@ -75,9 +75,18 @@ export default function RootLayout({
   return (
     <html
       lang="id"
+      suppressHydrationWarning
       className={`${manrope.variable} ${plexMono.variable} ${scheherazade.variable} ${sourceSerif.variable} h-full antialiased`}
     >
-      <body className="dark-mode min-h-full flex flex-col">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('qurai-theme')==='light'?'light':'dark';document.documentElement.classList.toggle('light-mode',t==='light');document.documentElement.classList.toggle('dark-mode',t==='dark');document.documentElement.style.colorScheme=t;}catch(e){}",
+          }}
+        />
+      </head>
+      <body suppressHydrationWarning className="dark-mode min-h-full flex flex-col">
         <ThemeController />
         <Suspense fallback={null}>
           <NavigationProvider>
