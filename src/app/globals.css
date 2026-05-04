@@ -49,9 +49,12 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    linear-gradient(145deg, rgba(7, 32, 16, 0.84), transparent 38%),
-    linear-gradient(315deg, rgba(85, 34, 25, 0.18), transparent 32%),
+    radial-gradient(140vmax 110vmax at -28vmax -32vmax, rgba(21, 101, 43, 0.38), transparent 78%),
+    radial-gradient(120vmax 100vmax at 126vmax 116vmax, rgba(85, 34, 25, 0.18), transparent 80%),
+    linear-gradient(145deg, rgba(7, 32, 16, 0.5), transparent 72%),
     var(--qurai-bg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--qurai-text);
   font-family: var(--font-manrope), sans-serif;
   transition: background 0.35s ease, color 0.35s ease;
@@ -73,9 +76,12 @@ body.light-mode {
   --qurai-gold: #817044;
   --qurai-shadow: 0 26px 70px rgba(43, 61, 39, 0.14);
   background:
-    linear-gradient(145deg, rgba(78, 185, 70, 0.16), transparent 38%),
-    linear-gradient(315deg, rgba(205, 191, 145, 0.22), transparent 34%),
+    radial-gradient(140vmax 110vmax at -28vmax -32vmax, rgba(78, 185, 70, 0.16), transparent 78%),
+    radial-gradient(120vmax 100vmax at 126vmax 116vmax, rgba(205, 191, 145, 0.18), transparent 80%),
+    linear-gradient(145deg, rgba(78, 185, 70, 0.08), transparent 72%),
     var(--qurai-bg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .theme-asset-light {
@@ -238,16 +244,12 @@ a {
 }
 
 .qurai-shell {
-  background:
-    radial-gradient(circle at top left, color-mix(in srgb, var(--qurai-green) 22%, transparent), transparent 28%),
-    radial-gradient(circle at bottom right, color-mix(in srgb, var(--qurai-copper) 16%, transparent), transparent 30%);
+  background: transparent;
 }
 
 .qurai-page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, color-mix(in srgb, var(--qurai-green) 20%, transparent), transparent 30%),
-    radial-gradient(circle at bottom right, color-mix(in srgb, var(--qurai-copper) 14%, transparent), transparent 32%);
+  background: transparent;
   color: var(--qurai-text);
 }
 
@@ -351,47 +353,78 @@ a {
   display: inline-flex;
   align-items: center;
   width: 56px;
-  height: 30px;
-  padding: 2px;
-  border: 1px solid var(--qurai-border);
+  height: 28px;
+  padding: 3px;
+  border: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(7, 24, 13, 0.92), rgba(28, 78, 35, 0.84));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 10px 24px rgba(0, 0, 0, 0.16);
+  background: #312e81;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   overflow: hidden;
-  transition: border-color 300ms ease, background 300ms ease, box-shadow 300ms ease, filter 300ms ease;
+  transition: all 0.4s ease;
 }
 
 .theme-toggle:hover {
-  border-color: var(--qurai-border-strong);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 12px 28px rgba(0, 0, 0, 0.22);
+  transform: scale(1.02);
+}
+
+.theme-toggle-sky {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 .theme-toggle:active .theme-toggle-knob {
-  transform: translateX(26px) scale(0.92);
+  transform: translateX(calc(100% + 6px)) scale(0.92);
 }
 
 .theme-toggle-knob {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 3px;
+  left: 3px;
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: #fffdf6;
-  color: #1f7f36;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.24);
-  transform: translateX(26px);
-  transition: transform 320ms cubic-bezier(.2,.85,.25,1.12), color 300ms ease, box-shadow 300ms ease;
+  background: #f8fafc;
+  color: #312e81;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: translateX(calc(100% + 6px));
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 2;
+}
+
+.theme-toggle-bg-icon {
+  position: absolute;
+  color: #ffffff;
+  opacity: 0.8;
+  transition: all 0.4s;
+}
+
+.theme-toggle-cloud {
+  right: 8px;
+  top: 8px;
+  width: 13px;
+  height: 13px;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.theme-toggle-stars {
+  left: 8px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .theme-toggle-icon {
   position: absolute;
-  width: 14px;
-  height: 14px;
-  transition: opacity 260ms ease, transform 300ms ease;
+  width: 12px;
+  height: 12px;
+  transition: all 0.3s;
 }
 
 .theme-toggle-icon-sun {
@@ -406,8 +439,8 @@ a {
 
 html.light-mode .theme-toggle,
 body.light-mode .theme-toggle {
-  background: linear-gradient(90deg, rgba(235, 241, 224, 0.96), rgba(255, 255, 255, 0.98));
-  box-shadow: inset 0 0 0 1px rgba(17, 24, 17, 0.04), 0 10px 24px rgba(43, 61, 39, 0.12);
+  background: #60a5fa;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 html.light-mode .theme-toggle:active .theme-toggle-knob,
@@ -417,9 +450,22 @@ body.light-mode .theme-toggle:active .theme-toggle-knob {
 
 html.light-mode .theme-toggle-knob,
 body.light-mode .theme-toggle-knob {
-  color: #817044;
+  background: #fcd34d;
+  color: #b45309;
   transform: translateX(0);
-  box-shadow: 0 5px 14px rgba(43, 61, 39, 0.18);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+html.light-mode .theme-toggle-cloud,
+body.light-mode .theme-toggle-cloud {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.light-mode .theme-toggle-stars,
+body.light-mode .theme-toggle-stars {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
 html.light-mode .theme-toggle-icon-sun,

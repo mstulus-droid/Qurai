@@ -50,25 +50,36 @@ export function ThemeToggle() {
       aria-label={isLight ? "Ganti ke mode gelap" : "Ganti ke mode terang"}
       aria-pressed={isLight}
     >
+      <span className="theme-toggle-sky" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          className="theme-toggle-bg-icon theme-toggle-cloud"
+          fill="currentColor"
+        >
+          <path d="M19.35 10.04A7.49 7.49 0 0 0 4.97 8.1 5.99 5.99 0 0 0 6 20h13a5 5 0 0 0 .35-9.96Z" />
+        </svg>
+        <svg
+          viewBox="0 0 24 24"
+          className="theme-toggle-bg-icon theme-toggle-stars"
+          fill="currentColor"
+        >
+          <path d="M12 .59 15.09 7l6.91 1-5 4.87L18.18 20 12 16.75 5.82 20 7 12.87 2 8l6.91-1L12 .59Z" />
+        </svg>
+      </span>
       <span className="theme-toggle-knob" aria-hidden="true">
         <svg
           viewBox="0 0 24 24"
           className="theme-toggle-icon theme-toggle-icon-sun"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
+          fill="currentColor"
         >
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" strokeLinecap="round" />
+          <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1Zm0-14a1 1 0 0 0 1-1V2a1 1 0 1 0-2 0v2a1 1 0 0 0 1 1Zm10 6h-2a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2ZM5 12a1 1 0 0 0-1-1H2a1 1 0 1 0 0 2h2a1 1 0 0 0 1-1Zm12.95 4.54a1 1 0 0 0-1.41 1.41l1.41 1.42a1 1 0 0 0 1.42-1.42l-1.42-1.41ZM6.05 4.63a1 1 0 0 0-1.42 1.42l1.42 1.41a1 1 0 0 0 1.41-1.41L6.05 4.63Zm11.9 2.83 1.42-1.41a1 1 0 0 0-1.42-1.42l-1.41 1.42a1 1 0 1 0 1.41 1.41ZM6.05 16.54l-1.42 1.41a1 1 0 1 0 1.42 1.42l1.41-1.42a1 1 0 1 0-1.41-1.41Z" />
         </svg>
         <svg
           viewBox="0 0 24 24"
           className="theme-toggle-icon theme-toggle-icon-moon"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
+          fill="currentColor"
         >
-          <path d="M20 14.4A7.6 7.6 0 0 1 9.6 4a8 8 0 1 0 10.4 10.4Z" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36 10.14 10.14 0 1 0 22 14.05a1 1 0 0 0-.36-1.05Z" />
         </svg>
       </span>
     </button>

@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArticleRecommendations } from "@/components/article-recommendations";
 import { ArticleNav } from "@/components/article-nav";
 
 export const metadata: Metadata = {
@@ -286,7 +287,7 @@ export default function DzulqarnainArticle() {
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
-        <footer className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <footer>
           <div>
             <p className="font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
               Ayat yang dirujuk
@@ -305,13 +306,9 @@ export default function DzulqarnainArticle() {
               ))}
             </div>
           </div>
-          <Link
-            href="/artikel"
-            className="font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] transition hover:text-[var(--qurai-gold)]"
-          >
-            ← Semua artikel
-          </Link>
         </footer>
+
+        <ArticleRecommendations currentSlug="dzulqarnain" />
       </article>
     </main>
   );
