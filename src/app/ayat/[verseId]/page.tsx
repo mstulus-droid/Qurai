@@ -10,7 +10,7 @@ import {
 import { BookmarkButton } from "@/app/bookmark/bookmark-button";
 import { ReadingProgress } from "@/app/reading-progress";
 import { VerseReaderCard } from "./verse-reader-card";
-import { getArticleForVerse } from "@/lib/article-refs";
+import { getArticlesForVerse } from "@/lib/article-refs";
 import Link from "next/link";
 
 type PageProps = {
@@ -67,7 +67,7 @@ export default async function VerseDetailPage({ params }: PageProps) {
     return <DatabaseUnavailable {...getDatabaseErrorInfo(error)} />;
   }
 
-  const articleRef = getArticleForVerse(verse.surahId, verse.ayahNumber);
+  const articleRefs = getArticlesForVerse(verse.surahId, verse.ayahNumber);
 
   return (
     <main
@@ -76,23 +76,28 @@ export default async function VerseDetailPage({ params }: PageProps) {
     >
       <ReadingProgress targetId="verse-reading-root" />
       <div className="mx-auto flex max-w-5xl flex-col gap-5">
-        {articleRef && (
-          <Link
-            href={`/artikel/${articleRef.slug}`}
-            className="flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-5 py-3 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
-          >
-            <div className="flex items-center gap-3 min-w-0">
-              <span className="shrink-0 font-mono text-[0.58rem] uppercase text-[var(--qurai-gold)]">
-                Baca
-              </span>
-              <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
-                {articleRef.title}
-              </span>
-            </div>
-            <span className="shrink-0 font-mono text-[0.65rem] uppercase text-[var(--qurai-gold)]">
-              →
-            </span>
-          </Link>
+        {articleRefs.length > 0 && (
+          <div className="flex flex-col gap-2">
+            {articleRefs.map((ref) => (
+              <Link
+                key={ref.slug}
+                href={`/artikel/${ref.slug}`}
+                className="flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-5 py-3 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="shrink-0 font-mono text-[0.58rem] uppercase text-[var(--qurai-gold)]">
+                    Baca
+                  </span>
+                  <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
+                    {ref.title}
+                  </span>
+                </div>
+                <span className="shrink-0 font-mono text-[0.65rem] uppercase text-[var(--qurai-gold)]">
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
         )}
         <section className="qurai-hero rounded-[2rem] p-6 sm:p-8">
           <div className="flex flex-col items-center gap-4 text-center">

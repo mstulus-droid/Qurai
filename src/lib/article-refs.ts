@@ -465,15 +465,15 @@ const REFS: Array<{
   },
 ];
 
-export function getArticleForVerse(
+export function getArticlesForVerse(
   surahId: number,
   ayahNumber: number,
-): ArticleRef | null {
-  const match = REFS.find(
-    (r) =>
-      r.surah === surahId &&
-      ayahNumber >= r.ayatStart &&
-      ayahNumber <= r.ayatEnd,
-  );
-  return match ? { slug: match.slug, title: match.title } : null;
+): ArticleRef[] {
+  const seen = new Set<string>();
+  return REFS.filter((r) => {
+    if (r.surah !== surahId || ayahNumber < r.ayatStart || ayahNumber > r.ayatEnd) return false;
+    if (seen.has(r.slug)) return false;
+    seen.add(r.slug);
+    return true;
+  }).map((r) => ({ slug: r.slug, title: r.title }));
 }

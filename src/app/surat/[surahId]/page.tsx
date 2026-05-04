@@ -20,7 +20,7 @@ import { SurahStatsPanel } from "./surah-stats-panel";
 import { SurahTopicPanel } from "./surah-topic-panel";
 import { VerseAnalysisDisclosures } from "./verse-analysis-disclosures";
 import { MarkdownText } from "@/components/markdown-text";
-import { getArticleForVerse } from "@/lib/article-refs";
+import { getArticlesForVerse } from "@/lib/article-refs";
 
 function ArticleRefBanner({
   surahId,
@@ -29,25 +29,30 @@ function ArticleRefBanner({
   surahId: number;
   ayahNumber: number;
 }) {
-  const ref = getArticleForVerse(surahId, ayahNumber);
-  if (!ref) return null;
+  const refs = getArticlesForVerse(surahId, ayahNumber);
+  if (refs.length === 0) return null;
   return (
-    <Link
-      href={`/artikel/${ref.slug}`}
-      className="mt-4 flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-4 py-2.5 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
-    >
-      <div className="flex min-w-0 items-center gap-3">
-        <span className="shrink-0 font-mono text-[0.56rem] uppercase text-[var(--qurai-gold)]">
-          Baca
-        </span>
-        <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
-          {ref.title}
-        </span>
-      </div>
-      <span className="shrink-0 font-mono text-[0.62rem] uppercase text-[var(--qurai-gold)]">
-        →
-      </span>
-    </Link>
+    <div className="mt-4 flex flex-col gap-2">
+      {refs.map((ref) => (
+        <Link
+          key={ref.slug}
+          href={`/artikel/${ref.slug}`}
+          className="flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-4 py-2.5 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
+        >
+          <div className="flex min-w-0 items-center gap-3">
+            <span className="shrink-0 font-mono text-[0.56rem] uppercase text-[var(--qurai-gold)]">
+              Baca
+            </span>
+            <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
+              {ref.title}
+            </span>
+          </div>
+          <span className="shrink-0 font-mono text-[0.62rem] uppercase text-[var(--qurai-gold)]">
+            →
+          </span>
+        </Link>
+      ))}
+    </div>
   );
 }
 
