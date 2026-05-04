@@ -22,6 +22,35 @@ import { VerseAnalysisDisclosures } from "./verse-analysis-disclosures";
 import { MarkdownText } from "@/components/markdown-text";
 import { getArticleForVerse } from "@/lib/article-refs";
 
+function ArticleRefBanner({
+  surahId,
+  ayahNumber,
+}: {
+  surahId: number;
+  ayahNumber: number;
+}) {
+  const ref = getArticleForVerse(surahId, ayahNumber);
+  if (!ref) return null;
+  return (
+    <Link
+      href={`/artikel/${ref.slug}`}
+      className="mt-4 flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-4 py-2.5 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
+    >
+      <div className="flex min-w-0 items-center gap-3">
+        <span className="shrink-0 font-mono text-[0.56rem] uppercase text-[var(--qurai-gold)]">
+          Baca
+        </span>
+        <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
+          {ref.title}
+        </span>
+      </div>
+      <span className="shrink-0 font-mono text-[0.62rem] uppercase text-[var(--qurai-gold)]">
+        →
+      </span>
+    </Link>
+  );
+}
+
 type PageProps = {
   params: Promise<{ surahId: string }>;
 };
@@ -303,28 +332,6 @@ export default async function SurahDetailPage({ params }: PageProps) {
                         ) : null}
                       </NavLink>
 
-                      {(() => {
-                        const articleRef = getArticleForVerse(verse.surahId, verse.ayahNumber);
-                        return articleRef ? (
-                          <Link
-                            href={`/artikel/${articleRef.slug}`}
-                            className="mt-3 flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-4 py-2.5 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
-                          >
-                            <div className="flex min-w-0 items-center gap-3">
-                              <span className="shrink-0 font-mono text-[0.56rem] uppercase text-[var(--qurai-gold)]">
-                                Baca
-                              </span>
-                              <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
-                                {articleRef.title}
-                              </span>
-                            </div>
-                            <span className="shrink-0 font-mono text-[0.62rem] uppercase text-[var(--qurai-gold)]">
-                              →
-                            </span>
-                          </Link>
-                        ) : null;
-                      })()}
-
                       {verse.asbabunNuzul ? (
                         <div className="mt-4 border-l-2 border-[var(--qurai-gold)] pl-4">
                           <p className="text-xs font-semibold uppercase text-[var(--qurai-gold)]">
@@ -342,6 +349,11 @@ export default async function SurahDetailPage({ params }: PageProps) {
                         moralConcerns={verse.moralConcerns}
                         scientificErrors={verse.scientificErrors}
                         contradictions={verse.contradictions}
+                      />
+
+                      <ArticleRefBanner
+                        surahId={verse.surahId}
+                        ayahNumber={verse.ayahNumber}
                       />
                     </article>
                   ))}
