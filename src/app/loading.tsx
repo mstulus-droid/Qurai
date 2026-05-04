@@ -16,8 +16,8 @@ export default function Loading() {
           {/* Icon container with pulse */}
           <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl animate-[pulse_2s_ease-in-out_infinite]">
             <Image
-              src="/brand/sliceq-icon.webp"
-              alt="SliceQ"
+              src="/brand/qurai-app-icon-dark.png"
+              alt="Qurai"
               width={72}
               height={72}
               className="h-16 w-16 object-contain animate-[bounce_2s_ease-in-out_infinite] drop-shadow-[0_6px_20px_rgba(16,185,129,0.35)]"

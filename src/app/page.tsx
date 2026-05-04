@@ -103,8 +103,8 @@ export default async function Home({ searchParams }: HomePageProps) {
             <CommitInfoPopup surahStats={surahStats}>
               <div className="relative block h-[72px] w-[260px] sm:h-[88px] sm:w-[320px]">
                 <Image
-                  src="/brand/sliceq-samping.webp"
-                  alt="SliceQ"
+                  src="/brand/qurai-wordmark-dark.png"
+                  alt="Qurai"
                   fill
                   priority
                   sizes="(max-width: 640px) 260px, 320px"

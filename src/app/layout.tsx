@@ -37,21 +37,21 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "SliceQ",
+  title: "Qurai",
   description:
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
   icons: {
-    icon: "/brand/sliceq-icon.webp",
-    shortcut: "/brand/sliceq-icon.webp",
-    apple: "/brand/sliceq-icon.webp",
+    icon: "/brand/qurai-app-icon-dark.png",
+    shortcut: "/brand/qurai-app-icon-dark.png",
+    apple: "/brand/qurai-app-icon-dark.png",
   },
   openGraph: {
-    title: "SliceQ",
+    title: "Qurai",
     description:
       "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
     images: [
       {
-        url: "/brand/sliceq-icon.webp",
+        url: "/brand/qurai-app-icon-dark.png",
         width: 512,
         height: 512,
       },

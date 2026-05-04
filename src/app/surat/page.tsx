@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Redirecting | SliceQ",
+  title: "Redirecting | Qurai",
 };
 
 export default async function SurahIndexPage() {

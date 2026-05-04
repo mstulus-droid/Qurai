@@ -4,7 +4,7 @@ import { getDatabaseErrorInfo } from "@/lib/db";
 import { getBookmarks } from "@/lib/quran-data";
 
 export const metadata = {
-  title: "Bookmark | SliceQ",
+  title: "Bookmark | Qurai",
 };
 
 export default async function BookmarkPage() {

@@ -23,18 +23,18 @@ export async function generateMetadata({ params }: PageProps) {
     verse = await getVerseById(Number(verseId));
   } catch {
     return {
-      title: "Database bermasalah | SliceQ",
+      title: "Database bermasalah | Qurai",
     };
   }
 
   if (!verse) {
     return {
-      title: "Ayat tidak ditemukan | SliceQ",
+      title: "Ayat tidak ditemukan | Qurai",
     };
   }
 
   return {
-    title: `${verse.surahNameIndonesian} Ayat ${verse.ayahNumber} | SliceQ`,
+    title: `${verse.surahNameIndonesian} Ayat ${verse.ayahNumber} | Qurai`,
   };
 }
 

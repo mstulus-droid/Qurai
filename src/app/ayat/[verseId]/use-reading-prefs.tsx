@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "sliceq-reading-prefs";
+const STORAGE_KEY = "qurai-reading-prefs";
 
 type Prefs = {
   size: "compact" | "regular" | "large";

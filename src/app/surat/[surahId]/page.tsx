@@ -106,18 +106,18 @@ export async function generateMetadata({ params }: PageProps) {
     surah = await getSurahById(Number(surahId));
   } catch {
     return {
-      title: "Database bermasalah | SliceQ",
+      title: "Database bermasalah | Qurai",
     };
   }
 
   if (!surah) {
     return {
-      title: "Surat tidak ditemukan | SliceQ",
+      title: "Surat tidak ditemukan | Qurai",
     };
   }
 
   return {
-    title: `${surah.nameLatin} | SliceQ`,
+    title: `${surah.nameLatin} | Qurai`,
   };
 }
 

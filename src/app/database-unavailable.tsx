@@ -16,7 +16,7 @@ export function DatabaseUnavailable({
       <div className="mx-auto flex max-w-4xl flex-col gap-5">
         <section className="rounded-[2rem] border border-white/70 bg-white/85 p-6 shadow-[0_30px_80px_-30px_rgba(27,46,30,0.35)] backdrop-blur sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
-            SliceQ Dev Notice
+            Qurai Dev Notice
           </p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             {title}

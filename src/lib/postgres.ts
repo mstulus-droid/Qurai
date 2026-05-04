@@ -1,7 +1,7 @@
 import { Pool } from "pg";
 
 declare global {
-  var __sliceqPool: Pool | undefined;
+  var __quraiPool: Pool | undefined;
 }
 
 function getDatabaseUrl() {
@@ -57,7 +57,7 @@ function readPoolSize(databaseUrl: string) {
 }
 
 export function getPool() {
-  if (!global.__sliceqPool) {
+  if (!global.__quraiPool) {
     const databaseUrl = getDatabaseUrl();
 
     if (usesSessionModePooler(databaseUrl)) {
@@ -66,7 +66,7 @@ export function getPool() {
       );
     }
 
-    global.__sliceqPool = new Pool({
+    global.__quraiPool = new Pool({
       connectionString: databaseUrl,
       max: readPoolSize(databaseUrl),
       idleTimeoutMillis: 10_000,
@@ -75,12 +75,12 @@ export function getPool() {
     });
   }
 
-  return global.__sliceqPool;
+  return global.__quraiPool;
 }
 
 export async function closePool() {
-  if (global.__sliceqPool) {
-    await global.__sliceqPool.end();
-    global.__sliceqPool = undefined;
+  if (global.__quraiPool) {
+    await global.__quraiPool.end();
+    global.__quraiPool = undefined;
   }
 }

@@ -124,7 +124,7 @@ export function getDatabaseErrorInfo(error: unknown): DatabaseErrorInfo {
     return {
       title: "Database belum bisa dihubungi",
       summary:
-        "SliceQ berhasil jalan, tapi koneksi ke PostgreSQL gagal sehingga data belum bisa ditampilkan.",
+        "Qurai berhasil jalan, tapi koneksi ke PostgreSQL gagal sehingga data belum bisa ditampilkan.",
       detail,
     };
   }

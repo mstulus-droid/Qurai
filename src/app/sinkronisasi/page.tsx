@@ -5,7 +5,7 @@ import { getSyncOverview } from "@/lib/excel-sync";
 import { SyncForm } from "./sync-form";
 
 export const metadata = {
-  title: "Sinkronisasi Excel | SliceQ",
+  title: "Sinkronisasi Excel | Qurai",
 };
 
 function formatDate(value: string | null) {

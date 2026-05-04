@@ -1,6 +1,6 @@
-# SliceQ Tutorial
+# Qurai Tutorial
 
-Panduan ini dirapikan supaya cocok dengan workflow SliceQ yang sekarang:
+Panduan ini dirapikan supaya cocok dengan workflow Qurai yang sekarang:
 
 - aplikasi online berjalan di Vercel
 - domain publik ada di `https://sliceq.rhadzor.id`
@@ -24,7 +24,7 @@ Artinya:
 
 ## 2. Lokasi penting
 
-- Project folder: `D:\Rhadz\Apps\Rhadzor ID\SliceQ`
+- Project folder: `D:\Rhadz\Apps\Rhadzor ID\Qurai`
 - Excel utama: `surat quran.xlsx`
 - Env lokal: `.env.local`
 - Contoh env: `.env.example`
@@ -49,7 +49,7 @@ Online:
 Buka PowerShell:
 
 ```powershell
-cd "D:\Rhadz\Apps\Rhadzor ID\SliceQ"
+cd "D:\Rhadz\Apps\Rhadzor ID\Qurai"
 npm run dev
 ```
 
@@ -122,7 +122,7 @@ Ini workflow utama yang disarankan.
 4. Jalankan:
 
 ```powershell
-cd "D:\Rhadz\Apps\Rhadzor ID\SliceQ"
+cd "D:\Rhadz\Apps\Rhadzor ID\Qurai"
 npm run import-excel
 ```
 
@@ -133,7 +133,7 @@ Kalau berhasil, data terbaru langsung masuk ke Supabase dan website online akan 
 Kalau hanya ingin validasi isi file Excel lebih dulu:
 
 ```powershell
-cd "D:\Rhadz\Apps\Rhadzor ID\SliceQ"
+cd "D:\Rhadz\Apps\Rhadzor ID\Qurai"
 npm run import-excel -- --dry-run
 ```
 
@@ -144,7 +144,7 @@ Ini berguna untuk memastikan parsing file aman sebelum benar-benar menulis ke da
 Kalau perlu menerapkan schema database lagi:
 
 ```powershell
-cd "D:\Rhadz\Apps\Rhadzor ID\SliceQ"
+cd "D:\Rhadz\Apps\Rhadzor ID\Qurai"
 npm run db:schema
 ```
 
