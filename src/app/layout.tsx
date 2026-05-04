@@ -49,9 +49,16 @@ export const metadata: Metadata = {
   description:
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
   icons: {
-    icon: "/brand/qurai-app-icon-dark.png",
-    shortcut: "/brand/qurai-app-icon-dark.png",
-    apple: "/brand/qurai-app-icon-dark.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/brand/qurai-favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: {
+      url: "/brand/qurai-favicon-180.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
   },
   openGraph: {
     title: "Qurai",
