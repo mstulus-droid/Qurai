@@ -82,6 +82,8 @@ export default async function VerseDetailPage({ params }: PageProps) {
               <Link
                 key={ref.slug}
                 href={`/artikel/${ref.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-5 py-3 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
               >
                 <div className="flex items-center gap-3 min-w-0">

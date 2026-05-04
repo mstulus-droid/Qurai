@@ -37,6 +37,8 @@ function ArticleRefBanner({
         <Link
           key={ref.slug}
           href={`/artikel/${ref.slug}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-4 py-2.5 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
         >
           <div className="flex min-w-0 items-center gap-3">

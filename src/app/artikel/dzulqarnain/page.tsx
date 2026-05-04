@@ -21,6 +21,8 @@ function VerseLink({
   return (
     <Link
       href={`/surat/${surah}#ayat-${ayat}`}
+      target="_blank"
+      rel="noopener noreferrer"
       className="border-b border-[var(--qurai-gold)] text-[var(--qurai-gold)] opacity-80 transition hover:opacity-100"
     >
       {children}
@@ -294,6 +296,8 @@ export default function DzulqarnainArticle() {
                 <Link
                   key={ayat}
                   href={`/surat/18#ayat-${ayat}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="border border-[color-mix(in_srgb,var(--qurai-gold)_30%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-3 py-1.5 font-mono text-[0.62rem] uppercase text-[var(--qurai-gold)] transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_12%,transparent)]"
                 >
                   Al-Kahf {ayat}
