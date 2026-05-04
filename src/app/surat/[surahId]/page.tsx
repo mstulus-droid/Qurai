@@ -1,4 +1,5 @@
 import { NavLink } from "@/components/nav-link";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DatabaseUnavailable } from "@/app/database-unavailable";
 import { getDatabaseErrorInfo } from "@/lib/db";
@@ -19,6 +20,7 @@ import { SurahStatsPanel } from "./surah-stats-panel";
 import { SurahTopicPanel } from "./surah-topic-panel";
 import { VerseAnalysisDisclosures } from "./verse-analysis-disclosures";
 import { MarkdownText } from "@/components/markdown-text";
+import { getArticleForVerse } from "@/lib/article-refs";
 
 type PageProps = {
   params: Promise<{ surahId: string }>;
@@ -300,6 +302,28 @@ export default async function SurahDetailPage({ params }: PageProps) {
                           </div>
                         ) : null}
                       </NavLink>
+
+                      {(() => {
+                        const articleRef = getArticleForVerse(verse.surahId, verse.ayahNumber);
+                        return articleRef ? (
+                          <Link
+                            href={`/artikel/${articleRef.slug}`}
+                            className="mt-3 flex items-center justify-between gap-4 rounded-2xl border border-[color-mix(in_srgb,var(--qurai-gold)_28%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] px-4 py-2.5 transition hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)]"
+                          >
+                            <div className="flex min-w-0 items-center gap-3">
+                              <span className="shrink-0 font-mono text-[0.56rem] uppercase text-[var(--qurai-gold)]">
+                                Baca
+                              </span>
+                              <span className="font-serif-reading truncate text-sm italic text-[var(--qurai-muted)]">
+                                {articleRef.title}
+                              </span>
+                            </div>
+                            <span className="shrink-0 font-mono text-[0.62rem] uppercase text-[var(--qurai-gold)]">
+                              →
+                            </span>
+                          </Link>
+                        ) : null;
+                      })()}
 
                       {verse.asbabunNuzul ? (
                         <div className="mt-4 border-l-2 border-[var(--qurai-gold)] pl-4">

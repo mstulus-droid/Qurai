@@ -1,6 +1,6 @@
 export const GIT_INFO = {
-  "hash": "13098df",
-  "message": "feat: add article pages",
-  "date": "2026-05-04 15:49:17 +0700",
+  "hash": "0c06c34",
+  "message": "feat: expand article references",
+  "date": "2026-05-04 16:07:15 +0700",
   "branch": "main"
 };

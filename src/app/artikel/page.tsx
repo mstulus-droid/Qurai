@@ -29,6 +29,16 @@ const articles = [
     date: "Mei 2026",
     readTime: "7 menit",
   },
+  {
+    slug: "sistem-moral-quran",
+    number: "03",
+    title: "Etika Abad Ke-7 yang Dianggap Abadi",
+    excerpt:
+      "Al-Quran mengklaim semua manusia setara di hadapan Allah. Di kitab yang sama ada perintah bunuh orang kafir, legalitas memukul istri, dan perbudakan seksual. Dua klaim itu tidak bisa berdiri bersamaan.",
+    surah: "At-Tawbah 9:5 · An-Nisa 4:34",
+    date: "Mei 2026",
+    readTime: "14 menit",
+  },
 ];
 
 export default function ArtikelPage() {
