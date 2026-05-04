@@ -39,6 +39,26 @@ const articles = [
     date: "Mei 2026",
     readTime: "14 menit",
   },
+  {
+    slug: "waraqah-dan-wahyu",
+    number: "04",
+    title: "Waraqah bin Naufal dan Asal-Usul Wahyu",
+    excerpt:
+      "Orang pertama yang memvalidasi pengalaman Muhammad adalah sepupu isterinya — seorang pendeta Kristen yang hafal kitab suci Ibrani. Bertanya siapa yang sebenarnya membentuk narasi awal Islam bukan pertanyaan yang mudah dijawab.",
+    surah: "Al-An'am 6:19 · Yunus 10:37",
+    date: "Mei 2026",
+    readTime: "10 menit",
+  },
+  {
+    slug: "wahyu-konvenien",
+    number: "05",
+    title: "Ketika Wahyu Mengikuti Kepentingan Pribadi Nabi",
+    excerpt:
+      "Ada pola di ayat-ayat Madaniyah: wahyu turun tepat saat Muhammad menghadapi masalah personal — konflik rumah tangga, ketertarikan pada perempuan tertentu, kritik publik, atau kebutuhan finansial. Pola ini bisa diperiksa langsung dari teks.",
+    surah: "Al-Ahzab 33:50 · At-Tahrim 66:1",
+    date: "Mei 2026",
+    readTime: "12 menit",
+  },
 ];
 
 export default function ArtikelPage() {
