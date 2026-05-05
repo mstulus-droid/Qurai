@@ -137,6 +137,8 @@ export default async function VerseDetailPage({ params }: PageProps) {
         </section>
 
         <VerseReaderCard
+          surahId={verse.surahId}
+          ayahNumber={verse.ayahNumber}
           arabicText={verse.arabicText}
           translation={verse.translation}
           catatanDepag={verse.catatanDepag}

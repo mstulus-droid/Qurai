@@ -8,6 +8,8 @@ import { MarkdownText } from "@/components/markdown-text";
 import { ReadingSizeToggle, useReadingPrefs } from "./use-reading-prefs";
 
 type VerseReaderCardProps = {
+  surahId: number;
+  ayahNumber: number;
   arabicText: string;
   translation: string;
   catatanDepag?: string;
@@ -23,6 +25,8 @@ type VerseReaderCardProps = {
 };
 
 export function VerseReaderCard({
+  surahId,
+  ayahNumber,
   arabicText,
   translation,
   catatanDepag,
@@ -171,6 +175,9 @@ export function VerseReaderCard({
             <p
               className={`font-serif-reading mt-1 text-[var(--qurai-text)] ${tokens.translation}`}
             >
+              <span className="font-sans text-sm font-semibold text-[var(--qurai-muted)]">
+                ({surahId}:{ayahNumber}){" "}
+              </span>
               <MarkdownText text={translation} />
             </p>
             {catatanDepag ? (

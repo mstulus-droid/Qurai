@@ -338,6 +338,9 @@ export default async function SurahDetailPage({ params }: PageProps) {
                           {verse.arabicText} <VerseNumberMarker number={verse.ayahNumber} />
                         </p>
                         <p className="surah-translation font-serif-reading mt-4 text-base leading-8 text-[var(--qurai-text)]">
+                          <span className="font-sans text-sm font-semibold text-[var(--qurai-muted)]">
+                            ({verse.surahId}:{verse.ayahNumber}){" "}
+                          </span>
                           <MarkdownText text={verse.translation} />
                         </p>
                         {verse.catatanDepag ? (
