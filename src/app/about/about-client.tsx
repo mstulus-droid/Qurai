@@ -99,7 +99,7 @@ export function AboutClient() {
               href="/artikel"
               className="inline-flex min-h-12 w-full items-center justify-center border border-[color-mix(in_srgb,var(--qurai-gold)_24%,transparent)] bg-[color-mix(in_srgb,var(--qurai-gold)_8%,transparent)] px-5 text-[var(--qurai-muted)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--qurai-gold)_14%,transparent)] hover:text-[var(--qurai-text)] sm:w-auto"
             >
-              Baca Artikel
+              Ruang Analisis
             </Link>
           </div>
         </div>
@@ -135,9 +135,9 @@ export function AboutClient() {
               </strong>{" "}
               untuk membaca ayat demi ayat secara kritis, dan{" "}
               <strong className="font-medium text-[var(--qurai-text)]">
-                esai mendalam
+                ruang analisis
               </strong>{" "}
-              yang menelusuri satu surat secara utuh.
+              untuk menguji klaim, riwayat, dan logika internal sebuah topik.
             </p>
           </div>
         </div>
@@ -172,11 +172,11 @@ export function AboutClient() {
                 02 / Artikel
               </span>
               <h2 className="font-serif-reading mt-10 text-[2.35rem] italic leading-none text-[var(--qurai-text)] sm:text-5xl">
-                Analisis Mendalam
+                Ruang Analisis
               </h2>
               <p className="mt-5 max-w-[32ch] text-sm font-light leading-8 text-[var(--qurai-muted)]">
-                Esai per surat tentang sejarah, logika, dan apa yang tersisa
-                setelah semuanya diperiksa.
+                Esai yang menguji klaim, riwayat, dan logika internal sebuah
+                topik sampai titik paling terang yang bisa dicapai.
               </p>
             </Link>
           </div>
@@ -188,15 +188,16 @@ export function AboutClient() {
           <div className="self-start font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)] md:sticky md:top-24">
             Nama
           </div>
-          <div className="grid items-center gap-8 sm:grid-cols-[180px_minmax(0,1fr)]">
-            <div className="relative h-[130px] w-[130px] sm:h-[180px] sm:w-[180px]">
+          <div className="grid grid-cols-[88px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-8">
+            <div className="relative h-[88px] w-[88px] sm:h-[180px] sm:w-[180px]">
               <ThemedMark
-                sizes="(max-width: 640px) 130px, 180px"
+                sizes="(max-width: 640px) 88px, 180px"
                 className="object-contain drop-shadow-[0_18px_40px_rgba(82,207,70,0.18)]"
               />
             </div>
             <div>
-              <h2 className="font-serif-reading text-[2.65rem] font-normal text-[var(--qurai-text)] sm:text-[4rem]">
+              <h2 className="font-serif-reading whitespace-nowrap text-[2.35rem] font-normal text-[var(--qurai-text)] sm:text-[4rem]">
+                <span className="mr-2 text-[var(--qurai-quiet)]">+</span>
                 <span className="italic text-[var(--qurai-green)]">urai</span>
               </h2>
               <p className="mt-4 max-w-[62ch] text-sm leading-8 text-[var(--qurai-muted)] sm:text-[0.95rem]">
