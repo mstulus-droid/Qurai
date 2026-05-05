@@ -25,7 +25,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-plex-mono);
-  --font-arabic: var(--font-scheherazade);
+  --font-arabic: var(--font-quran-complex);
   --font-serif-reading: var(--font-source-serif);
 }
 
@@ -137,7 +137,7 @@ a {
 /* ---------- Reading typography ---------- */
 
 .font-arabic {
-  font-family: var(--font-scheherazade), "Amiri", "Scheherazade New", serif;
+  font-family: var(--font-quran-complex), var(--font-scheherazade), "Amiri", "Scheherazade New", serif;
   font-feature-settings: "liga", "calt";
 }
 
@@ -300,6 +300,190 @@ a {
 
 .qurai-arabic-text {
   color: var(--qurai-text);
+}
+
+.surah-display-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.6rem);
+  z-index: 55;
+  width: min(18rem, calc(100vw - 2rem));
+  overflow: hidden;
+  border: 1px solid var(--qurai-border);
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, var(--qurai-surface-strong) 96%, transparent);
+  box-shadow: var(--qurai-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.surah-display-switch {
+  display: flex;
+  min-height: 2.75rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--qurai-text);
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.surah-display-switch:hover {
+  background: color-mix(in srgb, var(--qurai-green) 10%, transparent);
+}
+
+.surah-display-switch-track {
+  position: relative;
+  display: inline-flex;
+  height: 1.45rem;
+  width: 2.65rem;
+  flex-shrink: 0;
+  align-items: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--qurai-muted) 30%, transparent);
+  padding: 0.16rem;
+  transition: background 0.2s ease;
+}
+
+.surah-display-switch-thumb {
+  height: 1.12rem;
+  width: 1.12rem;
+  border-radius: 999px;
+  background: var(--qurai-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+  transform: translateX(0);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.surah-display-switch[aria-pressed="true"] .surah-display-switch-track {
+  background: color-mix(in srgb, var(--qurai-green) 72%, var(--qurai-surface-strong));
+}
+
+.surah-display-switch[aria-pressed="true"] .surah-display-switch-thumb {
+  background: var(--qurai-ink);
+  transform: translateX(1.2rem);
+}
+
+[data-show-translation="false"] .surah-translation,
+[data-show-topic-themes="false"] .surah-topic-theme,
+[data-show-depag-notes="false"] .surah-depag-note,
+[data-show-analysis-buttons="false"] .surah-analysis-controls,
+[data-show-further-reading="false"] .surah-further-reading {
+  display: none;
+}
+
+[data-show-topic-themes="false"] .surah-topic-section {
+  padding-left: 0 !important;
+}
+
+.surah-topic-section {
+  --surah-topic-rail-x: 0.72rem;
+  --surah-topic-rail-top: 1.9rem;
+  --surah-topic-rail-bottom: 1.5rem;
+}
+
+.surah-topic-section::before {
+  content: "";
+  position: absolute;
+  bottom: var(--surah-topic-rail-bottom);
+  left: var(--surah-topic-rail-x);
+  top: var(--surah-topic-rail-top);
+  z-index: 5;
+  width: 2px;
+  background: var(--qurai-border-strong);
+  border-radius: 999px;
+}
+
+.surah-topic-section::after {
+  content: "";
+  position: absolute;
+  left: var(--surah-topic-rail-x);
+  top: var(--surah-topic-rail-top);
+  z-index: 5;
+  height: 2px;
+  width: 1.3rem;
+  background: var(--qurai-border-strong);
+  border-radius: 999px;
+}
+
+.surah-topic-foot {
+  position: absolute;
+  bottom: var(--surah-topic-rail-bottom);
+  left: var(--surah-topic-rail-x);
+  z-index: 5;
+  height: 2px;
+  width: 1.3rem;
+  background: var(--qurai-border-strong);
+  border-radius: 999px;
+}
+
+[data-show-topic-themes="false"] .surah-topic-section::before,
+[data-show-topic-themes="false"] .surah-topic-section::after,
+[data-show-topic-themes="false"] .surah-topic-foot {
+  display: none;
+}
+
+.surah-topic-sticky {
+  position: sticky;
+  top: 3.35rem;
+  z-index: 42;
+}
+
+@media (min-width: 640px) {
+  .surah-topic-section {
+    --surah-topic-rail-x: 0.75rem;
+    --surah-topic-rail-bottom: 2rem;
+  }
+
+  .surah-topic-sticky {
+    top: 3.55rem;
+  }
+}
+
+[data-reading-only="true"] .surah-asbabun-nuzul {
+  display: none;
+}
+
+[data-reading-only="true"] .surah-verse-article,
+[data-reading-only="true"] .surah-reading-link {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-reading-only="true"] .surah-verse-article {
+  padding: 0.35rem 0;
+}
+
+[data-reading-only="true"] .surah-reading-link {
+  margin-top: 0;
+  padding: 0.75rem 0;
+}
+
+[data-reading-only="true"] .surah-reading-link:hover {
+  border-color: transparent;
+}
+
+.verse-number-marker {
+  display: inline-flex;
+  width: 1.75em;
+  height: 1.75em;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border: 0.08em solid currentColor;
+  border-radius: 999px;
+  color: var(--qurai-text);
+  font-family: var(--font-quran-complex), var(--font-scheherazade), serif;
+  font-size: 0.56em;
+  line-height: 1;
+  position: relative;
+  box-shadow:
+    inset 0 0 0 0.12em color-mix(in srgb, var(--qurai-gold) 18%, transparent),
+    0 0 0 0.08em color-mix(in srgb, var(--qurai-gold) 22%, transparent);
 }
 
 .revelation-badge {

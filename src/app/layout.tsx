@@ -5,6 +5,7 @@ import {
   Scheherazade_New,
   Source_Serif_4,
 } from "next/font/google";
+import localFont from "next/font/local";
 import { Suspense } from "react";
 import { InitialSplash } from "@/app/initial-splash";
 import { NavigationProvider } from "@/components/navigation-provider";
@@ -27,6 +28,13 @@ const scheherazade = Scheherazade_New({
   variable: "--font-scheherazade",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const quranComplex = localFont({
+  src: "../../font/QPCV2.woff2",
+  variable: "--font-quran-complex",
+  weight: "400",
   display: "swap",
 });
 
@@ -83,7 +91,7 @@ export default function RootLayout({
     <html
       lang="id"
       suppressHydrationWarning
-      className={`${manrope.variable} ${plexMono.variable} ${scheherazade.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${manrope.variable} ${plexMono.variable} ${scheherazade.variable} ${quranComplex.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <head>
         <script

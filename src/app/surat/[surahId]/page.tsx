@@ -13,6 +13,7 @@ import {
 import { ReadingProgress } from "@/app/reading-progress";
 import { SurahContextToggle } from "./surah-context-toggle";
 import { SurahFloatingControls } from "./surah-floating-controls";
+import { SurahDisplayShell } from "./surah-display-shell";
 import { SurahJumpControl } from "./surah-jump-control";
 import { SurahSearchControl } from "./surah-search-control";
 import { SurahStickyTitle } from "./surah-sticky-title";
@@ -32,7 +33,7 @@ function ArticleRefBanner({
   const refs = getArticlesForVerse(surahId, ayahNumber);
   if (refs.length === 0) return null;
   return (
-    <div className="mt-4 flex flex-col gap-2">
+    <div className="surah-further-reading mt-4 flex flex-col gap-2">
       {refs.map((ref) => (
         <Link
           key={ref.slug}
@@ -55,6 +56,20 @@ function ArticleRefBanner({
         </Link>
       ))}
     </div>
+  );
+}
+
+function toArabicIndicNumber(value: number) {
+  return value
+    .toString()
+    .replace(/\d/g, (digit) => "٠١٢٣٤٥٦٧٨٩"[Number(digit)]);
+}
+
+function VerseNumberMarker({ number }: { number: number }) {
+  return (
+    <span className="verse-number-marker" aria-label={`Ayat ${number}`}>
+      {toArabicIndicNumber(number)}
+    </span>
   );
 }
 
@@ -206,7 +221,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
       className="qurai-page px-3 py-8 sm:px-8 lg:px-12"
     >
       <ReadingProgress targetId="surah-reading-root" />
-      <div className="mx-auto flex max-w-6xl flex-col gap-5">
+      <SurahDisplayShell>
         <SurahStickyTitle surahNumber={surah.id} title={surah.nameLatin} />
         <SurahFloatingControls
           verseCount={surah.verseCount}
@@ -269,29 +284,30 @@ export default async function SurahDetailPage({ params }: PageProps) {
 
           <SurahStatsPanel verses={verses} surahNameLatin={surah.nameLatin} />
 
-          <SurahTopicPanel
-            topics={verseGroups
-              .filter((g) => g.topic)
-              .map((g, i) => ({
-                id: `topic-group-${i}`,
-                label: g.topic,
-                startAyah: g.verses[0].ayahNumber,
-                endAyah: g.verses[g.verses.length - 1].ayahNumber,
-              }))}
-          />
+          <div className="surah-topic-theme">
+            <SurahTopicPanel
+              topics={verseGroups
+                .filter((g) => g.topic)
+                .map((g, i) => ({
+                  id: `topic-group-${i}`,
+                  label: g.topic,
+                  startAyah: g.verses[0].ayahNumber,
+                  endAyah: g.verses[g.verses.length - 1].ayahNumber,
+                }))}
+            />
+          </div>
 
           <div className="space-y-5">
             {verseGroups.map((group, groupIndex) => (
               <section
                 id={`topic-group-${groupIndex}`}
                 key={`${group.topic || "tanpa-topik"}-${group.verses[0].ayahNumber}-${groupIndex}`}
-                className={group.topic ? "relative sm:pl-8 scroll-mt-24" : "scroll-mt-24"}
+                className={group.topic ? "surah-topic-section relative scroll-mt-24 pl-6 sm:pl-8" : "scroll-mt-24"}
               >
                 {group.topic ? (
                   <>
-                    <div className="absolute bottom-8 left-3 top-14 hidden w-px bg-[var(--qurai-border-strong)] sm:block" />
-                    <div className="absolute bottom-8 left-3 hidden h-px w-5 bg-[var(--qurai-border-strong)] sm:block" />
-                    <div className="sticky top-12 z-20 mb-3 mx-auto w-fit rounded-[1.25rem] border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_12%,var(--qurai-surface-strong))] px-4 py-3 text-center text-sm font-semibold leading-7 text-[var(--qurai-text)] shadow-[0_12px_34px_-28px_rgba(0,0,0,0.5)] backdrop-blur sm:mx-0 sm:w-auto sm:text-left sm:top-14">
+                    <div className="surah-topic-theme surah-topic-foot" />
+                    <div className="surah-topic-theme surah-topic-sticky mb-3 mx-auto w-fit rounded-[1.25rem] border border-[var(--qurai-border-strong)] bg-[color-mix(in_srgb,var(--qurai-green)_12%,var(--qurai-surface-strong))] px-4 py-3 text-center text-sm font-semibold leading-7 text-[var(--qurai-text)] shadow-[0_12px_34px_-28px_rgba(0,0,0,0.5)] backdrop-blur sm:mx-0 sm:w-auto sm:text-left">
                       {group.verses[0].ayahNumber === group.verses[group.verses.length - 1].ayahNumber
                         ? <>{group.verses[0].ayahNumber} : <MarkdownText text={group.topic} /></>
                         : <>{group.verses[0].ayahNumber}-{group.verses[group.verses.length - 1].ayahNumber} : <MarkdownText text={group.topic} /></>}
@@ -304,31 +320,28 @@ export default async function SurahDetailPage({ params }: PageProps) {
                     <article
                       key={`${verse.surahId}-${verse.ayahNumber}`}
                       id={`ayat-${verse.ayahNumber}`}
-                      className="qurai-card scroll-mt-28 rounded-[2rem] p-4 sm:p-6"
+                      className="surah-verse-article qurai-card scroll-mt-28 rounded-[2rem] p-4 sm:p-6"
                     >
-                      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-4">
-                        <p className="qurai-label">
-                          Ayat {verse.ayahNumber}
-                        </p>
-                        {!group.topic ? (
+                      {!group.topic ? (
+                        <div className="surah-topic-theme mb-2">
                           <p className="text-sm text-[var(--qurai-muted)]">
                             <MarkdownText text={verse.topic || "Tanpa topik"} />
                           </p>
-                        ) : null}
-                      </div>
+                        </div>
+                      ) : null}
 
                       <NavLink
                         href={`/ayat/${verse.id}`}
-                        className="qurai-reading-card mt-5 block rounded-[1.4rem] px-4 py-5 transition hover:border-[var(--qurai-border-strong)]"
+                        className="surah-reading-link qurai-reading-card mt-5 block rounded-[1.4rem] px-4 py-5 transition hover:border-[var(--qurai-border-strong)]"
                       >
-                        <p className="qurai-arabic-text font-arabic text-right text-3xl leading-[2] sm:text-4xl">
-                          {verse.arabicText}
+                        <p className="qurai-arabic-text font-arabic text-right text-3xl leading-[2] sm:text-4xl" dir="rtl">
+                          {verse.arabicText} <VerseNumberMarker number={verse.ayahNumber} />
                         </p>
-                        <p className="font-serif-reading mt-4 text-base leading-8 text-[var(--qurai-text)]">
+                        <p className="surah-translation font-serif-reading mt-4 text-base leading-8 text-[var(--qurai-text)]">
                           <MarkdownText text={verse.translation} />
                         </p>
                         {verse.catatanDepag ? (
-                          <div className="qurai-muted-card mt-4 rounded-[1.25rem] p-4">
+                          <div className="surah-depag-note qurai-muted-card mt-4 rounded-[1.25rem] p-4">
                             <p className="text-[10px] font-semibold uppercase text-[var(--qurai-gold)]">
                               Catatan Depag
                             </p>
@@ -340,7 +353,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
                       </NavLink>
 
                       {verse.asbabunNuzul ? (
-                        <div className="mt-4 border-l-2 border-[var(--qurai-gold)] pl-4">
+                        <div className="surah-asbabun-nuzul mt-4 border-l-2 border-[var(--qurai-gold)] pl-4">
                           <p className="text-xs font-semibold uppercase text-[var(--qurai-gold)]">
                             Asbabun Nuzul
                           </p>
@@ -350,13 +363,15 @@ export default async function SurahDetailPage({ params }: PageProps) {
                         </div>
                       ) : null}
 
-                      <VerseAnalysisDisclosures
-                        critique={verse.critique}
-                        logicalFallacies={verse.logicalFallacies}
-                        moralConcerns={verse.moralConcerns}
-                        scientificErrors={verse.scientificErrors}
-                        contradictions={verse.contradictions}
-                      />
+                      <div className="surah-analysis-controls">
+                        <VerseAnalysisDisclosures
+                          critique={verse.critique}
+                          logicalFallacies={verse.logicalFallacies}
+                          moralConcerns={verse.moralConcerns}
+                          scientificErrors={verse.scientificErrors}
+                          contradictions={verse.contradictions}
+                        />
+                      </div>
 
                       <ArticleRefBanner
                         surahId={verse.surahId}
@@ -369,7 +384,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
             ))}
           </div>
         </section>
-      </div>
+      </SurahDisplayShell>
     </main>
   );
 }

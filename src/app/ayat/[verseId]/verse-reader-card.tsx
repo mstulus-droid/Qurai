@@ -123,17 +123,6 @@ export function VerseReaderCard({
         <ReadingSizeToggle value={prefs.size} onChange={setSize} />
       </div>
 
-      {asbabunNuzul ? (
-        <div className="qurai-muted-card mb-6 reading-measure rounded-[1.25rem] p-4">
-          <p className="text-xs font-semibold uppercase text-[var(--qurai-gold)]">
-            Asbabun Nuzul
-          </p>
-          <p className="font-serif-reading mt-2 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
-            <MarkdownText text={asbabunNuzul} />
-          </p>
-        </div>
-      ) : null}
-
       <div className="mb-5 reading-measure">
         <p className="text-sm leading-7 text-[var(--qurai-muted)]">
           <span className="mr-2 text-xs font-semibold uppercase text-[var(--qurai-green)]">
@@ -191,6 +180,16 @@ export function VerseReaderCard({
                 </p>
                 <p className="font-serif-reading mt-1 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
                   <MarkdownText text={catatanDepag} />
+                </p>
+              </div>
+            ) : null}
+            {asbabunNuzul ? (
+              <div className="mt-5 border-l-2 border-[var(--qurai-gold)] pl-4">
+                <p className="text-xs font-semibold uppercase text-[var(--qurai-gold)]">
+                  Asbabun Nuzul
+                </p>
+                <p className="font-serif-reading mt-2 whitespace-pre-wrap text-sm leading-7 text-[var(--qurai-muted)]">
+                  <MarkdownText text={asbabunNuzul} />
                 </p>
               </div>
             ) : null}
