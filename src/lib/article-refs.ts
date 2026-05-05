@@ -463,6 +463,50 @@ const REFS: Array<{
     slug: "wahyu-konvenien",
     title: "Ketika Wahyu Mengikuti Kepentingan Pribadi Nabi",
   },
+  // Artikel: Ritual yang Tidak Ada dalam Al-Quran (lempar jumrah)
+  {
+    surah: 2,
+    ayatStart: 196,
+    ayatEnd: 203,
+    slug: "lempar-jumrah",
+    title: "Ritual yang Tidak Ada dalam Al-Quran",
+  },
+  {
+    surah: 22,
+    ayatStart: 27,
+    ayatEnd: 37,
+    slug: "lempar-jumrah",
+    title: "Ritual yang Tidak Ada dalam Al-Quran",
+  },
+  {
+    surah: 5,
+    ayatStart: 2,
+    ayatEnd: 2,
+    slug: "lempar-jumrah",
+    title: "Ritual yang Tidak Ada dalam Al-Quran",
+  },
+  // Artikel: Kaaba, Allah, dan Apa yang Ada Sebelumnya
+  {
+    surah: 53,
+    ayatStart: 19,
+    ayatEnd: 23,
+    slug: "warisan-pagan-arab",
+    title: "Kaaba, Allah, dan Apa yang Ada Sebelumnya",
+  },
+  {
+    surah: 29,
+    ayatStart: 61,
+    ayatEnd: 61,
+    slug: "warisan-pagan-arab",
+    title: "Kaaba, Allah, dan Apa yang Ada Sebelumnya",
+  },
+  {
+    surah: 68,
+    ayatStart: 1,
+    ayatEnd: 1,
+    slug: "warisan-pagan-arab",
+    title: "Kaaba, Allah, dan Apa yang Ada Sebelumnya",
+  },
 ];
 
 export function getArticlesForVerse(

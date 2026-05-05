@@ -59,6 +59,26 @@ const articles = [
     date: "Mei 2026",
     readTime: "12 menit",
   },
+  {
+    slug: "lempar-jumrah",
+    number: "06",
+    title: "Ritual yang Tidak Ada dalam Al-Quran",
+    excerpt:
+      "Al-Quran cukup detail soal haji — ihram, wukuf, thawaf, sa'i, kurban. Tapi lempar jumrah tidak disebut satu kali pun. Seluruh dasarnya berasal dari hadis dan tradisi Arab yang sudah ada sebelum Islam.",
+    surah: "Al-Baqarah 2:196 · Al-Hajj 22:27",
+    date: "Mei 2026",
+    readTime: "7 menit",
+  },
+  {
+    slug: "warisan-pagan-arab",
+    number: "07",
+    title: "Kaaba, Allah, dan Apa yang Ada Sebelumnya",
+    excerpt:
+      "Kaaba punya sejarah panjang sebagai kuil politeistik. Nama Allah muncul jauh sebelum Islam. Ritual haji sudah berlangsung berabad-abad sebelum Muhammad. Ini bukan tuduhan — ini catatan historis yang bisa diperiksa.",
+    surah: "An-Najm 53:19 · Al-Ankabut 29:61",
+    date: "Mei 2026",
+    readTime: "10 menit",
+  },
 ];
 
 export default function ArtikelPage() {

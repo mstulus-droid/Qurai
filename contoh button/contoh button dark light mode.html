@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>KALEINDO</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/webp" href="icons/icon_192.webp">
+    <meta name="theme-color" content="#3b82f6">
+
+    <link href="./tailwind-output.css?v=20260308-1" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css?v=20260308-1">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- === LEFT SIDEBAR (DESKTOP) === -->
+        <div class="desktop-sidebar">
+            <div>
+                <div class="flex items-center gap-3 mb-8 overflow-hidden">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <img src="icons/icon_512.webp" alt="Logo Kaleindo" id="logoKaleindo" class="w-full h-full object-contain">
+                    </div>
+
+                    <div class="sidebar-title-wrapper">
+                        <a href="kaleindo-about.html" class="hover:opacity-80 transition-opacity">
+                            <h1 class="font-bold text-lg leading-none tracking-wider whitespace-nowrap">KALEINDO</h1>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="desktopInstallContainer" class="hidden space-y-2 mb-8 animate-fade-in">
+                    <p class="text-xs font-bold opacity-50 uppercase tracking-widest mb-1">Aplikasi</p>
+                    <button onclick="triggerInstallFromSettings()" class="w-full bg-white text-slate-900 hover:bg-slate-100 transition p-3 rounded-xl flex items-center justify-center gap-2 font-bold text-sm shadow-lg group">
+                        <i class="fas fa-download group-hover:scale-110 transition-transform"></i> INSTALL APP
+                    </button>
+                </div>
+
+                <div class="space-y-2 mb-8">
+                    <p class="text-xs font-bold opacity-50 uppercase tracking-widest mb-1">Alarm & Notifikasi</p>
+                    
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/10">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold opacity-90"><i class="fas fa-bell mr-2"></i>Status</span>
+                            <span id="desktopNotifStatus" class="text-[0.6rem] font-bold uppercase tracking-wider opacity-70">Cek...</span>
+                        </div>
+                        <button onclick="handleNotificationClick()" id="desktopNotifBtn" class="w-full py-2 rounded-lg text-[0.7rem] font-bold bg-white/10 hover:bg-white/20 transition text-center border border-white/10">
+                            AKTIFKAN
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 mb-8">
+                    <p class="text-xs font-bold opacity-50 uppercase tracking-widest mb-2">Tampilan</p>
+
+                    <div class="theme-switch-wrapper" onclick="toggleSetting('darkMode')">
+                        <span class="text-sm font-medium opacity-90">Mode Tampilan</span>
+                        <div class="theme-toggle-pill" id="desktopThemeToggle">
+                            <i class="fas fa-cloud toggle-bg-icon icon-cloud"></i>
+                            <i class="fas fa-star toggle-bg-icon icon-stars text-[0.5rem]"></i>
+                            <div class="theme-toggle-circle">
+                                <i class="fas fa-sun theme-toggle-icon" id="desktopToggleIcon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center mt-3">
+                        <span class="text-sm font-medium opacity-90">Kalender Hijriah</span>
+                        <input type="checkbox" class="toggle-switch" id="dsk-hijri"
+                            onchange="event.stopPropagation(); toggleSetting('showHijri')">
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium opacity-90">Hari Pasaran</span>
+                        <input type="checkbox" class="toggle-switch" id="dsk-pasaran"
+                            onchange="event.stopPropagation(); toggleSetting('showPasaran')">
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium opacity-90">Hari Peringatan</span>
+                        <input type="checkbox" class="toggle-switch" id="dsk-obs"
+                            onchange="event.stopPropagation(); toggleSetting('showObservances')">
+                    </div>
+                </div>
+
+                <div class="space-y-2 mb-8">
+                    <p class="text-xs font-bold opacity-50 uppercase tracking-widest mb-1">Tema Warna</p>
+                    <button onclick="cycleTheme()"
+                        class="w-full bg-white/10 hover:bg-white/20 transition p-2 rounded-xl flex items-center justify-between px-4 font-bold text-sm">
+                        <span id="themeNameDesktop">Royal Blue</span>
+                        <i class="fas fa-palette"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-2 mb-8">
+                    <p class="text-xs font-bold opacity-50 uppercase tracking-widest mb-1">Efek Transisi</p>
+                    <select class="premium-select" id="transitionSelect" onchange="updateTransition(this.value)">
+                        <option value="none">None (Instant)</option>
+                        <option value="slide">Slide (Klasik)</option>
+                        <option value="cube">Cube Flip (3D)</option>
+                        <option value="fade">Fade (Lembut)</option>
+                        <option value="zoom">Zoom In/Out</option>
+                        <option value="flip">Flip Card</option>
+                    </select>
+                </div>
+
+                <div id="desktopAuthWrapper" class="mb-4 w-full flex flex-col items-center">
+    
+                    <button id="btnLoginGoogleDesktop" onclick="toggleGoogleAuth()" class="w-full bg-white text-slate-900 hover:bg-slate-100 transition p-3 rounded-xl flex items-center justify-center gap-2 font-bold text-sm shadow-lg group border border-slate-200/20">
+                        <i class="fab fa-google text-red-500 group-hover:scale-110 transition-transform"></i>
+                        <span>LOGIN GOOGLE</span>
+                    </button>
+
+                    <div id="loggedInUserDesktop" class="hidden flex-col items-center w-full animate-fade-in space-y-3">
+                        
+                        <div id="desktopSyncBadge" class="px-4 py-1.5 rounded-full border border-blue-400/30 bg-blue-500/20 flex items-center justify-center transition-all duration-300">
+                            <span id="desktopSyncStatusText" class="text-[0.6rem] font-bold text-blue-200 uppercase tracking-widest flex items-center">
+                                <i class="fas fa-circle-notch fa-spin mr-2"></i>MENUNGGU...
+                            </span>
+                        </div>
+
+                        <div class="text-center w-full">
+                            <p id="desktopUserName" class="text-[0.7rem] text-slate-300 italic mb-2 opacity-80">Login sebagai...</p>
+                            
+                            <button onclick="toggleGoogleAuth()" class="w-full py-2 rounded-lg border border-red-500/30 text-red-300 font-bold text-[0.7rem] hover:bg-red-500 hover:text-white hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2">
+                                <i class="fas fa-sign-out-alt"></i> Keluar / Logout
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="text-center opacity-40 text-xs">
+                <div>&copy; Rhadz Calendar</div>
+                <div id="appCommitHash" class="text-[0.55rem] mt-1 font-mono tracking-tight">—</div>
+            </div>
+        </div>
+        <div class="sidebar-toggle-arrow" id="sidebarArrowBtn" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+
+        <!-- === HEADER (MOBILE ONLY) === -->
+        <header class="header-rhadzor" id="mainHeader">
+            <div class="header-left">
+                <div class="btn-setting" onclick="openSettings()">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+            <div class="header-center" id="calendarHeaderCenter">
+                <div class="flex items-center gap-2">
+                    <div class="nav-arrow" onclick="changeMonth(-1)"><i class="fas fa-chevron-left"></i></div>
+                    <div class="month-year-title">
+                        <span id="monthLabelMobile" onclick="openMonthSelector()">JANUARI</span>
+                        <span id="yearLabelMobile" onclick="openYearSelector()">2026</span>
+                    </div>
+                    <div class="nav-arrow" onclick="changeMonth(1)"><i class="fas fa-chevron-right"></i></div>
+                </div>
+                <div class="hijri-label" id="hijriRangeMobile">RAJAB - SYA'BAN</div>
+            </div>
+            <div class="header-right">
+                <div class="btn-today-icon" onclick="goToToday()">
+                    <i class="fas fa-calendar-day text-sm"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content relative" style="position: relative; overflow: hidden;">
+
+            <style>
+                /* 1. Base Button Style */
+                .btn-anim {
+                    height: 40px;
+                    width: 40px; /* Lebar awal (bulat) */
+                    border-radius: 999px;
+                    display: flex;
+                    align-items: center;
+                    background: white;
+                    border: 1px solid #e2e8f0;
+                    color: #475569;
+                    cursor: pointer;
+                    overflow: hidden;
+                    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, color 0.3s, background-color 0.3s;
+                    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                }
+
+                /* Tampil hanya di Desktop */
+                @media (max-width: 1023px) {
+                    .btn-anim { display: none; }
+                }
+
+                /* Hover State Umum */
+                .btn-anim:hover {
+                    width: 130px; /* Lebar saat hover */
+                    border-color: #93c5fd; /* blue-300 */
+                    color: #2563eb; /* blue-600 */
+                    background-color: #eff6ff; /* blue-50 */
+                }
+
+                /* Wadah Ikon (Ukuran Tetap) */
+                .btn-anim .icon-box {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                }
+
+                /* Teks Label (Awalnya Hilang) */
+                .btn-anim .text-label {
+                    opacity: 0;
+                    white-space: nowrap;
+                    font-size: 0.7rem;
+                    font-weight: 800;
+                    letter-spacing: 0.05em;
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                    pointer-events: none;
+                }
+                
+                .btn-anim:hover .text-label {
+                    opacity: 1;
+                }
+
+                /* --- VARIASI 1: EXPAND KE KANAN (Untuk Tombol Kiri) --- */
+                .expand-right {
+                    justify-content: flex-start; /* Ikon di Kiri */
+                }
+                .expand-right .text-label {
+                    transform: translateX(-10px);
+                }
+                .expand-right:hover .text-label {
+                    transform: translateX(0);
+                    margin-left: 0px;
+                }
+
+                /* --- VARIASI 2: EXPAND KE KIRI (Untuk Tombol Kanan & Floating) --- */
+                .expand-left {
+                    justify-content: flex-end; /* Ikon di Kanan */
+                }
+                .expand-left .text-label {
+                    transform: translateX(10px);
+                }
+                .expand-left:hover .text-label {
+                    transform: translateX(0);
+                    margin-right: 4px;
+                }
+
+                /* Khusus Floating Button (Lebih Besar) */
+                .btn-floating-big {
+                    position: absolute;
+                    bottom: 32px;
+                    right: 32px;
+                    height: 48px;
+                    width: 48px;
+                    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+                    z-index: 999;
+                }
+                .btn-floating-big:hover {
+                    width: 140px;
+                }
+                .btn-floating-big .icon-box {
+                    width: 48px;
+                    height: 48px;
+                }
+            </style>
+
+            <div class="desktop-header-controls relative hidden lg:flex items-center justify-between py-4 mb-2 border-b border-slate-200">
+
+                <div class="flex items-center z-20">
+                    <button id="desktopNotesBtnTop" onclick="toggleNotesView()" 
+                        class="btn-anim expand-right" 
+                        title="Buka Catatanku">
+                        <div class="icon-box"><i class="fas fa-book"></i></div>
+                        <span class="text-label">CATATANKU</span>
+                    </button>
+                </div>
+
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-6 z-10">
+                    <button onclick="changeMonth(-1)" class="w-10 h-10 rounded-full bg-transparent hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800 transition">
+                        <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
+
+                    <div class="text-center min-w-[200px]">
+                        <h2 class="text-2xl font-black text-slate-800 tracking-tight leading-none flex gap-2 justify-center">
+                            <span id="desktopMonthDisplay" onclick="openMonthSelector()" class="cursor-pointer hover:text-blue-600 transition">JANUARI</span>
+                            <span id="desktopYearDisplay" onclick="openYearSelector()" class="cursor-pointer hover:text-blue-600 transition">2026</span>
+                        </h2>
+                        <p class="text-[0.65rem] text-slate-500 font-bold tracking-wider uppercase mt-1 cursor-default whitespace-nowrap" id="desktopHijri">1447 HIJRIAH</p>
+                    </div>
+
+                    <button onclick="changeMonth(1)" class="w-10 h-10 rounded-full bg-transparent hover:bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800 transition">
+                        <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-2 z-20">
+                    <button onclick="openDateSearch()" 
+                        class="btn-anim expand-left" 
+                        title="Cari Tanggal">
+                        <span class="text-label">PENCARIAN</span>
+                        <div class="icon-box"><i class="fas fa-search"></i></div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="calendarViewContainer" class="flex flex-col h-full">
+                <div class="calendar-section-mobile">
+                    <div class="calendar-card" id="swipeArea">
+                        <div class="calendar-grid-container" id="gridContainer">
+                            <div class="calendar-grid" id="calendarGrid"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-section-mobile" id="mobileInfoSection">
+                    <div class="space-y-2 mt-2" id="holidayContainerMobile"></div>
+                    <div class="quote-minimalist mt-8 text-center px-4 pb-8">
+                        <p class="text-xs text-slate-500 italic" id="quoteDisplayMobile">"Kata bijak di sini"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="notesViewContainer" class="notes-view-container hidden flex-col h-full bg-slate-50 relative">
+                <div class="flex-shrink-0 bg-slate-50 shadow-sm z-20 relative">
+                    <div class="notes-tab-group mx-4 mt-4 mb-2">
+                        <div class="notes-tab active" onclick="switchNoteTab('weekly', this)">MINGGUAN</div>
+                        <div class="notes-tab" onclick="switchNoteTab('monthly', this)">BULANAN</div>
+                        <div class="notes-tab" onclick="switchNoteTab('yearly', this)">TAHUNAN</div>
+                    </div>
+                    <div class="notes-nav-bar relative flex items-center justify-center py-3 px-4">
+                        <div class="flex items-center gap-4 z-10">
+                            <button onclick="navNotes(-1)" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200 text-slate-600 hover:bg-slate-300 transition"><i class="fas fa-chevron-left text-xs"></i></button>
+                            <span id="notesNavLabel" class="text-sm font-bold text-slate-800 uppercase tracking-wide w-32 text-center">MINGGU INI</span>
+                            <button onclick="navNotes(1)" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200 text-slate-600 hover:bg-slate-300 transition"><i class="fas fa-chevron-right text-xs"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="notesListContainer" class="flex-1 overflow-y-auto min-h-0 p-4 pb-32 space-y-3 relative z-10 custom-scrollbar"></div>
+                <div class="hidden lg:flex flex-shrink-0 p-4 bg-white border-t border-slate-200 shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-30 relative">
+                    <button onclick="openCreateNoteModal()" class="w-full p-3 rounded-xl font-bold text-sm tracking-widest text-white shadow-lg transition hover:opacity-90 hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2" style="background: var(--premium-gradient);">
+                        <i class="fas fa-plus"></i> BUAT CATATAN BARU
+                    </button>
+                </div>
+                
+                <button id="floatingNotesBtn" onclick="openCreateNoteModal()" class="lg:hidden fixed bottom-24 left-1/2 transform -translate-x-1/2 shadow-2xl z-50 flex items-center justify-center transition-all duration-300 overflow-hidden group fab-expandable">
+                    <div class="w-8 h-8 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0"><i class="fas fa-plus text-white text-sm"></i></div>
+                    <span class="text-white font-bold text-xs tracking-widest whitespace-nowrap fab-text ml-2 pr-2">CATATAN BARU</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                </button>
+            </div>
+
+            <button onclick="goToToday()" class="btn-anim expand-left btn-floating-big" title="Ke Hari Ini">
+                <span class="text-label">HARI INI</span>
+                <div class="icon-box"><i class="fas fa-calendar-day text-lg"></i></div>
+            </button>
+
+        </main>
+
+        <div class="right-panel-toggle-arrow" id="rightArrowBtn" onclick="toggleRightPanel()">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="desktop-right-panel" id="rightPanelDesktop">
+            <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Agenda Bulan Ini</h3>
+            <div id="holidayContainerDesktop" class="space-y-3 event-list-container flex-1"></div>
+            <div class="mt-auto pt-6 border-t border-slate-200">
+                <i class="fas fa-quote-left text-slate-300 text-lg mb-2 block"></i>
+                <p class="text-sm italic text-slate-600 font-medium leading-relaxed" id="quoteDisplayDesktop">Loading
+                    quote...</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER (MOBILE ONLY) -->
+    <footer class="footer-rhadzor lg:hidden">
+        <div id="footerLeftBtn" onclick="toggleNotesView()"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 active:bg-white/20 transition cursor-pointer flex-shrink-0">
+            <i class="fas fa-book text-white text-sm"></i>
+        </div>
+
+        <div class="flex-1 flex items-center justify-center mx-2">
+            <a href="kaleindo-about.html" class="text-sm font-bold tracking-widest text-white uppercase hover:text-blue-200 transition-colors">
+                KALEINDO
+            </a>
+        </div>
+
+        <div id="footerRightBtn" onclick="handleFooterRightAction()"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 active:bg-white/20 transition cursor-pointer flex-shrink-0">
+            <i class="fas fa-search text-white text-sm"></i>
+        </div>
+    </footer>
+    </div>
+
+    <div class="modal-overlay" id="selectorModal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header-line"></div>
+            <h3 id="modalTitle"
+                class="text-center font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest hidden">JUDUL MODAL
+            </h3>
+
+            <div id="modalBodyWrapper" class="flex-1 min-h-0 overflow-y-auto flex flex-col custom-scrollbar">
+                <div id="modalBody" class="w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="iosInstallModal" class="hidden fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-4 transition-opacity">
+        <div class="bg-white w-full max-w-sm rounded-2xl p-6 relative animate-slide-up">
+            <button onclick="closeIosModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="text-center">
+                <i class="fab fa-apple text-4xl text-slate-800 mb-3"></i>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Install di iPhone/iPad</h3>
+                <p class="text-sm text-slate-500 mb-6">Apple tidak mengizinkan instalasi otomatis. Silakan ikuti langkah manual berikut:</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 font-bold rounded-full flex-shrink-0">1</span>
+                    <span class="text-sm text-slate-700 font-medium">Ketuk tombol <strong class="text-slate-900">Share</strong> <i class="fas fa-share-square mx-1 text-blue-500"></i> di browser Safari bawah.</span>
+                </div>
+                <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                    <span class="w-8 h-8 flex items-center justify-center bg-blue-100 text-blue-600 font-bold rounded-full flex-shrink-0">2</span>
+                    <span class="text-sm text-slate-700 font-medium">Geser ke atas & pilih <strong class="text-slate-900">Add to Home Screen</strong> <i class="fas fa-plus-square mx-1 text-slate-400"></i>.</span>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-center">
+                <button onclick="closeIosModal()" class="text-slate-500 text-xs font-bold hover:text-slate-800">SAYA MENGERTI</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+    // Alamat yang sudah diverifikasi aktif
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth, setPersistence, browserPopupRedirectResolver, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged, browserLocalPersistence, indexedDBLocalPersistence } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    import { getFirestore, doc, setDoc, getDoc, collection } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyA9bBPxLtZB4qC4gJFEmX4XT3kiWO1ntiY",
+        authDomain: "bizdev-calendar.firebaseapp.com",
+        projectId: "bizdev-calendar",
+        storageBucket: "bizdev-calendar.firebasestorage.app",
+        messagingSenderId: "73788759775",
+        appId: "1:73788759775:web:436d2fca15bfb8050b136a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    // Pastikan auth persistence diset secara eksplisit agar sesi login tetap bertahan setelah laptop mati/restart.
+    const authPersistenceReady = setPersistence(auth, browserLocalPersistence)
+        .then(() => {
+            console.log("Auth persistence: LOCAL_STORAGE");
+            return getRedirectResult(auth);
+        })
+        .catch((error) => {
+            console.error("Auth persistence / redirect login error:", error);
+        });
+
+    async function signInGoogle() {
+        await authPersistenceReady;
+        try {
+            return await signInWithPopup(auth, provider);
+        } catch (error) {
+            // Fallback untuk environment yang tidak stabil dengan popup.
+            if (error && (error.code === "auth/operation-not-supported-in-this-environment" || error.code === "auth/argument-error")) {
+                await signInWithRedirect(auth, provider);
+                return null;
+            }
+            throw error;
+        }
+    }
+
+    function signOutGoogle() {
+        return signOut(auth);
+    }
+
+    function onAuthStateChangedSafe(callback) {
+        return onAuthStateChanged(auth, callback);
+    }
+
+    window.fbAuth = { auth, signInGoogle, signOutGoogle, onAuthStateChanged: onAuthStateChangedSafe };
+    window.fbDB = { db, doc, setDoc, getDoc, collection };
+    
+    console.log("Koneksi Firebase Berhasil!");
+    </script>
+
+    <script src="calendar-data.js?v=20260308-1"></script>
+    <script src="main.js?v=20260308-1"></script>
+    <script>
+        fetch('https://api.github.com/repos/mstulus-droid/Kaleindo/commits?per_page=1')
+            .then(r => r.json())
+            .then(data => {
+                const el = document.getElementById('appCommitHash');
+                const sha = Array.isArray(data) && data[0] && data[0].sha ? data[0].sha.substring(0, 7) : null;
+                if (el && sha) el.textContent = sha;
+            })
+            .catch(() => {});
+    </script>
+    <div id="calendarHoverTooltip"></div>
+</body>
+
+    </html>
