@@ -188,19 +188,19 @@ export function AboutClient() {
           <div className="self-start font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)] md:sticky md:top-24">
             Nama
           </div>
-          <div className="grid grid-cols-[88px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-8">
-            <div className="relative h-[88px] w-[88px] sm:h-[180px] sm:w-[180px]">
+          <div className="grid grid-cols-[176px_minmax(0,1fr)] items-start gap-2 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-8">
+            <div className="relative h-[176px] w-[176px] sm:h-[180px] sm:w-[180px]">
               <ThemedMark
-                sizes="(max-width: 640px) 88px, 180px"
-                className="object-contain drop-shadow-[0_18px_40px_rgba(82,207,70,0.18)]"
+                sizes="(max-width: 640px) 176px, 180px"
+                className="-translate-y-7 scale-[1.16] object-contain object-top drop-shadow-[0_18px_40px_rgba(82,207,70,0.18)] sm:translate-y-0 sm:scale-100"
               />
             </div>
-            <div>
-              <h2 className="font-serif-reading whitespace-nowrap text-[2.35rem] font-normal text-[var(--qurai-text)] sm:text-[4rem]">
+            <div className="-mt-1 sm:mt-0 sm:pt-0">
+              <h2 className="font-serif-reading whitespace-nowrap text-[2.45rem] font-normal leading-none text-[var(--qurai-text)] sm:text-[4rem]">
                 <span className="mr-2 text-[var(--qurai-quiet)]">+</span>
                 <span className="italic text-[var(--qurai-green)]">urai</span>
               </h2>
-              <p className="mt-4 max-w-[62ch] text-sm leading-8 text-[var(--qurai-muted)] sm:text-[0.95rem]">
+              <p className="mt-5 max-w-[38ch] text-sm leading-8 text-[var(--qurai-muted)] sm:max-w-[62ch] sm:text-[0.95rem]">
                 Quran sebagai objek kajian, urai sebagai cara kerja:
                 membongkar benang yang kusut, mengikuti lapisan historis,
                 linguistik, dan logisnya sampai pertanyaan menjadi lebih
