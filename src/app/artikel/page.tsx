@@ -145,15 +145,12 @@ export default function ArtikelPage() {
 
       <div className="mx-auto flex-1 w-[min(1120px,calc(100%_-_1.4rem))] px-0 pb-24 pt-32 sm:w-[min(1120px,calc(100%_-_2rem))] sm:pt-36">
         <div className="mb-16 sm:mb-20">
-          <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            02 / Artikel
-          </p>
           <h1 className="font-serif-reading text-[2.4rem] italic leading-tight text-[var(--qurai-text)] sm:text-[3.2rem]">
-            Analisis Mendalam
+            Ruang Analisis
           </h1>
           <p className="mt-5 max-w-[58ch] text-sm leading-8 text-[var(--qurai-muted)]">
-            Esai panjang yang menelusuri satu topik secara utuh — sejarah,
-            logika, dan apa yang tersisa setelah semuanya diperiksa.
+            Esai yang menguji klaim, riwayat, dan logika internal sebuah topik
+            sampai titik paling terang yang bisa dicapai.
           </p>
         </div>
 

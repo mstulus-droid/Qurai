@@ -60,6 +60,40 @@ function RevelationBadge({ kind, size = "md" }: { kind: RevelationKind; size?: "
   );
 }
 
+function HomeMenu() {
+  return (
+    <details className="home-menu relative w-[68px]">
+      <summary
+        className="home-menu-trigger inline-grid h-10 w-10 cursor-pointer list-none place-items-center rounded-full border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_82%,transparent)] text-[var(--qurai-text)] shadow-[0_16px_38px_-28px_rgba(0,0,0,0.55)] transition hover:border-[var(--qurai-border-strong)] hover:text-[var(--qurai-green)]"
+        aria-label="Buka menu"
+      >
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+          <path
+            d="M5 7h14M5 12h14M5 17h14"
+            stroke="currentColor"
+            strokeWidth="1.9"
+            strokeLinecap="round"
+          />
+        </svg>
+      </summary>
+      <div className="absolute left-0 top-12 z-30 min-w-40 overflow-hidden rounded-xl border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface)_94%,transparent)] p-1 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.72)] backdrop-blur">
+        <NavLink
+          href="/artikel"
+          className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] hover:text-[var(--qurai-green)]"
+        >
+          Artikel
+        </NavLink>
+        <NavLink
+          href="/about"
+          className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] hover:text-[var(--qurai-green)]"
+        >
+          Tentang
+        </NavLink>
+      </div>
+    </details>
+  );
+}
+
 export default async function Home({ searchParams }: HomePageProps) {
   const params = searchParams ? await searchParams : undefined;
   const surah = params?.surah?.trim() ?? "";
@@ -97,7 +131,7 @@ export default async function Home({ searchParams }: HomePageProps) {
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-4">
         <section className="px-1 pt-1">
           <div className="flex items-start justify-between gap-4">
-            <div className="w-[68px]" aria-hidden="true" />
+            <HomeMenu />
             <div className="flex flex-col items-center justify-center gap-4 text-center">
               <NavLink href="/about" aria-label="Tentang Qurai">
                 <div className="relative block h-[72px] w-[260px] drop-shadow-[0_24px_58px_rgba(46,176,62,0.16)] sm:h-[88px] sm:w-[320px]">

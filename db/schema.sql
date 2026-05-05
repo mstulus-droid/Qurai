@@ -55,11 +55,19 @@ ADD COLUMN IF NOT EXISTS contradictions TEXT NOT NULL DEFAULT '';
 
 CREATE TABLE IF NOT EXISTS bookmarks (
   id BIGSERIAL PRIMARY KEY,
-  verse_id BIGINT NOT NULL UNIQUE REFERENCES verses(id) ON DELETE CASCADE,
+  user_id UUID,
+  verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
   note TEXT NOT NULL DEFAULT '',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  UNIQUE (user_id, verse_id)
 );
+
+ALTER TABLE bookmarks
+ADD COLUMN IF NOT EXISTS user_id UUID;
+
+ALTER TABLE bookmarks
+DROP CONSTRAINT IF EXISTS bookmarks_verse_id_key;
 
 CREATE INDEX IF NOT EXISTS idx_verses_surah_id ON verses(surah_id);
 CREATE INDEX IF NOT EXISTS idx_verses_revelation_place ON verses(revelation_place);
@@ -69,6 +77,7 @@ CREATE INDEX IF NOT EXISTS idx_verse_analyses_scientific_errors ON verse_analyse
 CREATE INDEX IF NOT EXISTS idx_verse_analyses_contradictions ON verse_analyses USING GIN (to_tsvector('simple', contradictions));
 CREATE INDEX IF NOT EXISTS idx_verses_translation ON verses USING GIN (to_tsvector('simple', translation));
 CREATE INDEX IF NOT EXISTS idx_bookmarks_created_at ON bookmarks(created_at DESC);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_bookmarks_user_verse ON bookmarks(user_id, verse_id);
 
 -- Enable Row Level Security (RLS) on all public tables
 ALTER TABLE surahs ENABLE ROW LEVEL SECURITY;
@@ -77,6 +86,11 @@ ALTER TABLE verse_analyses ENABLE ROW LEVEL SECURITY;
 ALTER TABLE bookmarks ENABLE ROW LEVEL SECURITY;
 
 -- Allow public read access for anonymous users (data is public)
+DROP POLICY IF EXISTS "Allow public read" ON surahs;
+DROP POLICY IF EXISTS "Allow public read" ON verses;
+DROP POLICY IF EXISTS "Allow public read" ON verse_analyses;
+DROP POLICY IF EXISTS "Allow public read" ON bookmarks;
+
 CREATE POLICY "Allow public read" ON surahs FOR SELECT TO anon USING (true);
 CREATE POLICY "Allow public read" ON verses FOR SELECT TO anon USING (true);
 CREATE POLICY "Allow public read" ON verse_analyses FOR SELECT TO anon USING (true);

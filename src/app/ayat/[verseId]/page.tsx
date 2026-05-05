@@ -11,6 +11,7 @@ import { BookmarkButton } from "@/app/bookmark/bookmark-button";
 import { ReadingProgress } from "@/app/reading-progress";
 import { VerseReaderCard } from "./verse-reader-card";
 import { getArticlesForVerse } from "@/lib/article-refs";
+import { getCurrentUserId } from "@/lib/supabase/server";
 import Link from "next/link";
 
 type PageProps = {
@@ -59,9 +60,10 @@ export default async function VerseDetailPage({ params }: PageProps) {
   let bookmarked;
 
   try {
+    const userId = await getCurrentUserId();
     [neighbors, bookmarked] = await Promise.all([
       getVerseNeighbors(parsedId),
-      isVerseBookmarked(parsedId),
+      isVerseBookmarked(parsedId, userId),
     ]);
   } catch (error) {
     return <DatabaseUnavailable {...getDatabaseErrorInfo(error)} />;
@@ -131,7 +133,12 @@ export default async function VerseDetailPage({ params }: PageProps) {
                   <path d="M6.5 10.5V19h11v-8.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </NavLink>
-              <BookmarkButton verseId={verse.id} isBookmarked={bookmarked} iconOnly />
+              <BookmarkButton
+                verseId={verse.id}
+                isBookmarked={bookmarked}
+                next={`/ayat/${verse.id}`}
+                iconOnly
+              />
             </div>
           </div>
         </section>

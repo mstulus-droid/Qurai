@@ -7,6 +7,7 @@ import { toggleBookmark, type BookmarkActionState } from "./actions";
 type BookmarkButtonProps = {
   verseId: number;
   isBookmarked: boolean;
+  next: string;
   iconOnly?: boolean;
 };
 
@@ -67,6 +68,7 @@ function SubmitButton({
 export function BookmarkButton({
   verseId,
   isBookmarked,
+  next,
   iconOnly = false,
 }: BookmarkButtonProps) {
   const [state, action] = useActionState(toggleBookmark, initialState);
@@ -74,6 +76,7 @@ export function BookmarkButton({
   return (
     <form action={action} className="flex flex-col gap-3">
       <input type="hidden" name="verseId" value={verseId} />
+      <input type="hidden" name="next" value={next} />
       <SubmitButton isBookmarked={isBookmarked} iconOnly={iconOnly} />
       {!iconOnly && state.status !== "idle" ? (
         <p className="text-sm text-[var(--qurai-muted)]">{state.message}</p>

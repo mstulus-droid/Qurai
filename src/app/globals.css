@@ -596,10 +596,10 @@ a {
 }
 
 .theme-toggle-stars {
-  left: 8px;
-  top: 9px;
-  width: 8px;
-  height: 8px;
+  left: 6px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
   transform: translateY(0);
   opacity: 1;
 }
@@ -662,6 +662,15 @@ html.light-mode .theme-toggle-icon-moon,
 body.light-mode .theme-toggle-icon-moon {
   opacity: 0;
   transform: rotate(70deg) scale(0.72);
+}
+
+.home-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-menu[open] .home-menu-trigger {
+  border-color: var(--qurai-border-strong);
+  color: var(--qurai-green);
 }
 
 .qurai-loader-mark {

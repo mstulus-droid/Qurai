@@ -58,8 +58,11 @@ export const metadata: Metadata = {
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/qurai-favicon-16.png", sizes: "16x16", type: "image/png" },
       { url: "/brand/qurai-favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/qurai-favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/brand/qurai-favicon-64.png", sizes: "64x64", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
     apple: {

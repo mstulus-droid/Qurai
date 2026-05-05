@@ -2,16 +2,18 @@ import { NavLink } from "@/components/nav-link";
 import { DatabaseUnavailable } from "@/app/database-unavailable";
 import { getDatabaseErrorInfo } from "@/lib/db";
 import { getBookmarks } from "@/lib/quran-data";
+import { getCurrentUserId } from "@/lib/supabase/server";
 
 export const metadata = {
   title: "Bookmark | Qurai",
 };
 
 export default async function BookmarkPage() {
+  const userId = await getCurrentUserId();
   let bookmarks;
 
   try {
-    bookmarks = await getBookmarks();
+    bookmarks = userId ? await getBookmarks(userId) : [];
   } catch (error) {
     return <DatabaseUnavailable {...getDatabaseErrorInfo(error)} />;
   }
@@ -33,10 +35,10 @@ export default async function BookmarkPage() {
               </p>
             </div>
             <NavLink
-              href="/"
+              href={userId ? "/" : "/auth/login?next=/bookmark"}
               className="qurai-control inline-flex w-fit rounded-full px-4 py-2 text-sm font-semibold"
             >
-              Kembali ke beranda
+              {userId ? "Kembali ke beranda" : "Login Google"}
             </NavLink>
           </div>
         </section>
@@ -45,7 +47,9 @@ export default async function BookmarkPage() {
           <div className="qurai-muted-card mb-5 rounded-[1.25rem] px-4 py-3 text-sm">
             {bookmarks.length > 0
               ? `${bookmarks.length} ayat tersimpan di bookmark.`
-              : "Belum ada bookmark. Buka detail ayat lalu simpan bookmark dari sana."}
+              : userId
+                ? "Belum ada bookmark. Buka detail ayat lalu simpan bookmark dari sana."
+                : "Login Google untuk melihat bookmark lintas device milikmu."}
           </div>
 
           <div className="grid gap-4">

@@ -70,9 +70,6 @@ export function AboutClient() {
 
       <section className="mx-auto flex min-h-screen w-[min(1120px,calc(100%_-_1.4rem))] snap-start snap-always items-center px-0 pb-12 pt-28 sm:w-[min(1120px,calc(100%_-_2rem))] sm:pb-20">
         <div className="flex w-[min(760px,100%)] flex-col items-start">
-          <p className="mb-6 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)] sm:mb-9 sm:text-[0.68rem]">
-            Arsip baca & analisis teks
-          </p>
           <h1 className="sr-only">Qurai</h1>
           <div
             data-about-hero-wordmark

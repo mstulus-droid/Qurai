@@ -460,7 +460,11 @@ export async function getHighlightedVerses(limit = 3): Promise<VerseRecord[]> {
   return result.rows.map(mapVerse);
 }
 
-export async function isVerseBookmarked(verseId: number): Promise<boolean> {
+export async function isVerseBookmarked(verseId: number, userId: string | null): Promise<boolean> {
+  if (!userId) {
+    return false;
+  }
+
   const pool = getPool();
   const result = await pool.query<{ exists: boolean }>(
     `
@@ -468,15 +472,16 @@ export async function isVerseBookmarked(verseId: number): Promise<boolean> {
         select 1
         from bookmarks
         where verse_id = $1
+          and user_id = $2
       ) as exists
     `,
-    [verseId],
+    [verseId, userId],
   );
 
   return result.rows[0]?.exists ?? false;
 }
 
-export async function getBookmarks(): Promise<BookmarkRecord[]> {
+export async function getBookmarks(userId: string): Promise<BookmarkRecord[]> {
   const pool = getPool();
   const result = await pool.query<{
     id: number;
@@ -521,8 +526,10 @@ export async function getBookmarks(): Promise<BookmarkRecord[]> {
       from bookmarks b
       join verses v on v.id = b.verse_id
       join verse_analyses a on a.verse_id = v.id
+      where b.user_id = $1
       order by b.created_at desc
     `,
+    [userId],
   );
 
   return result.rows.map((row) => ({

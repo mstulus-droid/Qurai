@@ -20,6 +20,7 @@ import { SurahStickyTitle } from "./surah-sticky-title";
 import { SurahStatsPanel } from "./surah-stats-panel";
 import { SurahTopicPanel } from "./surah-topic-panel";
 import { VerseAnalysisDisclosures } from "./verse-analysis-disclosures";
+import { HashAnchorScroll } from "./hash-anchor-scroll";
 import { MarkdownText } from "@/components/markdown-text";
 import { getArticlesForVerse } from "@/lib/article-refs";
 
@@ -220,6 +221,7 @@ export default async function SurahDetailPage({ params }: PageProps) {
       id="surah-reading-root"
       className="qurai-page px-3 py-8 sm:px-8 lg:px-12"
     >
+      <HashAnchorScroll />
       <ReadingProgress targetId="surah-reading-root" />
       <SurahDisplayShell>
         <SurahStickyTitle surahNumber={surah.id} title={surah.nameLatin} />
