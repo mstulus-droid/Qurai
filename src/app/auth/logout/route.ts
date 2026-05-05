@@ -9,8 +9,21 @@ function sanitizeNext(value: string | null) {
   return value;
 }
 
+function getRequestOrigin(request: Request) {
+  const url = new URL(request.url);
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const forwardedProto = request.headers.get("x-forwarded-proto") ?? "https";
+
+  if (forwardedHost) {
+    return `${forwardedProto}://${forwardedHost}`;
+  }
+
+  return url.origin;
+}
+
 export async function GET(request: Request) {
-  const { origin, searchParams } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
+  const origin = getRequestOrigin(request);
   const next = sanitizeNext(searchParams.get("next"));
 
   if (hasSupabaseAuthConfig()) {
