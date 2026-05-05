@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 
@@ -8,7 +9,21 @@ export const metadata: Metadata = {
     "Analisis mendalam tentang teks, sejarah, dan pertanyaan yang jarang diajukan.",
 };
 
-const articles = [
+type ArticleItem = {
+  slug: string;
+  number: string;
+  title: string;
+  excerpt: string;
+  surah: string;
+  date: string;
+  readTime: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+};
+
+const articles: ArticleItem[] = [
   {
     slug: "dzulqarnain",
     number: "01",
@@ -18,6 +33,10 @@ const articles = [
     surah: "Al-Kahf 18:83–98",
     date: "Mei 2026",
     readTime: "8 menit",
+    image: {
+      src: "/article-images/01-dzulqarnain-dan-teks-yang-sudah-ada-sebelumnya-illustration.png",
+      alt: "Ilustrasi editorial medali kuno di atas latar kain gelap",
+    },
   },
   {
     slug: "babi-dan-kencing-unta",
@@ -28,6 +47,10 @@ const articles = [
     surah: "Al-Baqarah 2:173 · Al-Maidah 5:3",
     date: "Mei 2026",
     readTime: "7 menit",
+    image: {
+      src: "/article-images/02-babi-matang-kencing-unta-illustration.png",
+      alt: "Ilustrasi editorial botol cairan amber di depan kandang unta",
+    },
   },
   {
     slug: "sistem-moral-quran",
@@ -38,6 +61,10 @@ const articles = [
     surah: "At-Tawbah 9:5 · An-Nisa 4:34",
     date: "Mei 2026",
     readTime: "14 menit",
+    image: {
+      src: "/article-images/03-etika-abad-ke-7-yang-dianggap-abadi-illustration.png",
+      alt: "Ilustrasi editorial seorang penulis tua di ruang bercahaya",
+    },
   },
   {
     slug: "waraqah-dan-wahyu",
@@ -48,6 +75,10 @@ const articles = [
     surah: "Al-An'am 6:19 · Yunus 10:37",
     date: "Mei 2026",
     readTime: "10 menit",
+    image: {
+      src: "/article-images/04-waraqah-bin-naufal-dan-asal-usul-wahyu-illustration.png",
+      alt: "Ilustrasi editorial figur tua berjanggut di lanskap gurun",
+    },
   },
   {
     slug: "wahyu-konvenien",
@@ -58,6 +89,10 @@ const articles = [
     surah: "Al-Ahzab 33:50 · At-Tahrim 66:1",
     date: "Mei 2026",
     readTime: "12 menit",
+    image: {
+      src: "/article-images/05-ketika-wahyu-mengikuti-kepentingan-pribadi-nabi-illustration.png",
+      alt: "Ilustrasi editorial monumen kepalan tangan batu",
+    },
   },
   {
     slug: "lempar-jumrah",
@@ -68,6 +103,10 @@ const articles = [
     surah: "Al-Baqarah 2:196 · Al-Hajj 22:27",
     date: "Mei 2026",
     readTime: "7 menit",
+    image: {
+      src: "/article-images/06-ritual-yang-tidak-ada-dalam-al-quran-illustration.png",
+      alt: "Ilustrasi editorial kerumunan ritual di dekat dinding batu monumental",
+    },
   },
   {
     slug: "warisan-pagan-arab",
@@ -78,6 +117,24 @@ const articles = [
     surah: "An-Najm 53:19 · Al-Ankabut 29:61",
     date: "Mei 2026",
     readTime: "10 menit",
+    image: {
+      src: "/article-images/07-kaaba-allah-dan-apa-yang-ada-sebelumnya-illustration.png",
+      alt: "Ilustrasi editorial bangunan kubus gelap di halaman ziarah kuno",
+    },
+  },
+  {
+    slug: "kritik-quran",
+    number: "08",
+    title: "Apa yang Terlihat Setelah Teks Diperiksa",
+    excerpt:
+      "Al-Quran disusun bukan secara kronologis. Proses kompilasi menunjukkan variasi dan kehilangan materi. Ada kontradiksi internal yang tidak diselesaikan oleh doktrin abrogasi. Ada klaim ilmiah yang bermasalah.",
+    surah: "Al-Baqarah 2:23 · Al-Hijr 15:9",
+    date: "Mei 2026",
+    readTime: "14 menit",
+    image: {
+      src: "/article-images/08-apa-yang-terlihat-setelah-teks-diperiksa-illustration.png",
+      alt: "Ilustrasi editorial kaca pembesar di atas halaman manuskrip",
+    },
   },
 ];
 
@@ -124,8 +181,21 @@ export default function ArtikelPage() {
                   {article.excerpt}
                 </p>
               </div>
-              <div className="shrink-0 self-center font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] transition group-hover:text-[var(--qurai-gold)]">
-                Baca →
+              <div className="flex shrink-0 flex-col items-start gap-3 self-stretch sm:w-44 sm:items-end lg:w-52">
+                {article.image ? (
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[0.65rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] sm:w-44 lg:w-52">
+                    <Image
+                      src={article.image.src}
+                      alt={article.image.alt}
+                      fill
+                      sizes="(max-width: 640px) calc(100vw - 3.5rem), 208px"
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                ) : null}
+                <div className="mt-auto font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] transition group-hover:text-[var(--qurai-gold)]">
+                  Baca →
+                </div>
               </div>
             </Link>
           ))}

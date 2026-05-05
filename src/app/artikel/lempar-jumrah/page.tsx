@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 
@@ -7,6 +8,15 @@ export const metadata: Metadata = {
   title: "Ritual yang Tidak Ada dalam Al-Quran | Qurai",
   description:
     "Al-Quran cukup detail soal haji — ihram, wukuf, thawaf, sa'i, kurban. Tapi lempar jumrah tidak disebut satu kali pun. Seluruh dasarnya berasal dari hadis dan tradisi Arab yang sudah ada sebelum Islam.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/06-ritual-yang-tidak-ada-dalam-al-quran-illustration.png",
+        width: 1792,
+        height: 1024,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -55,6 +65,18 @@ export default function LemparJumrahArticle() {
             dari hadis dan tradisi Arab yang sudah ada sebelum Islam.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/06-ritual-yang-tidak-ada-dalam-al-quran-illustration.png"
+            alt="Ilustrasi editorial kerumunan ritual di dekat dinding batu monumental"
+            width={1792}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 

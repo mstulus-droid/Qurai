@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 
@@ -7,6 +8,15 @@ export const metadata: Metadata = {
   title: "Kaaba, Allah, dan Apa yang Ada Sebelumnya | Qurai",
   description:
     "Kaaba punya sejarah panjang sebagai kuil politeistik. Nama Allah muncul jauh sebelum Islam. Ritual haji sudah berlangsung berabad-abad sebelum Muhammad. Ini bukan tuduhan — ini catatan historis yang bisa diperiksa.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/07-kaaba-allah-dan-apa-yang-ada-sebelumnya-illustration.png",
+        width: 1792,
+        height: 1024,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -55,6 +65,18 @@ export default function WarisanPaganArabArticle() {
             Muhammad. Ini bukan tuduhan — ini catatan historis yang bisa diperiksa.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/07-kaaba-allah-dan-apa-yang-ada-sebelumnya-illustration.png"
+            alt="Ilustrasi editorial bangunan kubus gelap di halaman ziarah kuno"
+            width={1792}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 

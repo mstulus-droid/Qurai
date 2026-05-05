@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import { ArticleNav } from "@/components/article-nav";
@@ -8,6 +9,15 @@ export const metadata: Metadata = {
   title: "Etika Abad Ke-7 yang Dianggap Abadi | Qurai",
   description:
     "Al-Quran mengklaim universalisme moral — semua manusia setara di hadapan Allah. Tapi di kitab yang sama ada perintah bunuh orang kafir, legalitas pukul istri, dan perbudakan seksual. Dua klaim itu tidak bisa berdiri bersamaan.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/03-etika-abad-ke-7-yang-dianggap-abadi-illustration.png",
+        width: 1792,
+        height: 1024,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -58,6 +68,18 @@ export default function SistemMoralQuranArticle() {
             itu tidak bisa berdiri bersamaan.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/03-etika-abad-ke-7-yang-dianggap-abadi-illustration.png"
+            alt="Ilustrasi editorial seorang penulis tua di ruang bercahaya"
+            width={1792}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 

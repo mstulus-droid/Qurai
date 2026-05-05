@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import { ArticleNav } from "@/components/article-nav";
@@ -8,6 +9,15 @@ export const metadata: Metadata = {
   title: "Waraqah bin Naufal dan Asal-Usul Wahyu | Qurai",
   description:
     "Orang pertama yang memvalidasi pengalaman Muhammad adalah sepupu isterinya — seorang pendeta Kristen yang hafal kitab suci Ibrani. Bertanya siapa yang sebenarnya membentuk narasi awal Islam bukan pertanyaan yang mudah dijawab.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/04-waraqah-bin-naufal-dan-asal-usul-wahyu-illustration.png",
+        width: 1792,
+        height: 1024,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -56,6 +66,18 @@ export default function WaraqahDanWahyuArticle() {
             membentuk narasi awal Islam lebih sulit dijawab dari yang biasanya diakui.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/04-waraqah-bin-naufal-dan-asal-usul-wahyu-illustration.png"
+            alt="Ilustrasi editorial figur tua berjanggut di lanskap gurun"
+            width={1792}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 
