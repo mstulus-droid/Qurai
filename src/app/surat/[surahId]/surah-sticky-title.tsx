@@ -47,7 +47,7 @@ export function SurahStickyTitle({
 
   return (
     <div
-      className={`pointer-events-none fixed inset-x-0 top-0 z-30 transition-opacity duration-300 ${
+      className={`pointer-events-none fixed inset-x-0 top-0 z-[70] transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       aria-hidden={!isVisible}

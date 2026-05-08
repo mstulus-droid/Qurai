@@ -136,6 +136,100 @@ const articles: ArticleItem[] = [
       alt: "Ilustrasi editorial kaca pembesar di atas halaman manuskrip",
     },
   },
+  {
+    slug: "preservasi-quran",
+    number: "09",
+    title: 'Mitos "Preservasi Sempurna" Al-Quran',
+    excerpt:
+      "Manuskrip Sana'a memuat teks yang dihapus dan ditulisi ulang. 4.000 varian terdokumentasikan dari 14 manuskrip tertua. Seperempat kosakata Al-Quran bukan dari Arab. Kronologi pembentukannya tidak cocok dengan narasi 22 tahun pewahyuan.",
+    surah: "Yusuf 12:2 · Al-Hijr 15:9",
+    date: "Mei 2026",
+    readTime: "15 menit",
+    image: {
+      src: "/article-images/09-mitos-preservasi-sempurna-al-quran-illustration.png",
+      alt: "Ilustrasi editorial fragmen manuskrip tua diperiksa dengan kaca pembesar",
+    },
+  },
+  {
+    slug: "kurban-ibrahim",
+    number: "10",
+    title: "Siapa yang Hampir Disembelih Ibrahim?",
+    excerpt:
+      "Al-Quran tidak menyebut nama anak Ibrahim. Para sahabat terdekat Nabi tidak sepakat siapa. Al-Hajj 22:37 sendiri mengatakan daging dan darahnya tidak sampai kepada Allah. Dan penyembelihan di Kaaba sudah ada jauh sebelum Islam.",
+    surah: "As-Saffat 37:107 · Al-Hajj 22:37",
+    date: "Mei 2026",
+    readTime: "12 menit",
+    image: {
+      src: "/article-images/10-siapa-yang-hampir-disembelih-ibrahim-illustration.png",
+      alt: "Ilustrasi editorial altar batu kuno dengan pisau dan siluet domba di kejauhan",
+    },
+  },
+  {
+    slug: "an-nadr-ibn-al-harith",
+    number: "11",
+    title: "Orang yang Tidak Bisa Ditebus",
+    excerpt:
+      "Dari tujuh puluh tawanan Badar, hanya dua yang dieksekusi tanpa tebusan. An-Nadr ibn al-Harith bukan pemimpin militer. Ia ancaman naratif, seorang orator yang secara sistematis menantang klaim Al-Quran di majelis yang sama.",
+    surah: "Al-Anfal 8:31 · Al-Baqarah 2:23",
+    date: "Mei 2026",
+    readTime: "10 menit",
+    image: {
+      src: "/article-images/11-orang-yang-tidak-bisa-ditebus-illustration.png",
+      alt: "Ilustrasi editorial kantong tebusan, gulungan tertutup, dan pedang di jalan gurun",
+    },
+  },
+  {
+    slug: "allah-mekah-madinah",
+    number: "12",
+    title: "Allah di Mekah, Allah di Madinah",
+    excerpt:
+      "Al-Quran menyebut anggur sebagai rezeki di Mekah, lalu menyebutnya perbuatan setan di Madinah. Dari toleransi ke perintah membunuh, dari kesetaraan ke hierarki — semuanya berkorelasi dengan satu hal: kekuasaan.",
+    surah: "At-Taubah 9:29 · An-Nahl 16:67",
+    date: "Mei 2026",
+    readTime: "13 menit",
+    image: {
+      src: "/article-images/12-allah-di-mekah-allah-di-madinah-illustration.png",
+      alt: "Ilustrasi editorial dua kota historis dihubungkan jalan manuskrip dari anggur ke palu hukum",
+    },
+  },
+  {
+    slug: "ashabul-kahfi",
+    number: "13",
+    title: "Gua, Anjing, dan Naskah yang Sudah Ada Sembilan Puluh Tahun Sebelumnya",
+    excerpt:
+      "Kisah Ashabul Kahfi di Al-Quran punya pendahulu yang bisa dilacak: naskah Syriac abad ke-6, ditulis Jacob of Sarug, dengan detail yang sama persis — termasuk anjing di depan gua dan koin yang sudah tidak berlaku.",
+    surah: "Al-Kahf 18:22 · Al-Kahf 18:9",
+    date: "Mei 2026",
+    readTime: "11 menit",
+    image: {
+      src: "/article-images/13-gua-anjing-dan-naskah-yang-sudah-ada-sembilan-puluh-tahun-sebelumnya-illustration.png",
+      alt: "Ilustrasi editorial gua malam dengan anjing, koin kuno, dan naskah tua",
+    },
+  },
+  {
+    slug: "bumi-datar",
+    number: "14",
+    title: "Bumi yang Dihamparkan",
+    excerpt:
+      "Al-Quran menggunakan lima kata berbeda untuk menggambarkan bumi sebagai permukaan yang dibentangkan. Tafsir al-Jalalayn pada abad ke-15 mengakui ini secara eksplisit: bumi datar, bukan bola. Para mufasir itu tahu ada klaim sebaliknya dari astronomi Yunani, dan tetap memilih bacaan literal.",
+    surah: "Al-Ghasyiyah 88:20 · Al-Kahf 18:86",
+    date: "Mei 2026",
+    readTime: "9 menit",
+    image: {
+      src: "/article-images/14-bumi-yang-dihamparkan-illustration.png",
+      alt: "Ilustrasi editorial diagram kosmologi bumi terhampar di atas perkamen tua",
+    },
+  },
+  {
+    slug: "tidak-ada-paksaan",
+    number: "15",
+    title: "Tidak Ada Paksaan",
+    excerpt:
+      "Al-Baqarah 2:256 menyatakan tidak ada paksaan dalam agama. Al-Kahfi 18:29 menyebutkan percaya atau tidak percaya adalah pilihan terbuka. Tapi fiqh klasik dari empat mazhab besar menetapkan hukuman mati bagi yang keluar, dan mekanisme hukumnya menguji iman, bukan tindakan.",
+    surah: "Al-Baqarah 2:256 · An-Nisa 4:89",
+    date: "Mei 2026",
+    readTime: "10 menit",
+  },
 ];
 
 export default function ArtikelPage() {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ThemedWordmark } from "./theme-toggle";
+import { ThemedWordmark, ThemeToggle } from "./theme-toggle";
 
 type Props = {
   backHref?: string;
@@ -35,20 +35,23 @@ export function ArticleNav({ backHref, backLabel }: Props) {
       >
         <ThemedWordmark sizes="150px" className="object-contain object-left" />
       </Link>
-      <div className="hidden items-center gap-[clamp(1.2rem,3vw,2.5rem)] font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] sm:flex">
-        <Link href="/" className="transition hover:text-[var(--qurai-green)]">
-          Bedah Quran
-        </Link>
-        {backHref ? (
-          <Link
-            href={backHref}
-            className="transition hover:text-[var(--qurai-gold)]"
-          >
-            {backLabel ?? "Artikel"}
+      <div className="flex items-center gap-4 sm:gap-[clamp(1.2rem,3vw,2.5rem)]">
+        <div className="hidden items-center gap-[clamp(1.2rem,3vw,2.5rem)] font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] sm:flex">
+          <Link href="/" className="transition hover:text-[var(--qurai-green)]">
+            Bedah Quran
           </Link>
-        ) : (
-          <span className="text-[var(--qurai-gold)]">Artikel</span>
-        )}
+          {backHref ? (
+            <Link
+              href={backHref}
+              className="transition hover:text-[var(--qurai-gold)]"
+            >
+              {backLabel ?? "Artikel"}
+            </Link>
+          ) : (
+            <span className="text-[var(--qurai-gold)]">Artikel</span>
+          )}
+        </div>
+        <ThemeToggle />
       </div>
     </nav>
   );
