@@ -230,6 +230,16 @@ const articles: ArticleItem[] = [
     date: "Mei 2026",
     readTime: "10 menit",
   },
+  {
+    slug: "nikah-mutah",
+    number: "16",
+    title: "Kata yang Satu Ini",
+    excerpt:
+      "Tiga mufasir klasik terbesar sepakat bahwa An-Nisa 4:24 berbicara tentang nikah mut'ah. Tidak ada ayat Quran yang membatalkannya. Yang melarangnya adalah Umar bin Khattab, dan Umar sendiri yang mencatatkan pengakuan itu dalam Shahih Muslim.",
+    surah: "An-Nisa 4:24 · Al-Tahrim 66:1",
+    date: "Mei 2026",
+    readTime: "10 menit",
+  },
 ];
 
 export default function ArtikelPage() {

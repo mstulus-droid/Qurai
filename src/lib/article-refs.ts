@@ -587,6 +587,12 @@ const REFS: Array<{
   { surah: 18, ayatStart: 25, ayatEnd: 25, slug: "ashabul-kahfi", title: "Gua, Anjing, dan Naskah yang Sudah Ada Sembilan Puluh Tahun Sebelumnya" },
   { surah: 11, ayatStart: 49, ayatEnd: 49, slug: "ashabul-kahfi", title: "Gua, Anjing, dan Naskah yang Sudah Ada Sembilan Puluh Tahun Sebelumnya" },
   { surah: 12, ayatStart: 3, ayatEnd: 3, slug: "ashabul-kahfi", title: "Gua, Anjing, dan Naskah yang Sudah Ada Sembilan Puluh Tahun Sebelumnya" },
+  // Artikel: Kata yang Satu Ini (nikah-mutah)
+  { surah: 4, ayatStart: 24, ayatEnd: 24, slug: "nikah-mutah", title: "Kata yang Satu Ini" },
+  { surah: 2, ayatStart: 219, ayatEnd: 219, slug: "nikah-mutah", title: "Kata yang Satu Ini" },
+  { surah: 5, ayatStart: 90, ayatEnd: 90, slug: "nikah-mutah", title: "Kata yang Satu Ini" },
+  { surah: 17, ayatStart: 32, ayatEnd: 32, slug: "nikah-mutah", title: "Kata yang Satu Ini" },
+  { surah: 66, ayatStart: 1, ayatEnd: 1, slug: "nikah-mutah", title: "Kata yang Satu Ini" },
   // Artikel: Tidak Ada Paksaan (tidak-ada-paksaan)
   { surah: 2, ayatStart: 256, ayatEnd: 256, slug: "tidak-ada-paksaan", title: "Tidak Ada Paksaan" },
   { surah: 4, ayatStart: 89, ayatEnd: 89, slug: "tidak-ada-paksaan", title: "Tidak Ada Paksaan" },
