@@ -8,6 +8,24 @@ export const metadata: Metadata = {
   title: "Seperlima untuk Allah, Empat Perlima untuk Kalian | Qurai",
   description:
     "Al-Anfal 8:1 menyatakan ghanimah milik Allah dan Rasul sepenuhnya. Al-Anfal 8:41, beberapa puluh ayat kemudian, membagi empat perlima untuk pejuang. Sistem seperlima itu sudah ada sebelum Islam, dalam tradisi Arab pra-Islam disebut mirbā'. Yang berubah bukan angkanya.",
+  alternates: {
+    canonical: "/artikel/ghanimah",
+  },
+  openGraph: {
+    title: "Seperlima untuk Allah, Empat Perlima untuk Kalian | Qurai",
+    description:
+      "Al-Anfal 8:1 menyatakan ghanimah milik Allah dan Rasul sepenuhnya. Al-Anfal 8:41 membagi empat perlima untuk pejuang.",
+    url: "/artikel/ghanimah",
+    type: "article",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seperlima untuk Allah, Empat Perlima untuk Kalian | Qurai",
+    description:
+      "Al-Anfal 8:1 menyatakan ghanimah milik Allah dan Rasul sepenuhnya. Al-Anfal 8:41 membagi empat perlima untuk pejuang.",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
 };
 
 function VerseLink({

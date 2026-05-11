@@ -8,6 +8,24 @@ export const metadata: Metadata = {
   title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi | Qurai",
   description:
     "Al-Baqarah 2:106 mengakui bahwa ada ayat yang diganti dengan yang 'lebih baik.' Tapi kalau ada yang lebih baik, artinya yang lama kurang baik. Dan wahyu yang kurang baik dari entitas yang diklaim mahatahu adalah kontradiksi yang tidak bisa diselesaikan hanya dengan menamainya kebijaksanaan bertahap.",
+  alternates: {
+    canonical: "/artikel/nasikh-mansukh",
+  },
+  openGraph: {
+    title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi | Qurai",
+    description:
+      "Al-Baqarah 2:106 mengakui bahwa ada ayat yang diganti dengan yang 'lebih baik.' Tapi kalau ada yang lebih baik, artinya yang lama kurang baik.",
+    url: "/artikel/nasikh-mansukh",
+    type: "article",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi | Qurai",
+    description:
+      "Al-Baqarah 2:106 mengakui bahwa ada ayat yang diganti dengan yang 'lebih baik.' Tapi kalau ada yang lebih baik, artinya yang lama kurang baik.",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
 };
 
 function VerseLink({

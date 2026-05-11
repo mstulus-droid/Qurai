@@ -8,6 +8,24 @@ export const metadata: Metadata = {
   title: "Dari Mana Datangnya Pisau Itu? | Qurai",
   description:
     "Yusuf 12:31 menceritakan para wanita yang mengiris tangan karena terpesona Yusuf. Adegan itu tidak ada di Kitab Kejadian. Tapi ada di Bereshit Rabbah, kompilasi legenda Yahudi abad ke-5. Al-Qur'an menyebut kisah ini 'ahsanal qasas' — kisah yang paling baik.",
+  alternates: {
+    canonical: "/artikel/surat-yusuf-dan-midrash",
+  },
+  openGraph: {
+    title: "Dari Mana Datangnya Pisau Itu? | Qurai",
+    description:
+      "Yusuf 12:31 menceritakan para wanita yang mengiris tangan karena terpesona Yusuf. Adegan itu ada di Bereshit Rabbah.",
+    url: "/artikel/surat-yusuf-dan-midrash",
+    type: "article",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dari Mana Datangnya Pisau Itu? | Qurai",
+    description:
+      "Yusuf 12:31 menceritakan para wanita yang mengiris tangan karena terpesona Yusuf. Adegan itu ada di Bereshit Rabbah.",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
 };
 
 function VerseLink({

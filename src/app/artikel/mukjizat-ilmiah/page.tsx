@@ -8,6 +8,24 @@ export const metadata: Metadata = {
   title: "Pengetahuan yang Tidak Melampaui Zamannya | Qurai",
   description:
     "At-Tariq 86:5-7 mengklaim sperma berasal dari antara tulang sulbi dan tulang dada — salah secara anatomis, tapi konsisten dengan teori Galen abad ke-2. Gunung diklaim mencegah gempa di tempat gunung justru menjadi zona gempa paling aktif. Klaim 'mukjizat ilmiah' yang tidak melampaui pengetahuan yang sudah ada.",
+  alternates: {
+    canonical: "/artikel/mukjizat-ilmiah",
+  },
+  openGraph: {
+    title: "Pengetahuan yang Tidak Melampaui Zamannya | Qurai",
+    description:
+      "At-Tariq 86:5-7, teori Galen, gunung, dan klaim mukjizat ilmiah yang tidak melampaui pengetahuan zamannya.",
+    url: "/artikel/mukjizat-ilmiah",
+    type: "article",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pengetahuan yang Tidak Melampaui Zamannya | Qurai",
+    description:
+      "At-Tariq 86:5-7, teori Galen, gunung, dan klaim mukjizat ilmiah yang tidak melampaui pengetahuan zamannya.",
+    images: ["/brand/qurai-app-icon-dark.png"],
+  },
 };
 
 function VerseLink({

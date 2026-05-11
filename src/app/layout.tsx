@@ -11,6 +11,7 @@ import { InitialSplash } from "@/app/initial-splash";
 import { NavigationProvider } from "@/components/navigation-provider";
 import { NavigationLoading } from "@/components/navigation-loading";
 import { ThemeController } from "@/components/theme-toggle";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -45,15 +46,22 @@ const sourceSerif = Source_Serif_4({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Qurai",
+  url: SITE_URL,
+  inLanguage: "id-ID",
+  description:
+    "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Qurai",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Qurai",
+    template: "%s",
+  },
   description:
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
   icons: {
@@ -75,6 +83,10 @@ export const metadata: Metadata = {
     title: "Qurai",
     description:
       "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
+    url: "/",
+    siteName: "Qurai",
+    locale: "id_ID",
+    type: "website",
     images: [
       {
         url: "/brand/qurai-app-icon-dark.png",
@@ -82,6 +94,13 @@ export const metadata: Metadata = {
         height: 512,
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Qurai",
+    description:
+      "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
+    images: ["/brand/qurai-app-icon-dark.png"],
   },
 };
 
@@ -97,6 +116,12 @@ export default function RootLayout({
       className={`${manrope.variable} ${plexMono.variable} ${scheherazade.variable} ${quranComplex.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html:
