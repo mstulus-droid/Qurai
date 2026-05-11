@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Dzulqarnain dan Teks yang Sudah Ada Sebelumnya | Qurai",
@@ -326,6 +327,8 @@ export default function DzulqarnainArticle() {
             tersedia untuk dibaca. Hubungi kami kalau ingin salinannya.
           </p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

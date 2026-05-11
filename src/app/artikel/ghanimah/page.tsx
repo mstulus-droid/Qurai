@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Seperlima untuk Allah, Empat Perlima untuk Kalian | Qurai",
@@ -157,6 +158,8 @@ export default function GhanimahArticle() {
 
           <p>Sebuah sistem yang cukup terperinci untuk disebut insidental.</p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

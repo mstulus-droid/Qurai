@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Ketika Wahyu Mengikuti Kepentingan Pribadi Nabi | Qurai",
@@ -416,6 +417,8 @@ export default function WahyuKonvenienArticle() {
             pertanyaannya pergi.
           </p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

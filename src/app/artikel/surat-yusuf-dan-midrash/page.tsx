@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Dari Mana Datangnya Pisau Itu? | Qurai",
@@ -247,6 +248,8 @@ export default function SuratYusufDanMidrashArticle() {
             sana.
           </p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

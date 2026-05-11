@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Allah di Mekah, Allah di Madinah | Qurai",
@@ -414,6 +415,8 @@ export default function AllahMekahMadinahArticle() {
             terakhir itu yang berlaku.
           </p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

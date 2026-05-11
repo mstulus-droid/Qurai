@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Bumi yang Dihamparkan | Qurai",
@@ -296,6 +297,8 @@ export default function BumiDatarArticle() {
 
           <p>Di sana ada Dzulqarnain. Di sana ada mata airnya. Dan di sana matahari turun.</p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

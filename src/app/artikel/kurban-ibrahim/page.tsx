@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Siapa yang Hampir Disembelih Ibrahim? | Qurai",
@@ -265,6 +266,8 @@ export default function KurbanIbrahimArticle() {
             praktik yang sudah berjalan, jawabannya tidak ada di dalam teks.
           </p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

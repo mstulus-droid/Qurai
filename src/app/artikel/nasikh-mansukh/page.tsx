@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi | Qurai",
@@ -211,6 +212,8 @@ export default function NasikhMansukhArticle() {
             Al-Qur'an tidak menyertakan daftar yang sudah diganti.
           </p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 

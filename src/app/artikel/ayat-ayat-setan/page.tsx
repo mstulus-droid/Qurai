@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
+import { ArticleShare } from "@/components/article-share";
 
 export const metadata: Metadata = {
   title: "Ayat-ayat Setan | Qurai",
@@ -315,6 +316,8 @@ export default function AyatAyatSetanArticle() {
 
           <p>Kedua ayat itu ada dalam kitab yang sama.</p>
         </div>
+
+        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
