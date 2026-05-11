@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -17,14 +18,20 @@ export const metadata: Metadata = {
       "Al-Anfal 8:1 menyatakan ghanimah milik Allah dan Rasul sepenuhnya. Al-Anfal 8:41 membagi empat perlima untuk pejuang.",
     url: "/artikel/ghanimah",
     type: "article",
-    images: ["/brand/qurai-app-icon-dark.png"],
+    images: [
+      {
+        url: "/article-images/27-ghanimah-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Seperlima untuk Allah, Empat Perlima untuk Kalian | Qurai",
     description:
       "Al-Anfal 8:1 menyatakan ghanimah milik Allah dan Rasul sepenuhnya. Al-Anfal 8:41 membagi empat perlima untuk pejuang.",
-    images: ["/brand/qurai-app-icon-dark.png"],
+    images: ["/article-images/27-ghanimah-illustration.png"],
   },
 };
 
@@ -76,6 +83,17 @@ export default function GhanimahArticle() {
             tradisi Arab pra-Islam disebut mirbā'. Yang berubah bukan angkanya.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/27-ghanimah-illustration.png"
+            alt="Ilustrasi editorial pembagian harta rampasan menjadi satu bagian kecil dan empat bagian besar"
+            width={1672}
+            height={941}
+            priority
+            className="h-auto w-full object-cover"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 

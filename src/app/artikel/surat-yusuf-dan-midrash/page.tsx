@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -17,14 +18,20 @@ export const metadata: Metadata = {
       "Yusuf 12:31 menceritakan para wanita yang mengiris tangan karena terpesona Yusuf. Adegan itu ada di Bereshit Rabbah.",
     url: "/artikel/surat-yusuf-dan-midrash",
     type: "article",
-    images: ["/brand/qurai-app-icon-dark.png"],
+    images: [
+      {
+        url: "/article-images/28-surat-yusuf-dan-midrash-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Dari Mana Datangnya Pisau Itu? | Qurai",
     description:
       "Yusuf 12:31 menceritakan para wanita yang mengiris tangan karena terpesona Yusuf. Adegan itu ada di Bereshit Rabbah.",
-    images: ["/brand/qurai-app-icon-dark.png"],
+    images: ["/article-images/28-surat-yusuf-dan-midrash-illustration.png"],
   },
 };
 
@@ -76,6 +83,17 @@ export default function SuratYusufDanMidrashArticle() {
             menyebut kisah ini <em>ahsanal qasas</em>, kisah yang paling baik.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/28-surat-yusuf-dan-midrash-illustration.png"
+            alt="Ilustrasi editorial pisau jamuan, buah, dan manuskrip kuno di meja gelap"
+            width={1672}
+            height={941}
+            priority
+            className="h-auto w-full object-cover"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 

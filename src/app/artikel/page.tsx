@@ -401,6 +401,10 @@ const articles: ArticleItem[] = [
     surah: "Al-Mujadilah 58:12 · Al-Baqarah 2:106",
     date: "Mei 2026",
     readTime: "9 menit",
+    image: {
+      src: "/article-images/26-nasikh-mansukh-illustration.png",
+      alt: "Ilustrasi editorial manuskrip palimpsest dengan koreksi hukum di meja scriptorium gelap",
+    },
   },
   {
     slug: "ghanimah",
@@ -411,6 +415,10 @@ const articles: ArticleItem[] = [
     surah: "Al-Anfal 8:1 · Al-Anfal 8:41",
     date: "Mei 2026",
     readTime: "8 menit",
+    image: {
+      src: "/article-images/27-ghanimah-illustration.png",
+      alt: "Ilustrasi editorial pembagian harta rampasan menjadi satu bagian kecil dan empat bagian besar",
+    },
   },
   {
     slug: "surat-yusuf-dan-midrash",
@@ -421,6 +429,10 @@ const articles: ArticleItem[] = [
     surah: "Yusuf 12:3 · Yusuf 12:31",
     date: "Mei 2026",
     readTime: "11 menit",
+    image: {
+      src: "/article-images/28-surat-yusuf-dan-midrash-illustration.png",
+      alt: "Ilustrasi editorial pisau jamuan, buah, dan manuskrip kuno di meja gelap",
+    },
   },
   {
     slug: "mukjizat-ilmiah",
@@ -431,6 +443,10 @@ const articles: ArticleItem[] = [
     surah: "At-Tariq 86:5 · An-Nahl 16:15",
     date: "Mei 2026",
     readTime: "10 menit",
+    image: {
+      src: "/article-images/29-mukjizat-ilmiah-illustration.png",
+      alt: "Ilustrasi editorial instrumen ilmu kuno, diagram anatomi samar, dan model gunung di meja studi",
+    },
   },
 ];
 

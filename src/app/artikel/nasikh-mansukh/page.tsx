@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -17,14 +18,20 @@ export const metadata: Metadata = {
       "Al-Baqarah 2:106 mengakui bahwa ada ayat yang diganti dengan yang 'lebih baik.' Tapi kalau ada yang lebih baik, artinya yang lama kurang baik.",
     url: "/artikel/nasikh-mansukh",
     type: "article",
-    images: ["/brand/qurai-app-icon-dark.png"],
+    images: [
+      {
+        url: "/article-images/26-nasikh-mansukh-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi | Qurai",
     description:
       "Al-Baqarah 2:106 mengakui bahwa ada ayat yang diganti dengan yang 'lebih baik.' Tapi kalau ada yang lebih baik, artinya yang lama kurang baik.",
-    images: ["/brand/qurai-app-icon-dark.png"],
+    images: ["/article-images/26-nasikh-mansukh-illustration.png"],
   },
 };
 
@@ -77,6 +84,17 @@ export default function NasikhMansukhArticle() {
             dengan menamainya kebijaksanaan bertahap.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/26-nasikh-mansukh-illustration.png"
+            alt="Ilustrasi editorial manuskrip palimpsest dengan koreksi hukum di meja scriptorium gelap"
+            width={1672}
+            height={941}
+            priority
+            className="h-auto w-full object-cover"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 
