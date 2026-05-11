@@ -298,7 +298,7 @@ export default function BumiDatarArticle() {
           <p>Di sana ada Dzulqarnain. Di sana ada mata airnya. Dan di sana matahari turun.</p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -335,6 +335,8 @@ export default function BumiDatarArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

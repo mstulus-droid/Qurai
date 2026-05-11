@@ -352,7 +352,7 @@ export default function PreservasiQuranArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -387,6 +387,8 @@ export default function PreservasiQuranArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

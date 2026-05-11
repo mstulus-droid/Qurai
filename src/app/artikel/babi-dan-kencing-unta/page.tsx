@@ -233,7 +233,7 @@ export default function BabiDanKencingUntaArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -263,6 +263,8 @@ export default function BabiDanKencingUntaArticle() {
             </div>
           </div>
         </footer>
+
+        <ArticleShare />
 
         <ArticleRecommendations currentSlug="babi-dan-kencing-unta" />
       </article>

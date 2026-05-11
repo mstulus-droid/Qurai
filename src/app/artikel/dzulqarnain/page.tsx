@@ -328,7 +328,7 @@ export default function DzulqarnainArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -352,6 +352,8 @@ export default function DzulqarnainArticle() {
             </div>
           </div>
         </footer>
+
+        <ArticleShare />
 
         <ArticleRecommendations currentSlug="dzulqarnain" />
       </article>

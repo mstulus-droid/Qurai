@@ -239,7 +239,7 @@ export default function TidakAdaPaksaanArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -273,6 +273,8 @@ export default function TidakAdaPaksaanArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

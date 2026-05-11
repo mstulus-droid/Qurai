@@ -393,7 +393,7 @@ export default function SistemMoralQuranArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -429,6 +429,8 @@ export default function SistemMoralQuranArticle() {
             </div>
           </div>
         </footer>
+
+        <ArticleShare />
 
         <ArticleRecommendations currentSlug="sistem-moral-quran" />
       </article>

@@ -257,7 +257,7 @@ export default function MukjizatIlmiahArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -293,6 +293,8 @@ export default function MukjizatIlmiahArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

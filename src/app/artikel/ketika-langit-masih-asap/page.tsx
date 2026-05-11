@@ -194,7 +194,7 @@ export default function KetikaLangitMasihAsapArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -227,6 +227,8 @@ export default function KetikaLangitMasihAsapArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

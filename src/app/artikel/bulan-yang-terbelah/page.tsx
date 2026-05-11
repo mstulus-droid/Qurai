@@ -288,7 +288,7 @@ export default function BulanYangTerbelahArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -322,6 +322,8 @@ export default function BulanYangTerbelahArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

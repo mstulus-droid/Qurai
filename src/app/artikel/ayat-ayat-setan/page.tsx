@@ -317,7 +317,7 @@ export default function AyatAyatSetanArticle() {
           <p>Kedua ayat itu ada dalam kitab yang sama.</p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -353,6 +353,8 @@ export default function AyatAyatSetanArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

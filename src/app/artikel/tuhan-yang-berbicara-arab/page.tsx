@@ -323,7 +323,7 @@ export default function TuhanYangBerbicaraArabArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -356,6 +356,8 @@ export default function TuhanYangBerbicaraArabArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

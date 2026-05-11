@@ -287,7 +287,7 @@ export default function NamaDiDalamApiArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -320,6 +320,8 @@ export default function NamaDiDalamApiArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

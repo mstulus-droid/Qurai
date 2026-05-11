@@ -195,7 +195,7 @@ export default function GhanimahArticle() {
           <p>Sebuah sistem yang cukup terperinci untuk disebut insidental.</p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -227,6 +227,8 @@ export default function GhanimahArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );

@@ -232,7 +232,7 @@ export default function WaraqahDanWahyuArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -262,6 +262,8 @@ export default function WaraqahDanWahyuArticle() {
             </div>
           </div>
         </footer>
+
+        <ArticleShare />
 
         <ArticleRecommendations currentSlug="waraqah-dan-wahyu" />
       </article>

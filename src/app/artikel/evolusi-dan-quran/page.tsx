@@ -305,7 +305,7 @@ export default function EvolusiDanQuranArticle() {
           </p>
         </div>
 
-        <ArticleShare />
+        
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -340,6 +340,8 @@ export default function EvolusiDanQuranArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
       </article>
     </main>
   );
