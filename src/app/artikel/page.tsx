@@ -305,6 +305,36 @@ const articles: ArticleItem[] = [
     },
   },
   {
+    slug: "nasikh-mansukh",
+    number: "26",
+    title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi",
+    excerpt:
+      "Al-Baqarah 2:106 mengakui ada ayat yang diganti dengan yang 'lebih baik.' Kalau ada yang lebih baik, artinya yang lama kurang baik. Dan wahyu yang kurang baik dari entitas yang diklaim mahatahu adalah hal yang tidak bisa diselesaikan hanya dengan menamainya kebijaksanaan bertahap.",
+    surah: "Al-Mujadilah 58:12 · Al-Baqarah 2:106",
+    date: "Mei 2026",
+    readTime: "9 menit",
+  },
+  {
+    slug: "ghanimah",
+    number: "27",
+    title: "Seperlima untuk Allah, Empat Perlima untuk Kalian",
+    excerpt:
+      "Al-Anfal 8:1 menyatakan ghanimah milik Allah dan Rasul sepenuhnya. Tiga puluh ayat kemudian, 8:41 membagi empat perlima untuk pejuang. Sistem seperlima itu sudah ada dalam tradisi Arab pra-Islam, disebut mirbā'. Yang berubah bukan angkanya.",
+    surah: "Al-Anfal 8:1 · Al-Anfal 8:41",
+    date: "Mei 2026",
+    readTime: "8 menit",
+  },
+  {
+    slug: "surat-yusuf-dan-midrash",
+    number: "28",
+    title: "Dari Mana Datangnya Pisau Itu?",
+    excerpt:
+      "Yusuf 12:31 menceritakan para wanita yang mengiris tangan karena terpesona Yusuf. Adegan itu tidak ada di catatan tertua kisah ini. Tapi ada di Bereshit Rabbah, kompilasi legenda Yahudi abad ke-5 Masehi. Al-Qur'an menyebut kisah ini ahsanal qasas, kisah yang paling baik.",
+    surah: "Yusuf 12:3 · Yusuf 12:31",
+    date: "Mei 2026",
+    readTime: "11 menit",
+  },
+  {
     slug: "tuhan-yang-berbicara-arab",
     number: "21",
     title: "Tuhan yang Berbicara Arab",

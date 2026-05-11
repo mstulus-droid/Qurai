@@ -662,6 +662,25 @@ const REFS: Array<{
   { surah: 18, ayatStart: 86, ayatEnd: 86, slug: "bumi-datar", title: "Bumi yang Dihamparkan" },
   { surah: 2, ayatStart: 187, ayatEnd: 187, slug: "bumi-datar", title: "Bumi yang Dihamparkan" },
   { surah: 2, ayatStart: 149, ayatEnd: 149, slug: "bumi-datar", title: "Bumi yang Dihamparkan" },
+  // Artikel: Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi
+  { surah: 58, ayatStart: 12, ayatEnd: 12, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 58, ayatStart: 13, ayatEnd: 13, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 2, ayatStart: 106, ayatEnd: 106, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 9, ayatStart: 5, ayatEnd: 5, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 16, ayatStart: 67, ayatEnd: 67, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 2, ayatStart: 219, ayatEnd: 219, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 4, ayatStart: 43, ayatEnd: 43, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 5, ayatStart: 90, ayatEnd: 91, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 6, ayatStart: 38, ayatEnd: 38, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  { surah: 5, ayatStart: 3, ayatEnd: 3, slug: "nasikh-mansukh", title: "Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi" },
+  // Artikel: Seperlima untuk Allah, Empat Perlima untuk Kalian (ghanimah)
+  { surah: 8, ayatStart: 1, ayatEnd: 1, slug: "ghanimah", title: "Seperlima untuk Allah, Empat Perlima untuk Kalian" },
+  { surah: 8, ayatStart: 41, ayatEnd: 41, slug: "ghanimah", title: "Seperlima untuk Allah, Empat Perlima untuk Kalian" },
+  { surah: 8, ayatStart: 69, ayatEnd: 69, slug: "ghanimah", title: "Seperlima untuk Allah, Empat Perlima untuk Kalian" },
+  // Artikel: Dari Mana Datangnya Pisau Itu? (surat-yusuf-dan-midrash)
+  { surah: 12, ayatStart: 3, ayatEnd: 3, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
+  { surah: 12, ayatStart: 31, ayatEnd: 31, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
+  { surah: 21, ayatStart: 51, ayatEnd: 70, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
   // Artikel: Mitos "Preservasi Sempurna" Al-Quran
   { surah: 12, ayatStart: 2, ayatEnd: 2, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
   { surah: 2, ayatStart: 238, ayatEnd: 238, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
