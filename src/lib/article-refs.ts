@@ -681,6 +681,14 @@ const REFS: Array<{
   { surah: 12, ayatStart: 3, ayatEnd: 3, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
   { surah: 12, ayatStart: 31, ayatEnd: 31, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
   { surah: 21, ayatStart: 51, ayatEnd: 70, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
+  // Artikel: Pengetahuan yang Tidak Melampaui Zamannya (mukjizat-ilmiah)
+  { surah: 86, ayatStart: 5, ayatEnd: 7, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  { surah: 16, ayatStart: 15, ayatEnd: 15, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  { surah: 21, ayatStart: 31, ayatEnd: 31, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  { surah: 37, ayatStart: 6, ayatEnd: 10, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  { surah: 67, ayatStart: 5, ayatEnd: 5, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  { surah: 21, ayatStart: 30, ayatEnd: 30, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  { surah: 51, ayatStart: 47, ayatEnd: 47, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
   // Artikel: Mitos "Preservasi Sempurna" Al-Quran
   { surah: 12, ayatStart: 2, ayatEnd: 2, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
   { surah: 2, ayatStart: 238, ayatEnd: 238, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
