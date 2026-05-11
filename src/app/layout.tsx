@@ -49,11 +49,31 @@ const sourceSerif = Source_Serif_4({
 const websiteStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: "Qurai",
+  alternateName: "Qurai by Rhadzor",
   url: SITE_URL,
   inLanguage: "id-ID",
   description:
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
+  publisher: {
+    "@id": `${SITE_URL}/#organization`,
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE_URL}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Qurai",
+  url: SITE_URL,
+  logo: `${SITE_URL}/brand/qurai-app-icon-dark.png`,
+  sameAs: ["https://rhadzor.id"],
 };
 
 export const metadata: Metadata = {
@@ -64,6 +84,20 @@ export const metadata: Metadata = {
   },
   description:
     "Bedah quran per ayat dengan pendekatan kritis, non-apologis, dan fokus pada anotasi, kritik, serta konteks.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -119,7 +153,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteStructuredData),
+            __html: JSON.stringify([
+              organizationStructuredData,
+              websiteStructuredData,
+            ]),
           }}
         />
         <script
