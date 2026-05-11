@@ -1,12 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 
 export const metadata: Metadata = {
-  title: "Kata yang Satu Ini | Qurai",
+  title: "Tentang Kawin Kontrak | Qurai",
   description:
     "An-Nisa 4:24 menggunakan kata istamta'tum, akar kata yang sama dengan mut'ah. Tiga mufasir klasik terbesar mengakui ayat ini tentang nikah mut'ah. Yang melarangnya bukan Muhammad, tapi Umar — dan Umar sendiri yang mengatakannya, dalam Shahih Muslim.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/16-nikah-mutah-illustration.png",
+        width: 1792,
+        height: 1024,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -48,7 +58,7 @@ export default function NikahMutahArticle() {
             &nbsp;·&nbsp; 10 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
-            Kata yang Satu Ini
+            Tentang Kawin Kontrak
           </h1>
           <p className="font-serif-reading mt-6 text-[1.12rem] italic leading-relaxed text-[var(--qurai-muted)] sm:text-[1.22rem]">
             Tiga mufasir klasik terbesar sepakat bahwa An-Nisa 4:24 berbicara
@@ -57,6 +67,18 @@ export default function NikahMutahArticle() {
             pengakuan itu dalam Shahih Muslim.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/16-nikah-mutah-illustration.png"
+            alt="Ilustrasi editorial kontrak perkawinan, cincin, dan kantong koin di meja gelap"
+            width={1792}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 

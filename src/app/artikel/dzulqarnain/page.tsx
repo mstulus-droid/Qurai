@@ -153,11 +153,19 @@ export default function DzulqarnainArticle() {
           </h2>
 
           <p>
-            <em>Syriac Alexander Legend</em> — teks Kristen yang ditulis sekitar
-            629–636 M, tepat pada masa hidup Muhammad — menceritakan perjalanan
-            seorang raja ke timur dan barat, matahari terbenam di "sumber air
-            berlumpur", pembangunan tembok untuk menahan Gog dan Magog, dan sang
-            raja yang digambarkan saleh dan bertaqwa.
+            <em>Syriac Alexander Legend</em> menceritakan perjalanan seorang
+            raja ke timur dan barat, matahari terbenam di lautan gelap,
+            pembangunan tembok untuk menahan Gog dan Magog, dan sang raja yang
+            digambarkan saleh dan bertaqwa.
+          </p>
+
+          <p>
+            Kerangka narasi ini sudah ada jauh sebelum Al-Kahf dikompilasi. Mar
+            Jacob dari Sěrûgh, teolog Kristen Syriac yang hidup 451–521 M,
+            sudah menulis versi puitis tentang Alexander membangun tembok
+            Gog-Magog lebih dari satu abad sebelumnya. Bukan cerita yang
+            kebetulan muncul bersamaan — ini tradisi yang panjang, beredar di
+            komunitas Kristen Syriac di wilayah yang sama.
           </p>
 
           <p>
@@ -174,10 +182,7 @@ export default function DzulqarnainArticle() {
               ayat 86
             </VerseLink>{" "}
             menyebut Dzulqarnain menemukan matahari terbenam{" "}
-            <em>"di mata air yang berlumpur."</em> Matahari tentu tidak
-            terbenam di dalam badan air mana pun — tapi dalam cerita Syriac
-            aslinya memang begitu, dan versi Quran mewarisi detail itu tanpa
-            perubahan.
+            <em>"di mata air yang berlumpur."</em>
           </p>
 
           <blockquote className="border-l-2 border-[var(--qurai-gold)] py-1 pl-5 text-[var(--qurai-muted)] sm:pl-7">
@@ -192,6 +197,16 @@ export default function DzulqarnainArticle() {
               </VerseLink>
             </footer>
           </blockquote>
+
+          <p>
+            Dalam teks Syriac aslinya deskripsinya lebih spesifik: lautan
+            berbau busuk di ujung samudra, teksturnya digambarkan "seperti
+            nanah." Detail itu berubah dalam transmisi — dari laut berbau busuk
+            menjadi mata air berlumpur — tapi asal-usulnya dari sumber yang
+            sama. Dan kesalahan kosmologisnya diwarisi utuh: matahari yang
+            terbenam di dalam badan air, dalam bentuk apapun, tidak
+            mencerminkan cara kerja alam semesta.
+          </p>
 
           <p>
             Kalau ini wahyu, mengapa ia mewarisi kesalahan kosmologi dari teks
@@ -304,6 +319,11 @@ export default function DzulqarnainArticle() {
           <p>
             Orang Yahudi yang mengajukan pertanyaan itu mungkin sudah tahu
             jawabannya sejak awal.
+          </p>
+
+          <p className="text-[0.95rem] italic text-[var(--qurai-quiet)]">
+            Naskah Syriac yang menjadi dasar perbandingan di artikel ini
+            tersedia untuk dibaca. Hubungi kami kalau ingin salinannya.
           </p>
         </div>
 

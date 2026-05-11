@@ -229,16 +229,150 @@ const articles: ArticleItem[] = [
     surah: "Al-Baqarah 2:256 · An-Nisa 4:89",
     date: "Mei 2026",
     readTime: "10 menit",
+    image: {
+      src: "/article-images/15-tidak-ada-paksaan-illustration.png",
+      alt: "Ilustrasi editorial rantai putus, teks hukum, batu, dan dua arah jalan",
+    },
   },
   {
     slug: "nikah-mutah",
     number: "16",
-    title: "Kata yang Satu Ini",
+    title: "Tentang Kawin Kontrak",
     excerpt:
       "Tiga mufasir klasik terbesar sepakat bahwa An-Nisa 4:24 berbicara tentang nikah mut'ah. Tidak ada ayat Quran yang membatalkannya. Yang melarangnya adalah Umar bin Khattab, dan Umar sendiri yang mencatatkan pengakuan itu dalam Shahih Muslim.",
     surah: "An-Nisa 4:24 · Al-Tahrim 66:1",
     date: "Mei 2026",
     readTime: "10 menit",
+    image: {
+      src: "/article-images/16-nikah-mutah-illustration.png",
+      alt: "Ilustrasi editorial kontrak perkawinan, cincin, dan kantong koin di meja gelap",
+    },
+  },
+  {
+    slug: "evolusi-dan-quran",
+    number: "17",
+    title: "Dari Tanah Liat",
+    excerpt:
+      "Al-Quran menggambarkan penciptaan Adam dari tanah liat dengan material spesifik dan mekanisme yang jelas. Tafsir klasik membacanya secara literal. Kromosom 2 manusia dan genetika populasi menunjukkan sesuatu yang tidak bisa didamaikan dengan narasi dua individu pertama.",
+    surah: "Al-Imran 3:59 · Al-Hijr 15:26",
+    date: "Mei 2026",
+    readTime: "11 menit",
+    image: {
+      src: "/article-images/17-evolusi-dan-quran-illustration.png",
+      alt: "Ilustrasi editorial figur tanah liat, fosil, dan diagram kromosom di meja studi",
+    },
+  },
+  {
+    slug: "bulan-yang-terbelah",
+    number: "19",
+    title: "Bulan yang Terbelah",
+    excerpt:
+      "Al-Qamar 54:1 tidak menyebut siapa yang melihat, kapan, atau di mana. Hadis mengisi kekosongan itu dua abad kemudian. Dan di surah Al-Isra, tepat di tempat Muhammad ditantang menunjukkan mukjizat fisik, ada ayat yang menjelaskan mengapa Allah tidak mengirimkan tanda fisik, seolah belah bulan tidak pernah terjadi.",
+    surah: "Al-Qamar 54:1 · Al-Isra 17:59",
+    date: "Mei 2026",
+    readTime: "9 menit",
+    image: {
+      src: "/article-images/19-bulan-yang-terbelah-illustration.png",
+      alt: "Ilustrasi editorial orang-orang duduk menyaksikan bulan terbelah di kiri dan kanan gunung",
+    },
+  },
+  {
+    slug: "ayat-ayat-setan",
+    number: "18",
+    title: "Ayat-ayat Setan",
+    excerpt:
+      "At-Tabari mencatat bahwa sebelum insiden Gharaniq, Muhammad berharap dalam hatinya ada sesuatu yang mendamaikannya dengan kaumnya. Itu bukan deskripsi penerima wahyu yang pasif. Dan Al-Hajj 22:52 ada dalam Al-Quran sampai hari ini, mengakui bahwa setan bisa menyusup ke proses wahyu sebelum Allah menghilangkannya.",
+    surah: "An-Najm 53:19 · Al-Hajj 22:52",
+    date: "Mei 2026",
+    readTime: "9 menit",
+    image: {
+      src: "/article-images/18-ayat-ayat-setan-illustration.png",
+      alt: "Ilustrasi editorial fragmen berhala kuno dan naskah yang tertutup bayangan tinta",
+    },
+  },
+  {
+    slug: "nama-di-dalam-api",
+    number: "20",
+    title: "Nama di Dalam Api",
+    excerpt:
+      "Shahih Bukhari 4971 mencatat urutan yang spesifik: Abu Lahab menolak Muhammad di bukit Safa, lalu wahyu turun sebagai respons. Dari sekian banyak musuh Muhammad, hanya satu yang dikutuk dengan namanya dalam Al-Quran. Paman kandungnya sendiri.",
+    surah: "Al-Masad 111:1 · Asy-Syu'ara 26:214",
+    date: "Mei 2026",
+    readTime: "8 menit",
+    image: {
+      src: "/article-images/20-nama-di-dalam-api-illustration.png",
+      alt: "Ilustrasi editorial Abu Lahab dan istrinya di dekat api dengan kayu bakar dan tali sabut",
+    },
+  },
+  {
+    slug: "tuhan-yang-berbicara-arab",
+    number: "21",
+    title: "Tuhan yang Berbicara Arab",
+    excerpt:
+      "Q 12:2 menyebutkan alasan spesifik mengapa Al-Quran diturunkan dalam bahasa Arab: 'agar kamu memahaminya.' Kalimat itu mendefinisikan siapa yang dimaksud sebagai audiens utama. Dan di kitab yang sama tempat Allah mengklaim mengutus Muhammad untuk semesta alam, teks itu dikirim dalam satu bahasa yang hanya dimengerti satu kelompok manusia.",
+    surah: "Yusuf 12:2 · Al-Anbiya 21:107",
+    date: "Mei 2026",
+    readTime: "11 menit",
+    image: {
+      src: "/article-images/21-tuhan-yang-berbicara-arab-illustration.png",
+      alt: "Ilustrasi editorial naskah Arab yang memudar ke aksara lain di depan majelis gurun",
+    },
+  },
+  {
+    slug: "mengapa-wahyu-turun",
+    number: "22",
+    title: "Mengapa Wahyu Turun",
+    excerpt:
+      "Untuk banyak ayat Al-Quran, konteks turunnya tidak tunggal. Ada dua versi tentang At-Tahrim 66:1 dalam literatur hadis sahih: satu tentang madu dan bau napas, satu tentang persetubuhan dengan budak dan rahasia yang dibocorkan. Keduanya tidak bisa benar sekaligus.",
+    surah: "At-Tahrim 66:1 · Al-Ahzab 33:59",
+    date: "Mei 2026",
+    readTime: "10 menit",
+    image: {
+      src: "/article-images/22-mengapa-wahyu-turun-illustration.png",
+      alt: "Ilustrasi editorial gulungan riwayat yang terbelah di meja gelap",
+    },
+  },
+  {
+    slug: "kitab-yang-jelas",
+    number: "23",
+    title: "Kitab yang Jelas",
+    excerpt:
+      "Al-Kautsar adalah surah paling pendek dalam Al-Quran. Ayat ketiganya hampir tidak punya arti tanpa mengetahui kata penghinaan yang tidak disebutkan di dalamnya. Al-Quran menyebut dirinya 'kitabun mubeen', tapi tidak ada pembaca yang bisa memahaminya sendirian.",
+    surah: "Al-Kautsar 108:3 · Al-Anfal 8:5",
+    date: "Mei 2026",
+    readTime: "9 menit",
+    image: {
+      src: "/article-images/23-kitab-yang-jelas-illustration.png",
+      alt: "Ilustrasi editorial manuskrip tua yang dihubungkan ke fragmen pusat",
+    },
+  },
+  {
+    slug: "yang-lebih-baik-daripadanya",
+    number: "24",
+    title: "Yang Lebih Baik Daripadanya",
+    excerpt:
+      "Al-Anfal 8:65 dan 8:66 adalah dua ayat berurutan tentang kapasitas tempur yang sama. Yang pertama menetapkan rasio 1:10. Yang berikutnya merevisinya menjadi 1:2. Al-Baqarah 2:106 menyebut penggantinya 'lebih baik', yang berarti yang diganti lebih rendah kualitasnya.",
+    surah: "Al-Anfal 8:65 · An-Nur 24:2",
+    date: "Mei 2026",
+    readTime: "10 menit",
+    image: {
+      src: "/article-images/24-yang-lebih-baik-daripadanya-illustration.png",
+      alt: "Ilustrasi editorial papan strategi kuno dengan rasio batu yang direvisi",
+    },
+  },
+  {
+    slug: "ketika-langit-masih-asap",
+    number: "25",
+    title: "Ketika Langit Masih Asap",
+    excerpt:
+      "Al-Fussilat 41:9-12 menempatkan bumi selesai diciptakan sebelum langit dan bintang-bintang ada. Masalahnya: bumi tersusun dari elemen berat yang hanya bisa terbentuk di dalam inti bintang. Tanpa bintang terlebih dahulu, tidak ada material untuk membentuk planet sama sekali.",
+    surah: "Fussilat 41:9 · Al-Baqarah 2:29",
+    date: "Mei 2026",
+    readTime: "9 menit",
+    image: {
+      src: "/article-images/25-ketika-langit-masih-asap-illustration.png",
+      alt: "Ilustrasi editorial bumi purba di bawah langit kosmik berasap",
+    },
   },
 ];
 
