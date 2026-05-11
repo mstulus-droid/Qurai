@@ -448,6 +448,66 @@ const articles: ArticleItem[] = [
       alt: "Ilustrasi editorial instrumen ilmu kuno, diagram anatomi samar, dan model gunung di meja studi",
     },
   },
+  {
+    slug: "pengulangan-al-quran",
+    number: "30",
+    title: "Yang Diulang Tiga Puluh Satu Kali",
+    excerpt:
+      "Hampir 40 persen Surah Ar-Rahman terdiri dari satu frasa yang diulang 31 kali tanpa variasi. Kisah Nabi Hud diceritakan di lima surah berbeda dengan frasa yang hampir identik, tanpa menambah detail baru. Al-Qur'an menyebut dirinya tibyan li kulli syai' — penjelasan atas segala sesuatu.",
+    surah: "Ar-Rahman 55:13 · An-Nahl 16:89",
+    date: "Mei 2026",
+    readTime: "9 menit",
+  },
+  {
+    slug: "alif-lam-mim",
+    number: "31",
+    title: "Alif Lam Mim",
+    excerpt:
+      "Dua puluh sembilan surah dimulai dengan huruf yang tidak ada yang bisa menjelaskan maknanya setelah empat belas abad. Al-Qur'an menyebut dirinya dalam bahasa Arab yang jelas, tapi ada kata-kata di dalamnya yang tidak bisa dipahami dari dalam bahasa Arab saja.",
+    surah: "Al-Baqarah 2:1 · Al-Qari'ah 101:1",
+    date: "Mei 2026",
+    readTime: "9 menit",
+  },
+  {
+    slug: "jizyah",
+    number: "32",
+    title: "Wa Hum Saghirun",
+    excerpt:
+      "At-Tawbah 9:29 memerintahkan non-Muslim membayar jizyah 'wa hum saghirun' — sementara mereka dalam keadaan hina. Frasa itu bukan tambahan dari tradisi. Ia ada di dalam ayat, dalam satu kalimat yang sama dengan kewajiban membayar, sebagai kondisi yang menyertai pembayaran itu.",
+    surah: "At-Tawbah 9:29 · Al-Baqarah 2:256",
+    date: "Mei 2026",
+    readTime: "7 menit",
+  },
+  {
+    slug: "sapi-yang-melenguh",
+    number: "33",
+    title: "Sapi yang Melenguh",
+    excerpt:
+      "Patung logam buatan Samiri yang mengeluarkan suara seperti lembu hidup. Manusia yang diubah jadi kera sebagai hukuman. Mayat yang bangkit setelah dipukul daging sapi. Tiga narasi yang memberikan detail sangat konkret tapi meninggalkan celah kausal tanpa penjelasan.",
+    surah: "Ta Ha 20:88 · Al-Baqarah 2:73",
+    date: "Mei 2026",
+    readTime: "8 menit",
+  },
+  {
+    slug: "tongkat-ikan-dan-kulit",
+    number: "34",
+    title: "Tongkat, Ikan, dan Kulit yang Berbicara",
+    excerpt:
+      "Dua surah menyebut tongkat Musa dengan kata berbeda untuk momen yang sama, dan hanya satu yang mencatat Musa ketakutan. Yunus berdoa dari dalam perut ikan dengan kalimat teologis yang koheren. Kulit bersaksi melawan kehendak pemiliknya di hari kiamat.",
+    surah: "Ta Ha 20:20 · Al-Anbiya 21:87",
+    date: "Mei 2026",
+    readTime: "9 menit",
+  },
+  {
+    slug: "maidah",
+    number: "35",
+    title: "Ma'idah",
+    excerpt:
+      "Allah menjanjikan meja makan dari langit dengan ancaman hukuman terberat bagi yang tidak percaya setelah melihatnya — tapi Al-Qur'an tidak pernah mengkonfirmasi meja itu turun. Angin Sulaiman disebutkan dengan durasi berbeda di dua surah. Gunung bertasbih bersama Daud tanpa penanda apakah itu literal atau kiasan.",
+    surah: "Al-Ma'idah 5:115 · Saba 34:10",
+    date: "Mei 2026",
+    readTime: "8 menit",
+  },
 ];
 
 export default function ArtikelPage() {
@@ -467,7 +527,7 @@ export default function ArtikelPage() {
         </div>
 
         <div className="grid gap-[1px] border border-[var(--qurai-border)] bg-[var(--qurai-border)]">
-          {articles.map((article) => (
+          {articles.slice().reverse().map((article) => (
             <Link
               key={article.slug}
               href={`/artikel/${article.slug}`}

@@ -681,6 +681,26 @@ const REFS: Array<{
   { surah: 12, ayatStart: 3, ayatEnd: 3, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
   { surah: 12, ayatStart: 31, ayatEnd: 31, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
   { surah: 21, ayatStart: 51, ayatEnd: 70, slug: "surat-yusuf-dan-midrash", title: "Dari Mana Datangnya Pisau Itu?" },
+  // Artikel: Yang Diulang Tiga Puluh Satu Kali (pengulangan-al-quran)
+  { surah: 55, ayatStart: 13, ayatEnd: 13, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  { surah: 77, ayatStart: 15, ayatEnd: 15, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  { surah: 7, ayatStart: 65, ayatEnd: 65, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  { surah: 11, ayatStart: 50, ayatEnd: 50, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  { surah: 26, ayatStart: 123, ayatEnd: 123, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  { surah: 46, ayatStart: 21, ayatEnd: 21, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  { surah: 16, ayatStart: 89, ayatEnd: 89, slug: "pengulangan-al-quran", title: "Yang Diulang Tiga Puluh Satu Kali" },
+  // Artikel: Alif Lam Mim (alif-lam-mim)
+  { surah: 2, ayatStart: 1, ayatEnd: 1, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 12, ayatStart: 1, ayatEnd: 2, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 43, ayatStart: 3, ayatEnd: 3, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 101, ayatStart: 1, ayatEnd: 3, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 83, ayatStart: 7, ayatEnd: 8, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 74, ayatStart: 26, ayatEnd: 27, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 11, ayatStart: 82, ayatEnd: 82, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  { surah: 23, ayatStart: 100, ayatEnd: 100, slug: "alif-lam-mim", title: "Alif Lam Mim" },
+  // Artikel: Wa Hum Saghirun (jizyah)
+  { surah: 9, ayatStart: 29, ayatEnd: 29, slug: "jizyah", title: "Wa Hum Saghirun" },
+  { surah: 2, ayatStart: 256, ayatEnd: 256, slug: "jizyah", title: "Wa Hum Saghirun" },
   // Artikel: Pengetahuan yang Tidak Melampaui Zamannya (mukjizat-ilmiah)
   { surah: 86, ayatStart: 5, ayatEnd: 7, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
   { surah: 16, ayatStart: 15, ayatEnd: 15, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
@@ -689,6 +709,25 @@ const REFS: Array<{
   { surah: 67, ayatStart: 5, ayatEnd: 5, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
   { surah: 21, ayatStart: 30, ayatEnd: 30, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
   { surah: 51, ayatStart: 47, ayatEnd: 47, slug: "mukjizat-ilmiah", title: "Pengetahuan yang Tidak Melampaui Zamannya" },
+  // Artikel: Ma'idah (maidah) — Bagian 3 seri Mukjizat
+  { surah: 5, ayatStart: 112, ayatEnd: 115, slug: "maidah", title: "Ma'idah" },
+  { surah: 21, ayatStart: 81, ayatEnd: 81, slug: "maidah", title: "Ma'idah" },
+  { surah: 34, ayatStart: 12, ayatEnd: 12, slug: "maidah", title: "Ma'idah" },
+  { surah: 34, ayatStart: 10, ayatEnd: 10, slug: "maidah", title: "Ma'idah" },
+  { surah: 21, ayatStart: 79, ayatEnd: 79, slug: "maidah", title: "Ma'idah" },
+  // Artikel: Tongkat, Ikan, dan Kulit yang Berbicara (tongkat-ikan-dan-kulit) — Bagian 2 seri Mukjizat
+  { surah: 20, ayatStart: 18, ayatEnd: 21, slug: "tongkat-ikan-dan-kulit", title: "Tongkat, Ikan, dan Kulit yang Berbicara" },
+  { surah: 7, ayatStart: 107, ayatEnd: 107, slug: "tongkat-ikan-dan-kulit", title: "Tongkat, Ikan, dan Kulit yang Berbicara" },
+  { surah: 37, ayatStart: 142, ayatEnd: 144, slug: "tongkat-ikan-dan-kulit", title: "Tongkat, Ikan, dan Kulit yang Berbicara" },
+  { surah: 21, ayatStart: 87, ayatEnd: 87, slug: "tongkat-ikan-dan-kulit", title: "Tongkat, Ikan, dan Kulit yang Berbicara" },
+  { surah: 36, ayatStart: 65, ayatEnd: 65, slug: "tongkat-ikan-dan-kulit", title: "Tongkat, Ikan, dan Kulit yang Berbicara" },
+  { surah: 41, ayatStart: 20, ayatEnd: 21, slug: "tongkat-ikan-dan-kulit", title: "Tongkat, Ikan, dan Kulit yang Berbicara" },
+  // Artikel: Sapi yang Melenguh (sapi-yang-melenguh) — Bagian 1 seri Mukjizat
+  { surah: 20, ayatStart: 88, ayatEnd: 88, slug: "sapi-yang-melenguh", title: "Sapi yang Melenguh" },
+  { surah: 7, ayatStart: 148, ayatEnd: 148, slug: "sapi-yang-melenguh", title: "Sapi yang Melenguh" },
+  { surah: 2, ayatStart: 65, ayatEnd: 65, slug: "sapi-yang-melenguh", title: "Sapi yang Melenguh" },
+  { surah: 7, ayatStart: 166, ayatEnd: 166, slug: "sapi-yang-melenguh", title: "Sapi yang Melenguh" },
+  { surah: 2, ayatStart: 67, ayatEnd: 73, slug: "sapi-yang-melenguh", title: "Sapi yang Melenguh" },
   // Artikel: Mitos "Preservasi Sempurna" Al-Quran
   { surah: 12, ayatStart: 2, ayatEnd: 2, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
   { surah: 2, ayatStart: 238, ayatEnd: 238, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
