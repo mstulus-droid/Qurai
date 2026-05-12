@@ -761,6 +761,24 @@ const REFS: Array<{
   { surah: 7, ayatStart: 103, ayatEnd: 103, slug: "firaun", title: "Satu Firaun, Tiga Ribu Tahun" },
   { surah: 28, ayatStart: 38, ayatEnd: 38, slug: "firaun", title: "Satu Firaun, Tiga Ribu Tahun" },
   { surah: 10, ayatStart: 92, ayatEnd: 92, slug: "firaun", title: "Satu Firaun, Tiga Ribu Tahun" },
+  // Artikel: Ya Bunayya (ya-bunayya) — Bagian 1 seri Narasi Alkitab
+  { surah: 11, ayatStart: 42, ayatEnd: 43, slug: "ya-bunayya", title: "Ya Bunayya" },
+  { surah: 10, ayatStart: 92, ayatEnd: 92, slug: "ya-bunayya", title: "Ya Bunayya" },
+  { surah: 2, ayatStart: 247, ayatEnd: 249, slug: "ya-bunayya", title: "Ya Bunayya" },
+  // Artikel: Saudara Harun (saudara-harun) — Bagian 2 seri Narasi Alkitab
+  { surah: 19, ayatStart: 28, ayatEnd: 28, slug: "saudara-harun", title: "Saudara Harun" },
+  { surah: 20, ayatStart: 85, ayatEnd: 85, slug: "saudara-harun", title: "Saudara Harun" },
+  { surah: 20, ayatStart: 95, ayatEnd: 96, slug: "saudara-harun", title: "Saudara Harun" },
+  { surah: 9, ayatStart: 30, ayatEnd: 30, slug: "saudara-harun", title: "Saudara Harun" },
+  // Artikel: Di Bawah Pohon Kurma (di-bawah-pohon-kurma) — Bagian 3 seri Narasi Alkitab
+  { surah: 19, ayatStart: 23, ayatEnd: 25, slug: "di-bawah-pohon-kurma", title: "Di Bawah Pohon Kurma" },
+  { surah: 19, ayatStart: 29, ayatEnd: 30, slug: "di-bawah-pohon-kurma", title: "Di Bawah Pohon Kurma" },
+  { surah: 3, ayatStart: 35, ayatEnd: 37, slug: "di-bawah-pohon-kurma", title: "Di Bawah Pohon Kurma" },
+  // Artikel: Luqman Sebelum Al-Quran (luqman-sebelum-al-quran) — Bagian 4 seri Narasi Alkitab
+  { surah: 31, ayatStart: 12, ayatEnd: 12, slug: "luqman-sebelum-al-quran", title: "Luqman Sebelum Al-Quran" },
+  { surah: 31, ayatStart: 13, ayatEnd: 13, slug: "luqman-sebelum-al-quran", title: "Luqman Sebelum Al-Quran" },
+  { surah: 31, ayatStart: 14, ayatEnd: 14, slug: "luqman-sebelum-al-quran", title: "Luqman Sebelum Al-Quran" },
+  { surah: 31, ayatStart: 18, ayatEnd: 19, slug: "luqman-sebelum-al-quran", title: "Luqman Sebelum Al-Quran" },
 ];
 
 export function getArticlesForVerse(

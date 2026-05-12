@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
+import { ArticleAudio } from "@/components/article-audio";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
 
@@ -80,6 +81,8 @@ export default function KritikQuranArticle() {
             className="h-auto w-full"
           />
         </figure>
+
+        <ArticleAudio slug="kritik-quran" />
 
         <div className="ornament-divider mb-14" aria-hidden />
 

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleRecommendations } from "@/components/article-recommendations";
+import { ArticleAudio } from "@/components/article-audio";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
 
@@ -81,6 +82,8 @@ export default function SistemMoralQuranArticle() {
             className="h-auto w-full"
           />
         </figure>
+
+        <ArticleAudio slug="sistem-moral-quran" />
 
         <div className="ornament-divider mb-14" aria-hidden />
 

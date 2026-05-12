@@ -545,4 +545,44 @@ export const articles: ArticleItem[] = [
       alt: "Ilustrasi editorial meja makan menggantung di bawah cahaya langit gelap",
     },
   },
+  {
+    slug: "ya-bunayya",
+    number: "39",
+    title: "Ya Bunayya",
+    excerpt:
+      "Hud 11:42 menceritakan anak Nuh yang menolak naik kapal dan tenggelam. Namanya tidak disebut. Ibn Katsir menyebutnya Kanaan, At-Tabari menyebutnya Yam. Dalam kisah banjir yang lebih tua, anak seperti ini tidak ada sama sekali.",
+    surah: "Hud 11:42 · Yunus 10:92 · Al-Baqarah 2:247",
+    date: "Mei 2026",
+    readTime: "8 menit",
+  },
+  {
+    slug: "saudara-harun",
+    number: "40",
+    title: "Saudara Harun",
+    excerpt:
+      "Maryam 19:28 menyebut Maryam ibu Isa sebagai saudara perempuan Harun — yang hidup sekitar 1300 tahun sebelumnya. Al-Samiri, yang membuat patung anak sapi di masa Musa, menyandang nama dari wilayah yang belum ada. Dan klaim tentang keyakinan Yahudi yang tidak terdokumentasikan.",
+    surah: "Maryam 19:28 · Taha 20:85 · At-Taubah 9:30",
+    date: "Mei 2026",
+    readTime: "9 menit",
+  },
+  {
+    slug: "di-bawah-pohon-kurma",
+    number: "41",
+    title: "Di Bawah Pohon Kurma",
+    excerpt:
+      "Maryam 19:23 menempatkan Maryam di bawah pohon kurma saat melahirkan. Detail itu tidak ada dalam kisah kelahiran Isa yang dikenal, tapi ada dalam naskah Kristen yang beredar di Arabia. Begitu pula Maryam di Bait Suci dan bayi yang berbicara dari buaian.",
+    surah: "Maryam 19:23 · Ali Imran 3:37 · Maryam 19:29",
+    date: "Mei 2026",
+    readTime: "8 menit",
+  },
+  {
+    slug: "luqman-sebelum-al-quran",
+    number: "42",
+    title: "Luqman Sebelum Al-Quran",
+    excerpt:
+      "Luqman sudah terkenal di Arabia sebagai ahli hikmah dari suku 'Ad, dengan koleksi peribahasa yang beredar luas, jauh sebelum Islam. Al-Quran mengambil namanya dan reputasinya, lalu mengisi ulang hikmahnya dengan konten yang sama sekali berbeda.",
+    surah: "Luqman 31:12 · 31:13",
+    date: "Mei 2026",
+    readTime: "10 menit",
+  },
 ];

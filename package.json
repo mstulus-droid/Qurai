@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "db:schema": "tsx scripts/apply-schema.ts",
+    "generate-article-audio": "tsx scripts/generate-article-audio.ts",
     "import-excel": "tsx scripts/import-excel.ts"
   },
   "dependencies": {
