@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
-import { MukjizatSeriesNav } from "@/components/mukjizat-series-nav";
+import { MukjizatSeriesNav, MukjizatSeriesOutro } from "@/components/mukjizat-series-nav";
 
 export const metadata: Metadata = {
   title: "Tongkat, Ikan, dan Kulit yang Berbicara | Qurai",
@@ -85,6 +86,14 @@ export default function TongkatIkanDanKulitArticle() {
         <div className="ornament-divider mb-14" aria-hidden />
 
         <div className="font-serif-reading space-y-7 text-[1.08rem] leading-[1.92] text-[var(--qurai-muted)] sm:text-[1.18rem]">
+          <p>
+            Bagian kedua dari seri ini. Bagian sebelumnya: patung yang
+            bersuara, manusia yang dihukum menjadi kera, dan mayat yang hidup
+            kembali. Bagian ini: dua versi tongkat Musa yang tidak sepenuhnya
+            konsisten, Yunus yang berdoa dari dalam perut ikan, dan tubuh
+            yang bersaksi melawan pemiliknya.
+          </p>
+
           <p>
             Di{" "}
             <VerseLink surah={20} ayat={18}>Ta Ha 20:18</VerseLink>, Musa
@@ -211,9 +220,8 @@ export default function TongkatIkanDanKulitArticle() {
             tentang kepemilikan atas perbuatan sendiri ketika tubuh bertindak
             sebagai saksi independen dibiarkan terbuka.
           </p>
+          <MukjizatSeriesOutro current={2} />
         </div>
-
-        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -249,6 +257,10 @@ export default function TongkatIkanDanKulitArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
+
+        <ArticleRecommendations currentSlug="tongkat-ikan-dan-kulit" />
       </article>
     </main>
   );

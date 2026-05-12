@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
-import { MukjizatSeriesNav } from "@/components/mukjizat-series-nav";
+import { MukjizatSeriesNav, MukjizatSeriesOutro } from "@/components/mukjizat-series-nav";
 
 export const metadata: Metadata = {
   title: "Sapi yang Melenguh | Qurai",
@@ -86,6 +87,14 @@ export default function SapiYangMelenguhArticle() {
         <div className="ornament-divider mb-14" aria-hidden />
 
         <div className="font-serif-reading space-y-7 text-[1.08rem] leading-[1.92] text-[var(--qurai-muted)] sm:text-[1.18rem]">
+          <p>
+            Seri ini memeriksa narasi-narasi dalam Al-Qur'an yang sangat
+            konkret dalam detail tapi berhenti tepat sebelum mekanismenya
+            perlu dijelaskan. Bagian pertama: patung Samiri yang bersuara
+            sendiri, manusia yang dihukum menjadi kera, dan mayat yang hidup
+            kembali setelah dipukul bagian sapi.
+          </p>
+
           <p>
             <VerseLink surah={20} ayat={88}>Ta Ha 20:88</VerseLink> mencatat
             bahwa Samiri mengeluarkan dari cetakannya seekor anak sapi yang
@@ -199,9 +208,8 @@ export default function SapiYangMelenguhArticle() {
             polanya sama: detail yang sangat konkret, mekanisme yang
             dibiarkan terbuka.
           </p>
+          <MukjizatSeriesOutro current={1} />
         </div>
-
-        <ArticleShare />
 
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
@@ -236,6 +244,10 @@ export default function SapiYangMelenguhArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
+
+        <ArticleRecommendations currentSlug="sapi-yang-melenguh" />
       </article>
     </main>
   );

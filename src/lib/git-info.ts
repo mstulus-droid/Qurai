@@ -1,6 +1,6 @@
 export const GIT_INFO = {
-  "hash": "cbb2e42",
-  "message": "Add mukjizat article series",
-  "date": "2026-05-11 21:17:21 +0700",
+  "hash": "808f2b7",
+  "message": "Add article illustrations and page updates",
+  "date": "2026-05-12 11:12:58 +0700",
   "branch": "main"
 };

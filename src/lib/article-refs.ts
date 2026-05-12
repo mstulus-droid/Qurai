@@ -754,6 +754,13 @@ const REFS: Array<{
   { surah: 112, ayatStart: 2, ayatEnd: 2, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
   { surah: 20, ayatStart: 63, ayatEnd: 63, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
   { surah: 5, ayatStart: 69, ayatEnd: 69, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  // Artikel: Malam yang Diceritakan Berbeda
+  { surah: 17, ayatStart: 1, ayatEnd: 1, slug: "isra-miraj", title: "Malam yang Diceritakan Berbeda" },
+  { surah: 53, ayatStart: 13, ayatEnd: 18, slug: "isra-miraj", title: "Malam yang Diceritakan Berbeda" },
+  // Artikel: Satu Firaun, Tiga Ribu Tahun
+  { surah: 7, ayatStart: 103, ayatEnd: 103, slug: "firaun", title: "Satu Firaun, Tiga Ribu Tahun" },
+  { surah: 28, ayatStart: 38, ayatEnd: 38, slug: "firaun", title: "Satu Firaun, Tiga Ribu Tahun" },
+  { surah: 10, ayatStart: 92, ayatEnd: 92, slug: "firaun", title: "Satu Firaun, Tiga Ribu Tahun" },
 ];
 
 export function getArticlesForVerse(

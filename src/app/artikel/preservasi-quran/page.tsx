@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -389,6 +390,8 @@ export default function PreservasiQuranArticle() {
         </footer>
 
         <ArticleShare />
+
+        <ArticleRecommendations currentSlug="preservasi-quran" />
       </article>
     </main>
   );
