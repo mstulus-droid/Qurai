@@ -107,7 +107,7 @@ export default function NikahMutahArticle() {
             sepakat ayat ini tentang nikah mut'ah. Ibnu Katsir, yang tafsirnya
             masih diajarkan di pesantren dan madrasah di seluruh dunia, menulis:
             "Yakni mahar yang kamu relakan untuk mereka karena kamu telah
-            menikmati mereka dalam nikah mut'ah." Tafsir al-Jalalayn, teks
+            menikmati mereka dalam nikah mut'ah." Tafsir al-Jalalayn, naskah
             pengantar tafsir yang dipakai selama berabad-abad, menyatakan hal
             yang sama: "Ayat ini bicara tentang nikah mut'ah yang pernah
             dihalalkan."
@@ -193,7 +193,7 @@ export default function NikahMutahArticle() {
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
-            Masalah yang tidak bisa diselesaikan dari dalam teks
+            Masalah yang tidak bisa diselesaikan dari dalam Al-Quran
           </h2>
 
           <p>
@@ -216,12 +216,12 @@ export default function NikahMutahArticle() {
             </VerseLink>{" "}
             datang dengan pernyataan yang lebih tegas: khamr adalah perbuatan
             setan, maka jauhilah. Prosesnya bertahap, dan jejaknya ada dalam
-            teks. Larangan zina ada di ayatnya:{" "}
+            Al-Quran. Larangan zina ada di ayatnya:{" "}
             <VerseLink surah={17} ayat={32}>
               Al-Isra 17:32
             </VerseLink>
             . Ketika Allah melarang sesuatu yang penting, larangannya masuk ke
-            dalam teks.
+            dalam Al-Quran.
           </p>
 
           <p>Untuk mut'ah, tidak ada ayat yang membatalkan 4:24.</p>
@@ -232,11 +232,11 @@ export default function NikahMutahArticle() {
               Al-Tahrim 66:1
             </VerseLink>{" "}
             diturunkan ketika Muhammad melarang dirinya sendiri dari sesuatu
-            yang halal, dan Allah merespons langsung dalam teks: "Wahai Nabi,
+            yang halal, dan Allah merespons langsung dalam Al-Quran: "Wahai Nabi,
             mengapa engkau mengharamkan apa yang Allah halalkan bagimu?" Allah
             turun tangan mengoreksi, dan koreksinya tercatat. Kalau mut'ah
             benar-benar diharamkan melalui wahyu, kita bisa berharap ada
-            respons yang serupa dalam teks.
+            respons yang serupa dalam Al-Quran.
           </p>
 
           <p>

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -8,6 +9,15 @@ export const metadata: Metadata = {
   title: "Alif Lam Mim | Qurai",
   description:
     "Dua puluh sembilan surah dimulai dengan huruf yang tidak ada yang bisa menjelaskan maknanya setelah empat belas abad. Al-Qur'an menyebut dirinya dalam bahasa Arab yang jelas, tapi ada kata-kata di dalamnya yang tidak bisa dipahami dari dalam bahasa Arab saja. Al-Qari'ah, sijjin, saqar: istilah-istilah yang Al-Qur'an sendiri mempertanyakan, lalu tidak sepenuhnya menjawab.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/31-alif-lam-mim-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -59,6 +69,18 @@ export default function AlifLamMimArticle() {
             Arab saja.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/31-alif-lam-mim-illustration.png"
+            alt="Ilustrasi editorial tiga glyph bercahaya di atas manuskrip dalam ruang studi kuno"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 
@@ -187,7 +209,7 @@ export default function AlifLamMimArticle() {
 
           <p>
             Kalau ketidakjelasan itu disengaja, ada masalah lain: Al-Qur'an
-            tidak menyajikan dirinya sebagai teks esoteris untuk kalangan
+            tidak menyajikan dirinya sebagai kitab esoteris untuk kalangan
             khusus. Klaim sentralnya adalah aksesibilitas, petunjuk untuk semua
             manusia, dalam bahasa yang bisa dipahami.
           </p>

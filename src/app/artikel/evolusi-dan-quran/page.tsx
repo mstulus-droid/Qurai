@@ -258,7 +258,7 @@ export default function EvolusiDanQuranArticle() {
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
-            Jalan tengah yang tidak tersedia dalam teks
+            Jalan tengah yang tidak tersedia dalam Al-Quran
           </h2>
 
           <p>
@@ -269,7 +269,7 @@ export default function EvolusiDanQuranArticle() {
           </p>
 
           <p>
-            Masalahnya adalah teks tidak menyediakan ruang untuk posisi itu
+            Masalahnya adalah Al-Quran tidak menyediakan ruang untuk posisi itu
             tanpa kerja interpretasi yang cukup besar.
           </p>
 

@@ -102,7 +102,7 @@ export default function YangLebihBaikDaripadanyaArticle() {
           </p>
 
           <p>
-            Alasannya diberikan secara eksplisit dalam teks: Allah mengetahui
+            Alasannya diberikan secara eksplisit dalam Al-Quran: Allah mengetahui
             ada kelemahan di antara mereka, maka Ia meringankan beban.
           </p>
 
@@ -172,14 +172,14 @@ export default function YangLebihBaikDaripadanyaArticle() {
               An-Nur 24:2
             </VerseLink>{" "}
             menetapkan seratus kali dera untuk pezina, laki-laki dan perempuan.
-            Tidak ada pengecualian berdasarkan status pernikahan. Teksnya
+            Tidak ada pengecualian berdasarkan status pernikahan. Al-Qurannya
             spesifik dan tidak ambigu.
           </p>
 
           <p>
             Tapi hukum fikih Islam selama empat belas abad tidak mengikuti ayat
             itu untuk pezina yang sudah menikah. Yang diterapkan adalah rajam,
-            hukuman mati dengan dilempari batu, yang dasar tekstualnya bukan
+            hukuman mati dengan dilempari batu, yang dasar ayatnya bukan
             dari Al-Quran melainkan dari hadis. Bukan karena Q 24:2 dianggap
             tidak sahih. Ayat itu masih ada di mushaf, masih dibaca, masih
             diakui. Tapi ketika bertemu dengan hadis yang menyatakan sesuatu
@@ -189,7 +189,7 @@ export default function YangLebihBaikDaripadanyaArticle() {
           <p>
             Ini adalah kasus di mana perintah eksplisit Al-Quran tentang
             hukuman tidak diterapkan selama berabad-abad karena ada perkataan
-            Muhammad di luar teks Al-Quran yang menetapkan sesuatu yang
+            Muhammad di luar Al-Quran yang menetapkan sesuatu yang
             berbeda.
           </p>
 
@@ -229,7 +229,7 @@ export default function YangLebihBaikDaripadanyaArticle() {
           <p>
             Dan pertanyaan yang sama ada di tempat yang lebih luas: apakah 5
             ayat yang sudah tidak berlaku, atau 214, atau 238, tidak ada yang
-            tahu pasti. Tidak ada mekanisme di dalam teks Al-Quran sendiri yang
+            tahu pasti. Tidak ada mekanisme di dalam Al-Quran sendiri yang
             memberi tahu pembaca mana yang sudah digantikan dan mana yang masih
             berlaku. Yang ada adalah penilaian manusia tentang mana yang
             membatalkan mana, dan penilaian itu berbeda dari satu ulama ke

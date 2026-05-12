@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -9,6 +10,15 @@ export const metadata: Metadata = {
   title: "Ma'idah | Qurai",
   description:
     "Al-Ma'idah 5:115 menjanjikan meja makan dari langit, tapi Al-Qur'an tidak pernah mengkonfirmasi meja itu turun. Saba 34:12 memberikan durasi angin Sulaiman yang berbeda dari Al-Anbiya 21:81. Saba 34:10 memerintahkan gunung bertasbih bersama Daud, tanpa keterangan apakah itu literal atau kiasan.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/35-maidah-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -60,6 +70,18 @@ export default function MaidahArticle() {
           </p>
         </header>
 
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/35-maidah-illustration.png"
+            alt="Ilustrasi editorial meja makan menggantung di bawah cahaya langit gelap"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
+
         <div className="ornament-divider mb-14" aria-hidden />
 
         <div className="font-serif-reading space-y-7 text-[1.08rem] leading-[1.92] text-[var(--qurai-muted)] sm:text-[1.18rem]">
@@ -106,7 +128,7 @@ export default function MaidahArticle() {
             ia khawatir umatnya tidak mampu menanggung konsekuensinya. Satu
             posisi berpijak pada inferensi dari konteks umum. Posisi lain
             berpijak pada inferensi yang berbeda. Keduanya tidak berpijak pada
-            teks yang menyatakannya secara eksplisit.
+            ayat yang menyatakannya secara eksplisit.
           </p>
 
           <p>
@@ -145,7 +167,7 @@ export default function MaidahArticle() {
             cair, angkatan kerja supranatural. Kerajaan dengan sumber daya
             seperti itu seharusnya meninggalkan jejak arkeologis yang bisa
             diverifikasi. Tradisi Sulaiman dalam Al-Qur'an tidak terhubung
-            dengan catatan manapun di luar teks-teks yang bergantung pada
+            dengan catatan manapun di luar naskah-naskah yang bergantung pada
             tradisi yang sama.
           </p>
 
@@ -188,7 +210,7 @@ export default function MaidahArticle() {
             Ketiga narasi — meja yang tidak dikonfirmasi turun, angin yang
             ukurannya berbeda di dua surah, gunung yang mungkin berbicara
             atau mungkin tidak — berbagi satu pola: klaim yang sangat konkret
-            di satu sisi, dan ketidakjelasan resolusi di sisi yang lain. Teks
+            di satu sisi, dan ketidakjelasan resolusi di sisi yang lain. Al-Quran
             tidak menawarkan cara untuk menentukan mana yang mana.
           </p>
         </div>

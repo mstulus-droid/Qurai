@@ -216,7 +216,7 @@ export default function AllahMekahMadinahArticle() {
             Ketika Muhammad tiba di Madinah pada 622 M, salah satu kelompok
             yang ia harapkan bisa menerimanya adalah komunitas Yahudi setempat.
             Mereka monoteistik, mereka punya tradisi kenabian, dan mereka tahu
-            teks-teks suci yang Muhammad rujuk dalam wahyunya.
+            kitab-kitab suci yang Muhammad rujuk dalam wahyunya.
           </p>
 
           <p>Mereka menolak.</p>
@@ -328,9 +328,9 @@ export default function AllahMekahMadinahArticle() {
 
           <p>
             Pernyataan tentang kesetaraan spiritual di Al-Ahzab 33:35 tidak
-            dicabut. Ia tetap ada di dalam teks. Tapi ia berdampingan dengan
+            dicabut. Ia tetap ada di dalam Al-Quran. Tapi ia berdampingan dengan
             sistem hukum yang membangun hierarki berdasarkan jenis kelamin di
-            hampir setiap domain kehidupan yang diatur. Sebuah teks yang
+            hampir setiap domain kehidupan yang diatur. Sebuah kitab yang
             menyatakan kesetaraan sambil melembagakan ketidaksetaraan tidak
             sedang mengalami pertumbuhan. Ia sedang mengakomodasi dua hal yang
             tidak bisa berdiri bersama.
@@ -397,8 +397,8 @@ export default function AllahMekahMadinahArticle() {
 
           <p>
             Dan kalau begitu, siapa yang memutuskan mana yang universal dan
-            mana yang kontekstual? Teks sendiri tidak menjelaskan ini.
-            Jawabannya ada pada pembacanya, bukan pada teks. Dan pembaca yang
+            mana yang kontekstual? Al-Quran sendiri tidak menjelaskan ini.
+            Jawabannya ada pada pembacanya, bukan pada kitabnya. Dan pembaca yang
             berbeda akan menarik garis itu di tempat yang berbeda, sesuai
             kebutuhan masing-masing.
           </p>

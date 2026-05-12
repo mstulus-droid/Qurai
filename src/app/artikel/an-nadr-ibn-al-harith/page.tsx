@@ -171,7 +171,7 @@ export default function AnNadrIbnAlHarithArticle() {
 
           <p>
             Al-Quran memiliki konsep <em>i'jaz</em>, kemukjizatan linguistik.
-            Teksnya tidak bisa ditandingi.{" "}
+            Ayat-ayatnya tidak bisa ditandingi.{" "}
             <VerseLink surah={2} ayat={23}>
               Al-Baqarah 2:23-24
             </VerseLink>{" "}

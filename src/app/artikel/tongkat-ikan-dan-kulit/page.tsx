@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -9,6 +10,15 @@ export const metadata: Metadata = {
   title: "Tongkat, Ikan, dan Kulit yang Berbicara | Qurai",
   description:
     "Ta Ha 20:20 dan Al-A'raf 7:107 menyebut tongkat Musa dengan dua kata berbeda untuk peristiwa yang sama. Al-Anbiya 21:87 menempatkan Yunus berdoa dari dalam perut ikan. Fussilat 41:20-21 memperlihatkan kulit yang bersaksi melawan pemiliknya. Tiga narasi dengan celah yang berbeda-beda.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/34-tongkat-ikan-dan-kulit-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -60,6 +70,18 @@ export default function TongkatIkanDanKulitArticle() {
           </p>
         </header>
 
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/34-tongkat-ikan-dan-kulit-illustration.png"
+            alt="Ilustrasi editorial tongkat, ikan, dan fragmen kulit simbolik di atas batu gelap"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
+
         <div className="ornament-divider mb-14" aria-hidden />
 
         <div className="font-serif-reading space-y-7 text-[1.08rem] leading-[1.92] text-[var(--qurai-muted)] sm:text-[1.18rem]">
@@ -100,7 +122,7 @@ export default function TongkatIkanDanKulitArticle() {
 
           <p>
             Dua narasi tentang peristiwa yang sama, dengan detail yang tidak
-            sepenuhnya konsisten, dan tidak ada penanda dalam teks tentang
+            sepenuhnya konsisten, dan tidak ada penanda dalam Al-Quran tentang
             mana yang lebih akurat.
           </p>
 
@@ -141,7 +163,7 @@ export default function TongkatIkanDanKulitArticle() {
             yang paling banyak dikutip dalam tradisi Islam, disebut dalam
             banyak konteks kesulitan ekstrem. Al-Qur'an tidak menjelaskan
             mekanisme keselamatannya. Yang dibangun adalah model: bahwa
-            tasbih di titik paling gelap bisa menjadi jalan keluar. Teks
+            tasbih di titik paling gelap bisa menjadi jalan keluar. Al-Quran
             tidak menawarkan penjelasan kausal. Ia menawarkan formula.
           </p>
 

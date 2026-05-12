@@ -107,9 +107,9 @@ export default function PreservasiQuranArticle() {
           <p>
             Yang membuat temuan ini tidak nyaman adalah isinya. Fragmen-fragmen
             itu memuat varian yang berbeda dari Mushaf Utsmani yang kita kenal:
-            urutan surah yang berbeda, ayat-ayat yang tidak ada di teks
+            urutan surah yang berbeda, ayat-ayat yang tidak ada di mushaf
             standar, ribuan variasi kata. Dan ada yang lebih mengusik — beberapa
-            halaman adalah <em>palimpsest</em>: teks lama dihapus, lalu
+            halaman adalah <em>palimpsest</em>: naskah lama dihapus, lalu
             ditulisi ulang. Itu bukan tanda preservasi. Itu tanda revisi.
           </p>
 
@@ -154,7 +154,7 @@ export default function PreservasiQuranArticle() {
             , satu qira'at memuat frasa "wa huwa abun lahum" (dan dia bapak
             bagi mereka) setelah "istri-istrinya adalah ibu mereka" — menambahkan
             status Muhammad sebagai bapak spiritual umat. Qira'at lain tidak
-            memuat frasa itu. Ini bukan variasi pelafalan. Ini perbedaan teks.
+            memuat frasa itu. Ini bukan variasi pelafalan. Ini perbedaan naskah.
           </p>
 
           <p>
@@ -169,14 +169,14 @@ export default function PreservasiQuranArticle() {
           <p>
             Dan Brubaker adalah spesialis manuskrip Al-Quran yang menghabiskan
             bertahun-tahun membandingkan 14 manuskrip tertua (abad ke-7 hingga
-            ke-10) dengan teks standar saat ini. Hasilnya: lebih dari 4.000
+            ke-10) dengan naskah standar saat ini. Hasilnya: lebih dari 4.000
             varian tekstual.
           </p>
 
           <p>
             Bukan cuma soal titik dan harakat. Brubaker mendokumentasikan
             perbedaan ejaan yang mengubah arti, perbedaan urutan ayat dan surah,
-            dan penambahan atau pengurangan teks. Ini bukan klaim fringe — ini
+            dan penambahan atau pengurangan ayat. Ini bukan klaim fringe — ini
             hasil analisis paleografi dan kodikologi yang metodis, dipublikasikan
             dan bisa diverifikasi.
           </p>
@@ -226,7 +226,7 @@ export default function PreservasiQuranArticle() {
             liturgi dari tradisi Kristen Syro-Aramaic. "Ya Sin" misalnya, ia
             baca sebagai bentuk Aramaic dari "Yasu" — Yesus. Hipotesis ini
             kontroversial dan belum diterima luas. Tapi pertanyaan dasarnya
-            tidak mudah diabaikan: mengapa teks wahyu memuat hal-hal yang
+            tidak mudah diabaikan: mengapa Al-Quran memuat hal-hal yang
             generasi terbaik penerimanya pun tidak bisa jelaskan?
           </p>
 
@@ -269,7 +269,7 @@ export default function PreservasiQuranArticle() {
 
           <p>
             Salah satu prinsip dasar ilmu Al-Quran adalah pembedaan antara
-            surah Makkiyah dan Madaniyah. Tapi ketika teks diperiksa lebih
+            surah Makkiyah dan Madaniyah. Tapi ketika Al-Quran diperiksa lebih
             teliti, pembedaan ini tidak selalu koheren.
           </p>
 
@@ -287,7 +287,7 @@ export default function PreservasiQuranArticle() {
 
           <p>
             Analisis redaksi menemukan setidaknya tiga lapisan komposisi yang
-            berbeda dalam teks Al-Quran. Lapisan pertama: doa-doa pendek dan
+            berbeda dalam Al-Quran. Lapisan pertama: doa-doa pendek dan
             litani, bahasanya paling dekat dengan Aramaic, punya kesamaan kuat
             dengan tradisi liturgi Kristen dan Yahudi. Lapisan kedua:
             narasi-narasi biblikal yang diperluas dengan polemik terhadap
@@ -296,7 +296,7 @@ export default function PreservasiQuranArticle() {
           </p>
 
           <p>
-            Kalau ini teks tunggal yang diturunkan dalam 22 tahun,
+            Kalau ini kitab tunggal yang diturunkan dalam 22 tahun,
             lapisan-lapisan itu perlu penjelasan.
           </p>
 
@@ -314,8 +314,8 @@ export default function PreservasiQuranArticle() {
             Perjanjian Baru punya lebih dari 5.800 manuskrip Yunani yang sudah
             dikatalogkan, dari abad ke-2 hingga ke-15. Fragmen P52, bagian dari
             Injil Yohanes, memiliki dating sekitar 125 M — hanya 25–30 tahun
-            setelah penulisan teks aslinya. Codex Sinaiticus dan Vaticanus dari
-            abad ke-4 memuat teks yang hampir lengkap. Dan semua varian
+            setelah penulisan naskah aslinya. Codex Sinaiticus dan Vaticanus dari
+            abad ke-4 memuat naskah yang hampir lengkap. Dan semua varian
             dipublikasikan secara terbuka dalam edisi kritis yang bisa diakses
             siapa saja.
           </p>
@@ -335,9 +335,9 @@ export default function PreservasiQuranArticle() {
           <p>
             Ribuan varian tekstual sudah terdokumentasikan — bukan oleh orang
             yang membenci Islam, tapi oleh sarjana manuskrip yang kerjanya
-            memang membandingkan teks. Substrat linguistik Al-Quran jauh lebih
+            memang membandingkan naskah. Substrat linguistik Al-Quran jauh lebih
             kompleks dari klaim "bahasa Arab yang jelas." Kronologi pembentukan
-            teksnya, kalau mengikuti bukti numismatik dan paleografis, menunjuk
+            pembentukannya, kalau mengikuti bukti numismatik dan paleografis, menunjuk
             ke proses yang jauh lebih panjang dari 22 tahun pewahyuan.
           </p>
 
@@ -346,7 +346,7 @@ export default function PreservasiQuranArticle() {
               Al-Hijr 15:9
             </VerseLink>{" "}
             menyatakan Allah yang menjaga kelestarian "adz-dzikr" ini. Tapi
-            kalau teksnya memang melewati semua proses seperti yang data
+            kalau Al-Quran memang melewati semua proses seperti yang data
             tunjukkan — revisi, variasi, standardisasi bertahap — klaim "tidak
             berubah satu huruf pun" itu klaim apa sebenarnya?
           </p>

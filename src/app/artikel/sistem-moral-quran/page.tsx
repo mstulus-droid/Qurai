@@ -106,7 +106,7 @@ export default function SistemMoralQuranArticle() {
           <p>
             Ini klaim universalisme yang kuat. Masalahnya, di kitab yang sama
             ada ayat-ayat lain yang menarik ke arah yang berlawanan — dan
-            perbedaannya bukan soal interpretasi tepi, tapi soal teks yang
+            perbedaannya bukan soal interpretasi tepi, tapi soal Al-Quran yang
             cukup eksplisit.
           </p>
 
@@ -215,7 +215,7 @@ export default function SistemMoralQuranArticle() {
             untuk menasihati, memisahkan di tempat tidur, lalu memukul istri
             yang dianggap tidak taat. Kata "wadribuhunna" dalam bahasa Arab
             adalah bentuk imperative dari "daraba" — memukul. Tidak ada dalam
-            teks aslinya kata yang membatasi intensitas.
+            ayat aslinya kata yang membatasi intensitas.
           </p>
 
           <p>
@@ -372,7 +372,7 @@ export default function SistemMoralQuranArticle() {
 
           <p>
             Ini bukan soal satu atau dua ayat yang bisa dianggap "disalahpahami."
-            Ini pola yang konsisten di seluruh teks — sistem yang membagi
+            Ini pola yang konsisten di seluruh Al-Quran — sistem yang membagi
             dunia menjadi in-group dan out-group, dengan perlakuan yang sangat
             berbeda untuk masing-masing.
           </p>

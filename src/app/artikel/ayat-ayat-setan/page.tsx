@@ -121,7 +121,7 @@ export default function AyatAyatSetanArticle() {
 
           <p>
             Lalu, menurut catatan At-Tabari, Ibn Sa'd, Al-Waqidi, dan Ibn
-            Ishaq, muncul dua kalimat yang tidak ada dalam teks An-Najm hari
+            Ishaq, muncul dua kalimat yang tidak ada dalam An-Najm hari
             ini:
           </p>
 

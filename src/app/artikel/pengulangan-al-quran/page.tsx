@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -8,6 +9,15 @@ export const metadata: Metadata = {
   title: "Yang Diulang Tiga Puluh Satu Kali | Qurai",
   description:
     "Hampir 40 persen Surah Ar-Rahman terdiri dari satu frasa yang diulang 31 kali tanpa variasi. Kisah Nabi Hud diceritakan di lima surah berbeda dengan frasa yang hampir identik, tanpa menambah detail baru. Al-Qur'an menyebut dirinya tibyan li kulli syai' — tapi sebagian besar ruangnya diisi dengan cerita yang sudah pernah diceritakan di tempat lain dalam kitab yang sama.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/30-pengulangan-al-quran-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -60,6 +70,18 @@ export default function PengulanganAlQuranArticle() {
           </p>
         </header>
 
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/30-pengulangan-al-quran-illustration.png"
+            alt="Ilustrasi editorial manuskrip dengan pola pengulangan emas di meja studi gelap"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
+
         <div className="ornament-divider mb-14" aria-hidden />
 
         <div className="font-serif-reading space-y-7 text-[1.08rem] leading-[1.92] text-[var(--qurai-muted)] sm:text-[1.18rem]">
@@ -93,7 +115,7 @@ export default function PengulanganAlQuranArticle() {
 
           <p>
             Para ulama balagha Arab, dari Ibnu Qutaibah sampai Al-Jahiz,
-            membahas takrar, pengulangan dalam teks. Kesimpulan umumnya:
+            membahas takrar, pengulangan dalam Al-Quran. Kesimpulan umumnya:
             pengulangan yang kuat mengandung variasi redaksi, perkembangan
             makna, atau pergeseran konteks. Pengulangan mekanis, frasa identik
             tanpa modifikasi, lebih dekat ke kecacatan daripada keunggulan
@@ -159,7 +181,7 @@ export default function PengulanganAlQuranArticle() {
             Pola seperti ini adalah ciri khas transmisi lisan. Epos oral
             seperti Iliad mengandung pengulangan formula serupa, kalimat yang
             digunakan kembali hampir kata per kata setiap kali situasi yang
-            sama muncul. Ketika teks lisan dikompilasi dalam bentuk tertulis,
+            sama muncul. Ketika wahyu lisan dikompilasi dalam bentuk tertulis,
             pengulangan itu ikut terbawa.
           </p>
 

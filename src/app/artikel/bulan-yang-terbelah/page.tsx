@@ -101,7 +101,7 @@ export default function BulanYangTerbelahArticle() {
           <p>
             Kalimat itu berdiri sendiri tanpa konteks. Tidak ada yang
             diceritakan siapa yang melihat, kapan tepatnya, di mana, atau dalam
-            kondisi apa. Teks berlanjut seolah tidak ada yang perlu dijelaskan
+            kondisi apa. Surah itu berlanjut seolah tidak ada yang perlu dijelaskan
             lebih lanjut.
           </p>
 
@@ -166,7 +166,7 @@ export default function BulanYangTerbelahArticle() {
             Apa yang sebenarnya dilihat orang Makkah
           </h2>
 
-          <p>Ada masalah lain, yang lebih dekat dengan teksnya sendiri.</p>
+          <p>Ada masalah lain, yang lebih dekat dengan ayat-ayatnya sendiri.</p>
 
           <p>
             Para mufasir klasik tidak sepakat soal apa yang dimaksud Q 54:1.
@@ -227,7 +227,7 @@ export default function BulanYangTerbelahArticle() {
             menempatkan Cheraman Perumal sezaman dengan Muhammad.
             Sumber-sumber berbeda menaruhnya di abad ke-4 M, ada yang di abad
             ke-9 M, keduanya jauh dari awal abad ke-7. Kisah ini pertama muncul
-            dalam teks Malayalam yang ditulis lama setelah masa Muhammad, dan
+            dalam catatan Malayalam yang ditulis lama setelah masa Muhammad, dan
             tidak ada sumber primer India yang mengkonfirmasinya.
           </p>
 
@@ -277,13 +277,13 @@ export default function BulanYangTerbelahArticle() {
           <p>
             Kalau belah bulan benar-benar sudah terjadi, ayat ini tidak perlu
             ada. Allah baru saja mengirimkan tanda fisik yang jauh melampaui
-            semua yang ada dalam daftar tuntutan itu. Tapi teks di sini
+            semua yang ada dalam daftar tuntutan itu. Tapi Al-Isra di sini
             berperilaku seolah tidak ada tanda fisik yang pernah diberikan,
             seolah pertanyaan itu masih terbuka, masih perlu dijawab.
           </p>
 
           <p>
-            Surah Al-Isra tidak tahu soal belah bulan. Atau lebih tepatnya: teks
+            Surah Al-Isra tidak tahu soal belah bulan. Atau lebih tepatnya: surah
             itu berperilaku seolah tidak tahu.
           </p>
         </div>

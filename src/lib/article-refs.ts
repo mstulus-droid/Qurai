@@ -735,6 +735,25 @@ const REFS: Array<{
   { surah: 33, ayatStart: 6, ayatEnd: 6, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
   { surah: 2, ayatStart: 144, ayatEnd: 144, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
   { surah: 15, ayatStart: 9, ayatEnd: 9, slug: "preservasi-quran", title: 'Mitos "Preservasi Sempurna" Al-Quran' },
+  // Artikel: Bahasa Arab yang Jelas
+  { surah: 39, ayatStart: 28, ayatEnd: 28, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 26, ayatStart: 195, ayatEnd: 195, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 12, ayatStart: 2, ayatEnd: 2, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 1, ayatStart: 6, ayatEnd: 6, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 23, ayatStart: 11, ayatEnd: 11, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 25, ayatStart: 1, ayatEnd: 1, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 2, ayatStart: 248, ayatEnd: 248, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 3, ayatStart: 52, ayatEnd: 52, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 24, ayatStart: 35, ayatEnd: 35, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 6, ayatStart: 75, ayatEnd: 75, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 18, ayatStart: 31, ayatEnd: 31, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 76, ayatStart: 17, ayatEnd: 17, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 80, ayatStart: 28, ayatEnd: 31, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 4, ayatStart: 12, ayatEnd: 12, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 4, ayatStart: 176, ayatEnd: 176, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 112, ayatStart: 2, ayatEnd: 2, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 20, ayatStart: 63, ayatEnd: 63, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
+  { surah: 5, ayatStart: 69, ayatEnd: 69, slug: "bahasa-arab-yang-jelas", title: "Bahasa Arab yang Jelas" },
 ];
 
 export function getArticlesForVerse(

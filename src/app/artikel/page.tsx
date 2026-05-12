@@ -6,14 +6,14 @@ import { ArticleNav } from "@/components/article-nav";
 export const metadata: Metadata = {
   title: "Artikel | Qurai",
   description:
-    "Analisis mendalam tentang teks, sejarah, dan pertanyaan yang jarang diajukan.",
+    "Analisis mendalam tentang naskah, sejarah, dan pertanyaan yang jarang diajukan.",
   alternates: {
     canonical: "/artikel",
   },
   openGraph: {
     title: "Artikel | Qurai",
     description:
-      "Analisis mendalam tentang teks, sejarah, dan pertanyaan yang jarang diajukan.",
+      "Analisis mendalam tentang naskah, sejarah, dan pertanyaan yang jarang diajukan.",
     url: "/artikel",
     type: "website",
     images: ["/brand/qurai-app-icon-dark.png"],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Artikel | Qurai",
     description:
-      "Analisis mendalam tentang teks, sejarah, dan pertanyaan yang jarang diajukan.",
+      "Analisis mendalam tentang naskah, sejarah, dan pertanyaan yang jarang diajukan.",
     images: ["/brand/qurai-app-icon-dark.png"],
   },
 };
@@ -103,7 +103,7 @@ const articles: ArticleItem[] = [
     number: "05",
     title: "Ketika Wahyu Mengikuti Kepentingan Pribadi Nabi",
     excerpt:
-      "Ada pola di ayat-ayat Madaniyah: wahyu turun tepat saat Muhammad menghadapi masalah personal — konflik rumah tangga, ketertarikan pada perempuan tertentu, kritik publik, atau kebutuhan finansial. Pola ini bisa diperiksa langsung dari teks.",
+      "Ada pola di ayat-ayat Madaniyah: wahyu turun tepat saat Muhammad menghadapi masalah personal — konflik rumah tangga, ketertarikan pada perempuan tertentu, kritik publik, atau kebutuhan finansial. Pola ini bisa diperiksa langsung dari Al-Quran.",
     surah: "Al-Ahzab 33:50 · At-Tahrim 66:1",
     date: "Mei 2026",
     readTime: "12 menit",
@@ -159,7 +159,7 @@ const articles: ArticleItem[] = [
     number: "09",
     title: 'Mitos "Preservasi Sempurna" Al-Quran',
     excerpt:
-      "Manuskrip Sana'a memuat teks yang dihapus dan ditulisi ulang. 4.000 varian terdokumentasikan dari 14 manuskrip tertua. Seperempat kosakata Al-Quran bukan dari Arab. Kronologi pembentukannya tidak cocok dengan narasi 22 tahun pewahyuan.",
+      "Manuskrip Sana'a memuat naskah yang dihapus dan ditulisi ulang. 4.000 varian terdokumentasikan dari 14 manuskrip tertua. Seperempat kosakata Al-Quran bukan dari Arab. Kronologi pembentukannya tidak cocok dengan narasi 22 tahun pewahyuan.",
     surah: "Yusuf 12:2 · Al-Hijr 15:9",
     date: "Mei 2026",
     readTime: "15 menit",
@@ -327,7 +327,7 @@ const articles: ArticleItem[] = [
     number: "21",
     title: "Tuhan yang Berbicara Arab",
     excerpt:
-      "Q 12:2 menyebutkan alasan spesifik mengapa Al-Quran diturunkan dalam bahasa Arab: 'agar kamu memahaminya.' Kalimat itu mendefinisikan siapa yang dimaksud sebagai audiens utama. Dan di kitab yang sama tempat Allah mengklaim mengutus Muhammad untuk semesta alam, teks itu dikirim dalam satu bahasa yang hanya dimengerti satu kelompok manusia.",
+      "Q 12:2 menyebutkan alasan spesifik mengapa Al-Quran diturunkan dalam bahasa Arab: 'agar kamu memahaminya.' Kalimat itu mendefinisikan siapa yang dimaksud sebagai audiens utama. Dan di kitab yang sama tempat Allah mengklaim mengutus Muhammad untuk semesta alam, Al-Quran itu dikirim dalam satu bahasa yang hanya dimengerti satu kelompok manusia.",
     surah: "Yusuf 12:2 · Al-Anbiya 21:107",
     date: "Mei 2026",
     readTime: "11 menit",
@@ -457,6 +457,10 @@ const articles: ArticleItem[] = [
     surah: "Ar-Rahman 55:13 · An-Nahl 16:89",
     date: "Mei 2026",
     readTime: "9 menit",
+    image: {
+      src: "/article-images/30-pengulangan-al-quran-illustration.png",
+      alt: "Ilustrasi editorial manuskrip dengan pola pengulangan emas di meja studi gelap",
+    },
   },
   {
     slug: "alif-lam-mim",
@@ -467,6 +471,10 @@ const articles: ArticleItem[] = [
     surah: "Al-Baqarah 2:1 · Al-Qari'ah 101:1",
     date: "Mei 2026",
     readTime: "9 menit",
+    image: {
+      src: "/article-images/31-alif-lam-mim-illustration.png",
+      alt: "Ilustrasi editorial tiga glyph bercahaya di atas manuskrip dalam ruang studi kuno",
+    },
   },
   {
     slug: "jizyah",
@@ -477,6 +485,10 @@ const articles: ArticleItem[] = [
     surah: "At-Tawbah 9:29 · Al-Baqarah 2:256",
     date: "Mei 2026",
     readTime: "7 menit",
+    image: {
+      src: "/article-images/32-jizyah-illustration.png",
+      alt: "Ilustrasi editorial pembayaran koin jizyah di meja batu dengan sosok tertunduk",
+    },
   },
   {
     slug: "sapi-yang-melenguh",
@@ -487,6 +499,10 @@ const articles: ArticleItem[] = [
     surah: "Ta Ha 20:88 · Al-Baqarah 2:73",
     date: "Mei 2026",
     readTime: "8 menit",
+    image: {
+      src: "/article-images/33-sapi-yang-melenguh-illustration.png",
+      alt: "Ilustrasi editorial patung anak sapi logam bersuara di perkemahan gurun malam",
+    },
   },
   {
     slug: "tongkat-ikan-dan-kulit",
@@ -497,6 +513,24 @@ const articles: ArticleItem[] = [
     surah: "Ta Ha 20:20 · Al-Anbiya 21:87",
     date: "Mei 2026",
     readTime: "9 menit",
+    image: {
+      src: "/article-images/34-tongkat-ikan-dan-kulit-illustration.png",
+      alt: "Ilustrasi editorial tongkat, ikan, dan fragmen kulit simbolik di atas batu gelap",
+    },
+  },
+  {
+    slug: "bahasa-arab-yang-jelas",
+    number: "36",
+    title: "Bahasa Arab yang Jelas",
+    excerpt:
+      "Az-Zumar menyebut Al-Quran sebagai kitab berbahasa Arab tanpa kebengkokan. Al-Fatihah, doa yang dibaca tujuh belas kali sehari, menggunakan kata sirat yang bukan dari bahasa Arab. Al-Suyuti sendiri mendokumentasikan lebih dari seratus kata asing. Dan 29 surah masih dibuka dengan huruf yang tidak ada yang bisa jelaskan setelah empat belas abad.",
+    surah: "Az-Zumar 39:28 · Al-Fatihah 1:6",
+    date: "Mei 2026",
+    readTime: "10 menit",
+    image: {
+      src: "/article-images/36-bahasa-arab-yang-jelas-illustration.png",
+      alt: "Ilustrasi editorial manuskrip multibahasa di meja studi gelap",
+    },
   },
   {
     slug: "maidah",
@@ -507,6 +541,10 @@ const articles: ArticleItem[] = [
     surah: "Al-Ma'idah 5:115 · Saba 34:10",
     date: "Mei 2026",
     readTime: "8 menit",
+    image: {
+      src: "/article-images/35-maidah-illustration.png",
+      alt: "Ilustrasi editorial meja makan menggantung di bawah cahaya langit gelap",
+    },
   },
 ];
 

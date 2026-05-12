@@ -8,7 +8,7 @@ import { ArticleShare } from "@/components/article-share";
 export const metadata: Metadata = {
   title: "Apa yang Terlihat Setelah Teks Diperiksa | Qurai",
   description:
-    "Al-Quran disusun bukan secara kronologis. Kompilasi menunjukkan variasi dan kehilangan materi. Ada kontradiksi internal yang tidak diselesaikan oleh doktrin abrogasi. Ada klaim ilmiah yang salah. Ada tantangan sastra tanpa kriteria. Semua ini bisa diperiksa dari teks.",
+    "Al-Quran disusun bukan secara kronologis. Kompilasi menunjukkan variasi dan kehilangan materi. Ada kontradiksi internal yang tidak diselesaikan oleh doktrin abrogasi. Ada klaim ilmiah yang salah. Ada tantangan sastra tanpa kriteria. Semua ini bisa diperiksa dari Al-Quran.",
   openGraph: {
     images: [
       {
@@ -64,7 +64,7 @@ export default function KritikQuranArticle() {
             Al-Quran disusun bukan secara kronologis. Proses kompilasi menunjukkan
             variasi dan kehilangan materi. Ada kontradiksi internal yang tidak
             diselesaikan oleh doktrin abrogasi. Ada klaim ilmiah yang bermasalah.
-            Semua ini bisa diperiksa dari teks.
+            Semua ini bisa diperiksa dari Al-Quran.
           </p>
         </header>
 
@@ -84,11 +84,11 @@ export default function KritikQuranArticle() {
 
         <div className="font-serif-reading space-y-7 text-[1.08rem] leading-[1.92] text-[var(--qurai-muted)] sm:text-[1.18rem]">
           <p>
-            Ada perbedaan antara membaca Al-Quran sebagai teks suci dan membacanya
+            Ada perbedaan antara membaca Al-Quran sebagai kitab suci dan membacanya
             sebagai objek historis. Yang pertama adalah praktik keimanan. Yang kedua
             adalah metode keilmuan. Artikel ini memilih yang kedua — bukan untuk
             menyerang keyakinan siapapun, tapi untuk memeriksa apa yang ada dalam
-            teks dan dalam sejarahnya.
+            Al-Quran dan dalam sejarahnya.
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
@@ -137,15 +137,15 @@ export default function KritikQuranArticle() {
               17:85
             </VerseLink>
             ). Tanpa hadis atau sirah, pembaca tidak tahu siapa yang bertanya dan
-            dalam konteks apa. Al-Quran merespons pertanyaan yang tidak ada di dalam
-            teks itu sendiri.
+            dalam konteks apa. Al-Quran merespons pertanyaan yang tidak ada di
+            dalamnya.
           </p>
 
           <p>
             Semua ini bisa dijelaskan dengan argumen bahwa Al-Quran memang tidak
             dirancang sebagai narasi linear. Tapi kalau itu yang dimaksud, maka klaim
             bahwa Al-Quran adalah panduan lengkap yang mandiri perlu dimaknai ulang —
-            karena teks yang membutuhkan begitu banyak penjelasan eksternal untuk
+            karena kitab yang membutuhkan begitu banyak penjelasan eksternal untuk
             dipahami sulit disebut cukup dengan sendirinya.
           </p>
 
@@ -154,11 +154,11 @@ export default function KritikQuranArticle() {
           </h2>
 
           <p>
-            Al-Quran tidak dikompilasi menjadi satu teks semasa Muhammad hidup.
+            Al-Quran tidak dikompilasi menjadi satu mushaf semasa Muhammad hidup.
             Wahyu tersebar dalam berbagai media — tulang, pelepah kurma, hafalan
-            para sahabat — dan tidak ada supervisi langsung dari Muhammad atas teks
+            para sahabat — dan tidak ada supervisi langsung dari Muhammad atas naskah
             final. Setelah kematiannya, banyak penghafal tewas dalam Perang Riddah,
-            mendorong Umar bin Khattab mendesak Abu Bakar untuk mengkompilasi teks
+            mendorong Umar bin Khattab mendesak Abu Bakar untuk mengkompilasi Al-Quran
             sebelum lebih banyak yang hilang.
           </p>
 
@@ -181,7 +181,7 @@ export default function KritikQuranArticle() {
             Aisyah meriwayatkan bahwa Surah Al-Ahzab pada masa Muhammad dibaca
             sebanyak 200 ayat. Dalam mushaf Utsmani, surah itu hanya berisi 73 ayat.
             Umar bin Khattab bersaksi bahwa ayat tentang rajam pernah ada dalam
-            Al-Quran tapi tidak ada dalam teks yang sekarang. Al-Quran sendiri
+            Al-Quran tapi tidak ada dalam mushaf yang sekarang. Al-Quran sendiri
             mengklaim dalam{" "}
             <VerseLink surah={15} ayat={9}>
               Al-Hijr 15:9
@@ -193,7 +193,7 @@ export default function KritikQuranArticle() {
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
-            Kontradiksi dalam teks
+            Kontradiksi dalam Al-Quran
           </h2>
 
           <p>
@@ -277,7 +277,7 @@ export default function KritikQuranArticle() {
             menceritakan anaknya yang menolak naik bahtera dan akhirnya tenggelam.
             Muslim biasanya menjelaskan ini dengan argumen bahwa anak yang durhaka
             bukan bagian dari "keluarga" dalam arti teologis — tapi itu interpretasi
-            yang ditambahkan dari luar teks.
+            yang ditambahkan dari luar Al-Quran.
           </p>
 
           <p>
@@ -486,7 +486,7 @@ export default function KritikQuranArticle() {
           <p>
             Yang sulit adalah bahwa alat-alat itu hanya bekerja dari dalam. Seseorang
             yang datang tanpa keimanan sebelumnya akan melihat pola yang berbeda dari
-            teks yang sama. Kedua orang itu menggunakan bukti yang sama, tapi tiba
+            kitab yang sama. Kedua orang itu menggunakan bukti yang sama, tapi tiba
             di tempat yang berbeda. Itulah yang membuat pertanyaan ini tetap terbuka
             — dan layak diajukan.
           </p>

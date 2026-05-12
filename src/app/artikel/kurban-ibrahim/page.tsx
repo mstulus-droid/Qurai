@@ -140,7 +140,7 @@ export default function KurbanIbrahimArticle() {
           <p>
             Versi Al-Quran menyisakan pertanyaan yang tidak dijawab, lalu umat
             Islam hari ini menyembelih kambing dan sapi atas nama "sembelihan
-            yang besar" itu, tanpa teks yang menjelaskan kenapa kambing atau
+            yang besar" itu, tanpa penjelasan di Al-Quran kenapa kambing atau
             sapi yang dimaksud.
           </p>
 
@@ -158,7 +158,7 @@ export default function KurbanIbrahimArticle() {
               Al-An'am 6:114
             </VerseLink>{" "}
             menyebutnya <em>mufasshal</em>, terperinci. Tapi untuk memahami
-            kisah Ibrahim saja, pembaca harus keluar dari teks dan merujuk ke
+            kisah Ibrahim saja, pembaca harus keluar dari kitab ini dan merujuk ke
             tafsir ulama, hadis-hadis, kisah-kisah Israeliyat, bahkan ke
             Alkitab.
           </p>
@@ -221,7 +221,7 @@ export default function KurbanIbrahimArticle() {
           </p>
 
           <p>
-            22:37 seperti mempertanyakan kegunaan ritualnya sendiri, lalu teks
+            22:37 seperti mempertanyakan kegunaan ritualnya sendiri, lalu surah
             berlanjut seolah tidak terjadi apa-apa.
           </p>
 
@@ -263,7 +263,7 @@ export default function KurbanIbrahimArticle() {
           <p>
             Islam memberikan narasi Ibrahim sebagai asal-usulnya. Apakah itu
             rekonstruksi historis yang akurat atau legitimasi teologis untuk
-            praktik yang sudah berjalan, jawabannya tidak ada di dalam teks.
+            praktik yang sudah berjalan, jawabannya tidak ada di dalam kitab.
           </p>
         </div>
 

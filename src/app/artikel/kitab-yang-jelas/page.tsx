@@ -66,7 +66,7 @@ export default function KitabYangJelasArticle() {
             terhadap satu penghinaan yang tidak disebutkan di dalamnya.
             Al-Anfal 8:5-7 merujuk ke Perang Badar tanpa menyebut kata
             "Badar" sama sekali. Al-Quran menyebut dirinya "kitabun mubeen",
-            teks yang jelas. Tapi tidak ada pembaca yang bisa memahaminya
+            kitab yang jelas. Tapi tidak ada pembaca yang bisa memahaminya
             sendirian.
           </p>
         </header>
@@ -96,7 +96,7 @@ export default function KitabYangJelasArticle() {
           </p>
 
           <p>
-            Dalam teksnya, kalimat itu tidak memberi tahu siapa yang dimaksud,
+            Di dalamnya, kalimat itu tidak memberi tahu siapa yang dimaksud,
             apa yang mereka lakukan, mengapa mereka "terputus," atau apa
             hubungannya dengan dua ayat sebelumnya tentang telaga dan kurban.
             Ia berdiri sendiri tanpa penjelasan.
@@ -123,7 +123,7 @@ export default function KitabYangJelasArticle() {
             Tanpa mengetahui bahwa kata <em>abtar</em> dilontarkan kepada
             Muhammad, tanpa tahu oleh siapa dan dalam konteks apa, ayat ketiga
             itu hampir tidak punya arti. Ia adalah kalimat penutup dari
-            percakapan yang tidak ada di dalam teksnya sendiri.
+            percakapan yang tidak ada di dalam surahnya sendiri.
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
@@ -134,7 +134,7 @@ export default function KitabYangJelasArticle() {
             <VerseLink surah={8} ayat={5}>
               Al-Anfal 8:5–7
             </VerseLink>{" "}
-            adalah contoh yang lebih ekstrem. Teks berkata: Allah menyuruhmu
+            adalah contoh yang lebih ekstrem. Al-Quran berkata: Allah menyuruhmu
             keluar dari rumahmu dengan kebenaran, dan sebagian orang beriman
             tidak menyukainya. Mereka membantahmu seolah dihalau ke arah
             kematian. Allah menjanjikan salah satu dari dua golongan untukmu,
@@ -158,12 +158,12 @@ export default function KitabYangJelasArticle() {
             pasukan.
           </p>
 
-          <p>Tidak satu kata pun dari narasi itu ada di dalam teks.</p>
+          <p>Tidak satu kata pun dari narasi itu ada di dalam Al-Quran.</p>
 
           <p>
             Ayat-ayat itu tidak bercerita tentang Badar. Mereka merujuk ke
             Badar, mengasumsikan pembaca sudah tahu, dan mengomentari keputusan
-            yang diambil di sana. Teks itu tidak memberikan cukup informasi
+            yang diambil di sana. Ayat-ayat itu tidak memberikan cukup informasi
             untuk dimengerti sama sekali tanpa cerita yang tidak ada di
             dalamnya.
           </p>
@@ -179,12 +179,12 @@ export default function KitabYangJelasArticle() {
             </VerseLink>{" "}
             di beberapa tempat. Di pembuka Surah Yusuf, di pembuka Al-Hijr, di
             Al-Naml, di Al-Qashash. Kata <em>mubeen</em> artinya jelas,
-            gamblang, terang. Teks yang menjelaskan dirinya sendiri.
+            gamblang, terang. Kitab yang menjelaskan dirinya sendiri.
           </p>
 
           <p>
             Paradoksnya ada di antara klaim itu dan apa yang kita lihat ketika
-            membaca teksnya.
+            membacanya.
           </p>
 
           <p>
@@ -204,7 +204,7 @@ export default function KitabYangJelasArticle() {
           <p>
             Tradisi Islam menyelesaikan masalah ini dengan membangun aparatus
             eksternal yang besar: asbabun nuzul, sirah, hadis, tafsir. Semuanya
-            dibutuhkan untuk menjelaskan apa yang teks sendiri tidak jelaskan.
+            dibutuhkan untuk menjelaskan apa yang Al-Quran sendiri tidak jelaskan.
             Literatur itu tebal, dan bertambah tebal dari generasi ke generasi,
             karena semakin jauh pembaca dari Arabia abad ke-7, semakin banyak
             yang perlu dijelaskan.
@@ -219,10 +219,10 @@ export default function KitabYangJelasArticle() {
           </p>
 
           <p>
-            Tapi kalau memang begitu, teks itu dirancang untuk pembaca spesifik
+            Tapi kalau memang begitu, kitab itu dirancang untuk pembaca spesifik
             di Arabia abad ke-7, bukan untuk semua manusia di semua zaman.
-            Keduanya tidak bisa benar sekaligus: teks yang jelas untuk semua
-            orang, atau teks yang hanya jelas bagi orang yang sudah tahu semua
+            Keduanya tidak bisa benar sekaligus: kitab yang jelas untuk semua
+            orang, atau kitab yang hanya jelas bagi orang yang sudah tahu semua
             konteksnya.
           </p>
         </div>

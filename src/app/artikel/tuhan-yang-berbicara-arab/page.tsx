@@ -8,7 +8,7 @@ import { ArticleShare } from "@/components/article-share";
 export const metadata: Metadata = {
   title: "Tuhan yang Berbicara Arab | Qurai",
   description:
-    "Q 12:2 menyebutkan alasan spesifik mengapa Al-Quran diturunkan dalam bahasa Arab: 'agar kamu memahaminya.' Kalimat itu bukan sekadar konteks — ia mendefinisikan siapa yang dimaksud sebagai 'kamu'. Dan di surah yang sama tempat Allah mengklaim mengutus Muhammad untuk semesta alam, teks itu dikirim dalam satu bahasa yang hanya dimengerti satu kelompok manusia.",
+    "Q 12:2 menyebutkan alasan spesifik mengapa Al-Quran diturunkan dalam bahasa Arab: 'agar kamu memahaminya.' Kalimat itu bukan sekadar konteks — ia mendefinisikan siapa yang dimaksud sebagai 'kamu'. Dan di surah yang sama tempat Allah mengklaim mengutus Muhammad untuk semesta alam, Al-Quran itu dikirim dalam satu bahasa yang hanya dimengerti satu kelompok manusia.",
   openGraph: {
     images: [
       {
@@ -66,7 +66,7 @@ export default function TuhanYangBerbicaraArabArticle() {
             dalam bahasa Arab: "agar kamu memahaminya." Kalimat itu bukan
             sekadar konteks — ia mendefinisikan siapa yang dimaksud sebagai
             "kamu." Dan di kitab yang sama tempat Allah mengklaim mengutus
-            Muhammad untuk semesta alam, teks itu dikirim dalam satu bahasa
+            Muhammad untuk semesta alam, Al-Quran itu dikirim dalam satu bahasa
             yang hanya dimengerti satu kelompok manusia.
           </p>
         </header>
@@ -110,7 +110,7 @@ export default function TuhanYangBerbicaraArabArticle() {
               {" "}
               Thaha 20:113
             </VerseLink>{" "}
-            mengulang frasa yang sama. Tiga kali dalam teks yang berbeda,
+            mengulang frasa yang sama. Tiga kali dalam ayat yang berbeda,
             sifat Arab dari wahyu itu tidak diperlakukan sebagai kebetulan
             atau keterbatasan teknis, tapi sebagai bagian dari desain.
           </p>
@@ -124,7 +124,7 @@ export default function TuhanYangBerbicaraArabArticle() {
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
-            Pertanyaan dari dalam teks
+            Pertanyaan dari dalam Al-Quran
           </h2>
 
           <p>
@@ -152,7 +152,7 @@ export default function TuhanYangBerbicaraArabArticle() {
           </p>
 
           <p>
-            Teks itu sendiri, dalam satu ayat, memperlihatkan di mana pusat
+            Al-Quran itu sendiri, dalam satu ayat, memperlihatkan di mana pusat
             gravitasinya berada.
           </p>
 
@@ -184,7 +184,7 @@ export default function TuhanYangBerbicaraArabArticle() {
 
           <p>
             Dua ayat itu berdiri di samping Q 12:2 tanpa menyelesaikan
-            tegangan di antara keduanya. Misi universal. Teks dalam satu
+            tegangan di antara keduanya. Misi universal. Kitab dalam satu
             bahasa. Ritual berorientasi satu kota. Nabi dari satu suku.
           </p>
 
@@ -243,7 +243,7 @@ export default function TuhanYangBerbicaraArabArticle() {
           </p>
 
           <p>
-            Ini bukan anomali sejarah yang bisa dipisahkan dari tekstnya.
+            Ini bukan anomali sejarah yang bisa dipisahkan dari Al-Qurannya.
             Struktur teologis yang menempatkan Arab sebagai bahasa wahyu,
             Mekah sebagai pusat ibadah, dan nabi Arab sebagai perantara
             terakhir, menghasilkan hierarki yang sangat logis untuk

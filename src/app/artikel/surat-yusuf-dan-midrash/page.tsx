@@ -239,7 +239,7 @@ export default function SuratYusufDanMidrashArticle() {
             Qurayzah. Komunitas-komunitas ini membawa serta tradisi intelektual
             mereka, termasuk cerita-cerita Midrash yang selama berabad-abad
             sudah menjadi bagian dari cara mereka memahami dan menceritakan
-            teks-teks lama.
+            naskah-naskah lama.
           </p>
 
           <p>

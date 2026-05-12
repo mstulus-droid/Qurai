@@ -92,7 +92,7 @@ export default function TidakAdaPaksaanArticle() {
             <em>la ikraha fi'd-din</em>, tidak ada paksaan dalam agama.
           </p>
 
-          <p>Ayat itu nyata dan tidak perlu ditafsirkan ulang. Tapi teks tidak berhenti di situ.</p>
+          <p>Ayat itu nyata dan tidak perlu ditafsirkan ulang. Tapi Al-Quran tidak berhenti di situ.</p>
 
           <p>
             <VerseLink surah={4} ayat={89}>
@@ -223,7 +223,7 @@ export default function TidakAdaPaksaanArticle() {
           <p>
             Al-Quran sendiri punya kata untuk kondisi ini: <em>munafik</em>,
             orang yang menampilkan keimanan yang tidak ada di dalam hatinya. Dan
-            teks tidak memperlakukan kemunafikan dengan ringan.{" "}
+            Al-Quran tidak memperlakukan kemunafikan dengan ringan.{" "}
             <VerseLink surah={4} ayat={145}>
               An-Nisa 4:145
             </VerseLink>{" "}

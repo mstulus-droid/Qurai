@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -8,6 +9,15 @@ export const metadata: Metadata = {
   title: "Wa Hum Saghirun | Qurai",
   description:
     "At-Tawbah 9:29 memerintahkan non-Muslim membayar jizyah 'wa hum saghirun' — sementara mereka dalam keadaan hina. Kata saghirun bukan interpretasi kemudian, ia ada di dalam ayat sebagai kondisi yang menyertai pembayaran. Al-Baqarah 2:256 menyatakan tidak ada paksaan dalam agama, tapi sistem yang menetapkan penghinaan bagi yang tidak berpindah agama bekerja dengan mekanisme yang berbeda.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/32-jizyah-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -58,6 +68,18 @@ export default function JizyahArticle() {
             sebagai kondisi yang menyertai kewajiban membayar.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/32-jizyah-illustration.png"
+            alt="Ilustrasi editorial pembayaran koin jizyah di meja batu dengan sosok tertunduk"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 
@@ -113,7 +135,7 @@ export default function JizyahArticle() {
           </p>
 
           <p>
-            Frasa itu bukan detail yang bisa diabaikan. Ia ada di dalam teks,
+            Frasa itu bukan detail yang bisa diabaikan. Ia ada di dalam Al-Quran,
             dalam satu kalimat yang sama dengan kewajiban membayar, sebagai
             kondisi yang menyertai pembayaran itu.
           </p>

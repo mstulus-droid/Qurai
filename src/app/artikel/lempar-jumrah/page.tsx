@@ -108,7 +108,7 @@ export default function LemparJumrahArticle() {
 
           <p>
             Bukan soal tafsiran atau cara membaca. Kata "jumrah", perintah melempar
-            batu, atau apapun yang merujuk pada ritual itu tidak ada di teks.
+            batu, atau apapun yang merujuk pada ritual itu tidak ada di Al-Quran.
             Seluruh dasarnya berasal dari hadis dan tradisi lisan.
           </p>
 
@@ -152,7 +152,7 @@ export default function LemparJumrahArticle() {
           <p>
             Kalau jawabannya adalah "simbolisme" — itu argumen yang bisa diterima.
             Tapi simbolisme itu tidak ada di Al-Quran. Dan simbol wajib yang tidak
-            punya dasar teks dalam kitab yang diklaim lengkap dan sempurna adalah
+            punya dasar ayat dalam kitab yang diklaim lengkap dan sempurna adalah
             posisi yang perlu dijelaskan.
           </p>
 
@@ -195,7 +195,7 @@ export default function LemparJumrahArticle() {
             Quraninya. Ini bukan argumen bahwa ritual itu harus dihentikan — tapi
             ini pertanyaan yang masuk akal untuk diajukan: seberapa besar risiko
             yang bisa diterima atas nama sesuatu yang seluruh dasarnya berasal dari
-            tradisi, bukan teks?
+            tradisi, bukan ayatnya?
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">

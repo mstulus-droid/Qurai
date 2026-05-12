@@ -106,7 +106,7 @@ export default function DzulqarnainArticle() {
             <VerseLink surah={18} ayat={83}>
               ayat 83–98
             </VerseLink>{" "}
-            terasa sangat dekat dengan teks Syriac yang sudah ada. Terlalu dekat
+            terasa sangat dekat dengan naskah Syriac yang sudah ada. Terlalu dekat
             untuk diabaikan.
           </p>
 
@@ -200,7 +200,7 @@ export default function DzulqarnainArticle() {
           </blockquote>
 
           <p>
-            Dalam teks Syriac aslinya deskripsinya lebih spesifik: lautan
+            Dalam naskah Syriac aslinya deskripsinya lebih spesifik: lautan
             berbau busuk di ujung samudra, teksturnya digambarkan "seperti
             nanah." Detail itu berubah dalam transmisi — dari laut berbau busuk
             menjadi mata air berlumpur — tapi asal-usulnya dari sumber yang
@@ -210,12 +210,12 @@ export default function DzulqarnainArticle() {
           </p>
 
           <p>
-            Kalau ini wahyu, mengapa ia mewarisi kesalahan kosmologi dari teks
+            Kalau ini wahyu, mengapa ia mewarisi kesalahan kosmologi dari naskah
             manusia sebelumnya?
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
-            Pengakuan yang terpendam di dalam teks
+            Pengakuan yang terpendam di dalam kitab
           </h2>
 
           <p>
@@ -230,7 +230,7 @@ export default function DzulqarnainArticle() {
           </p>
 
           <p>
-            Dan jawaban yang diberikan identik dengan teks yang sudah ada di
+            Dan jawaban yang diberikan identik dengan naskah yang sudah ada di
             tangan mereka.
           </p>
 
@@ -274,7 +274,7 @@ export default function DzulqarnainArticle() {
           </p>
 
           <p>
-            Tembok itu ada dalam teks Syriac. Tidak ada di tanah.
+            Tembok itu ada dalam naskah Syriac. Tidak ada di tanah.
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
@@ -292,7 +292,7 @@ export default function DzulqarnainArticle() {
           </p>
 
           <p>
-            Kedua, strukturnya identik dengan teks Kristen berbahasa Syriac yang
+            Kedua, strukturnya identik dengan naskah Kristen berbahasa Syriac yang
             sudah beredar sebelumnya. Bukan mirip — identik. Termasuk detail
             yang salah secara sains.
           </p>
@@ -305,10 +305,10 @@ export default function DzulqarnainArticle() {
           <p>
             Ulama modern terus berusaha menambal ini. Tapi setiap teori baru
             membuka pertanyaan yang tidak lebih kecil dari sebelumnya. Musa
-            Cerantonio — seorang mualaf Australia yang mahir membaca teks Aramaic
+            Cerantonio — seorang mualaf Australia yang mahir membaca naskah Aramaic
             — akhirnya meninggalkan Islam setelah membandingkan Alexander Romance
             dengan Quran secara langsung. Bukan karena emosi, tapi karena
-            teks-teksnya terlalu identik untuk disebut kebetulan.
+            naskah-naskahnya terlalu identik untuk disebut kebetulan.
           </p>
 
           <p>

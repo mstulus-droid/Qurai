@@ -147,7 +147,7 @@ export default function KetikaLangitMasihAsapArticle() {
             <VerseLink surah={79} ayat={27}>
               An-Nazi'at 79:27–30
             </VerseLink>{" "}
-            menyajikan urutan yang tampak terbalik dari Q 41. Teks berkata:
+            menyajikan urutan yang tampak terbalik dari Q 41. Al-Quran berkata:
             Allah membangun dan meninggikan langit, menyempurnakannya,
             menggelapkan malamnya, dan mengeluarkan cahayanya. Setelah itu
             (ba'da dzalika) bumi dihamparkan.
@@ -175,7 +175,7 @@ export default function KetikaLangitMasihAsapArticle() {
               Al-Anbiya 21:30
             </VerseLink>{" "}
             menambahkan satu detail lagi: langit dan bumi awalnya menyatu,
-            lalu dipisahkan. Air dijadikan dasar segala yang hidup. Teks itu
+            lalu dipisahkan. Air dijadikan dasar segala yang hidup. Ayat itu
             sering dikutip sebagai petunjuk Big Bang. Tapi kalau Big Bang
             adalah acuannya, kronologi Q 41 justru berlawanan dengan
             kosmologi yang sama: dalam Big Bang, bintang-bintang ada jauh
@@ -189,7 +189,7 @@ export default function KetikaLangitMasihAsapArticle() {
             Dari nebula bintang-bintang terbentuk, dari sisa materialnya
             planet-planet terbentuk, bumi adalah produk akhir. Tapi dalam Q 41,
             "dukhan" muncul setelah bumi sudah selesai diciptakan dan
-            dilengkapi. Kalau "dukhan" memang nebula primordial, teks itu
+            dilengkapi. Kalau "dukhan" memang nebula primordial, ayat itu
             menempatkan nebula setelah produk akhirnya sudah ada.
           </p>
         </div>

@@ -155,13 +155,13 @@ export default function NamaDiDalamApiArticle() {
           </h2>
 
           <p>
-            Al-Quran punya banyak musuh yang disebutkan dalam teks. Abu Jahl,
+            Al-Quran punya banyak musuh yang disebutkan dalam Al-Quran. Abu Jahl,
             salah satu penentang paling keras yang ikut memimpin pasukan Quraisy
             di Badar, tidak pernah disebut namanya dalam satu ayat pun. Para
             pemimpin yang memboikot Muhammad selama tiga tahun di Shi'b Abi
             Talib juga tidak. Kaum munafik di Madinah yang dicurigai Muhammad
             mendapat banyak ayat tersendiri, tapi identitasnya tidak pernah
-            dikonfirmasi langsung oleh teks.
+            dikonfirmasi langsung oleh Al-Quran.
           </p>
 
           <p>Hanya satu orang yang dikutuk dengan nama.</p>
@@ -280,7 +280,7 @@ export default function NamaDiDalamApiArticle() {
 
           <p>
             Apakah julukan itu memang sudah dikenal sebelum surah ini turun,
-            atau teks yang kemudian membentuk cara kita membaca orangnya, tidak
+            atau kitab yang kemudian membentuk cara kita membaca orangnya, tidak
             ada yang bisa memastikan. Tapi nama itu sekarang melekat selamanya,
             dalam kitab yang dibaca lebih dari satu miliar orang, sebagai
             sinonim untuk orang yang paling celaka.

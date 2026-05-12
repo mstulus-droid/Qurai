@@ -147,7 +147,7 @@ export default function BumiDatarArticle() {
             Tafsir al-Jalalayn ditulis oleh dua ulama: Jalaluddin al-Mahalli
             yang wafat tahun 1459 M, dan muridnya Jalaluddin as-Suyuthi yang
             wafat tahun 1505 M. Tafsir ini ringkas, padat, dan sampai hari ini
-            dipakai sebagai teks pengantar tafsir di banyak pesantren. Ketika
+            dipakai sebagai kitab pengantar tafsir di banyak pesantren. Ketika
             membahas <em>sutihat</em> di Al-Ghasyiyah 88:20, mereka menulis:
             "Ini secara literal menunjukkan bahwa bumi itu datar, yang merupakan
             pendapat mayoritas ulama syariat, dan bukan berbentuk bola seperti
@@ -160,7 +160,7 @@ export default function BumiDatarArticle() {
             Pengetahuan tentang bumi yang berbentuk bola sudah ada di dunia
             Islam jauh sebelum al-Jalalayn lahir. Gerakan penerjemahan
             besar-besaran di era Abbasiyah pada abad ke-8 hingga ke-10 M
-            membawa teks-teks Ptolemy, Aristoteles, dan astronom Yunani lainnya
+            membawa naskah-naskah Ptolemy, Aristoteles, dan astronom Yunani lainnya
             ke dalam bahasa Arab. Para ilmuwan Muslim tidak hanya
             menerjemahkan, mereka mengembangkan. Al-Biruni pada abad ke-11 M
             menghitung keliling bumi menggunakan metode trigonometri, dan
@@ -173,7 +173,7 @@ export default function BumiDatarArticle() {
             mereka berada di tengah tradisi intelektual yang sudah mengenal
             kosmologi bola. Mereka tetap memilih bacaan literal. Bukan karena
             tidak tahu lebih baik, tapi karena itulah yang mereka baca dalam
-            teksnya.
+            Al-Quran.
           </p>
 
           <h2 className="font-serif-reading pt-6 text-[1.55rem] font-normal text-[var(--qurai-text)] sm:text-[1.75rem]">
@@ -221,7 +221,7 @@ export default function BumiDatarArticle() {
             mencerminkan waktu Madinah. Semua solusi itu masuk akal sebagai
             adaptasi praktis. Tapi semuanya adalah adaptasi yang dibuat setelah
             fakta geografis diketahui dan masalahnya muncul. Tidak satu pun ada
-            di dalam teks, karena teks tidak membayangkan ada manusia yang
+            di dalam Al-Quran, karena Al-Quran tidak membayangkan ada manusia yang
             tinggal di tempat seperti itu.
           </p>
 
@@ -269,8 +269,8 @@ export default function BumiDatarArticle() {
           </p>
 
           <p>
-            Teks tidak mengatakan Dzulqarnain melihat matahari terbenam di
-            cakrawala dari kejauhan. Teks mengatakan ia <em>mencapai</em> tempat
+            Al-Quran tidak mengatakan Dzulqarnain melihat matahari terbenam di
+            cakrawala dari kejauhan. Al-Quran mengatakan ia <em>mencapai</em> tempat
             matahari terbenam, dan di sana ia <em>mendapati</em> matahari itu
             terbenam ke dalam mata air berlumpur panas. Ada lokasi fisik yang ia
             tuju. Ada sesuatu yang ia temukan di sana: sebuah mata air, dan di
@@ -286,10 +286,10 @@ export default function BumiDatarArticle() {
           </p>
 
           <p>
-            Tapi teks tidak mendukung pembacaan itu. Kata yang dipakai bukan
+            Tapi Al-Quran tidak mendukung pembacaan itu. Kata yang dipakai bukan
             "sepertinya" atau "seolah-olah." Dan yang lebih penting: Dzulqarnain
             tidak sekadar menyaksikan pemandangan senja dari pantai. Ia{" "}
-            <em>mencapai</em> titik itu. Ia <em>sampai ke sana</em>. Teks
+            <em>mencapai</em> titik itu. Ia <em>sampai ke sana</em>. Al-Quran
             memposisikannya sebagai seseorang yang berhasil menempuh perjalanan
             ke ujung barat dunia, dan di ujung itu ada mata air bersuhu panas
             dan berlumpur, dan ke dalamnya matahari terbenam.

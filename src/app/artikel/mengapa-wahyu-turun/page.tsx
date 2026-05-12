@@ -87,7 +87,7 @@ export default function MengapaWahyuTurunArticle() {
           <p>
             Setiap kali ada ayat yang terasa ambigu atau sulit dipahami dalam
             isolasi, jawabannya hampir selalu sama: lihat asbabun nuzul.
-            Ketahui sebabnya, dan teksnya akan menjadi jelas.
+            Ketahui sebabnya, dan ayat-ayatnya akan menjadi jelas.
           </p>
 
           <p>
@@ -115,7 +115,7 @@ export default function MengapaWahyuTurunArticle() {
 
           <p>
             Sesuatu yang halal dilarang sendiri oleh Muhammad. Wahyu turun
-            mengoreksinya. Itu yang kita tahu dari teksnya. Tapi apa yang
+            mengoreksinya. Itu yang kita tahu dari Al-Quran. Tapi apa yang
             terjadi sebelumnya, ada dua versi dalam literatur hadis sahih, dan
             keduanya tidak bisa benar sekaligus.
           </p>
@@ -177,7 +177,7 @@ export default function MengapaWahyuTurunArticle() {
           </p>
 
           <p>
-            Alasan yang diberikan teks sendiri adalah identifikasi: supaya
+            Alasan yang diberikan Al-Quran sendiri adalah identifikasi: supaya
             dikenal, supaya tidak diganggu.
           </p>
 
@@ -285,7 +285,7 @@ export default function MengapaWahyuTurunArticle() {
             menunjukkan konsistensi tekstual yang relatif tinggi.
           </p>
 
-          <p>Tapi teks dan konteksnya bukan satu paket yang sama.</p>
+          <p>Tapi Al-Quran dan konteksnya bukan satu paket yang sama.</p>
 
           <p>
             Pertanyaan kapan ayat ini turun, di Mekah atau Madinah, untuk
@@ -307,13 +307,13 @@ export default function MengapaWahyuTurunArticle() {
 
           <p>
             Yang tersisa adalah keputusan mufasir. Dan keputusan itu selalu
-            membawa sesuatu dari luar teks, agenda mazhab, kebutuhan
+            membawa sesuatu dari luar Al-Quran, agenda mazhab, kebutuhan
             kontekstualisasi, atau preferensi teologis yang sudah ada sebelum
             ayat itu dibuka.
           </p>
 
           <p>
-            Paradoksnya ada di sana dan tidak pergi: untuk memahami teks yang
+            Paradoksnya ada di sana dan tidak pergi: untuk memahami kitab yang
             diklaim dijaga sempurna, seseorang bergantung pada konteks yang
             tidak pernah dijaga.
           </p>

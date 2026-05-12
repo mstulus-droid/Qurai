@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
@@ -9,6 +10,15 @@ export const metadata: Metadata = {
   title: "Sapi yang Melenguh | Qurai",
   description:
     "Ta Ha 20:88 menceritakan patung anak sapi buatan Samiri yang mengeluarkan suara seperti lembu hidup. Al-Baqarah 2:73 memerintahkan mayat dipukul dengan bagian sapi untuk hidup kembali. Al-A'raf 7:166 mengubah manusia menjadi kera sebagai hukuman. Tiga narasi yang meninggalkan celah kausal tanpa penjelasan.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/33-sapi-yang-melenguh-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -60,6 +70,18 @@ export default function SapiYangMelenguhArticle() {
             kausal yang tidak diisi.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/33-sapi-yang-melenguh-illustration.png"
+            alt="Ilustrasi editorial patung anak sapi logam bersuara di perkemahan gurun malam"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <div className="ornament-divider mb-14" aria-hidden />
 
@@ -147,7 +169,7 @@ export default function SapiYangMelenguhArticle() {
           </p>
 
           <p>
-            Teks memberikan instruksi yang sangat konkret: harus sapi betina,
+            Al-Quran memberikan instruksi yang sangat konkret: harus sapi betina,
             bukan tua bukan muda, kuning tua warnanya, belum pernah digunakan
             membajak, tidak ada belang. Enam ayat dihabiskan untuk
             menspesifikasi hewan yang harus disembelih. Satu ayat untuk
@@ -159,7 +181,7 @@ export default function SapiYangMelenguhArticle() {
             dan kebangkitan sementara. Mengapa instrumen kebangkitannya harus
             sapi yang sama? Apa hubungan antara memukul mayat dengan daging
             dan kemampuan mayat itu bicara? Kalau tujuannya hanya mengungkap
-            pelaku, Allah bisa mengungkapnya langsung tanpa prosedur ini. Teks
+            pelaku, Allah bisa mengungkapnya langsung tanpa prosedur ini. Al-Quran
             memilih prosedur yang sangat spesifik tapi tidak menawarkan
             penjelasan mengapa prosedur itu yang dipilih.
           </p>

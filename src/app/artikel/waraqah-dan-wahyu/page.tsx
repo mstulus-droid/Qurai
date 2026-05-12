@@ -103,8 +103,8 @@ export default function WaraqahDanWahyuArticle() {
 
           <p>
             Sumber-sumber Islam klasik menggambarkan Waraqah sebagai orang yang meninggalkan
-            agama leluhur, mempelajari Injil, dan menulis teks Ibrani — atau menurut riwayat lain,
-            teks Arab dari Injil. Dia bukan tokoh pinggiran. Dia adalah orang yang Khadijah percaya
+            agama leluhur, mempelajari Injil, dan menulis naskah Ibrani — atau menurut riwayat lain,
+            naskah Arab dari Injil. Dia bukan tokoh pinggiran. Dia adalah orang yang Khadijah percaya
             untuk menilai apakah suaminya baru saja menerima sesuatu yang nyata atau sedang mengalami
             gangguan.
           </p>
@@ -121,7 +121,7 @@ export default function WaraqahDanWahyuArticle() {
           </h2>
 
           <p>
-            Al-Quran berulang kali menegaskan bahwa dirinya bukan teks yang dibuat-buat.{" "}
+            Al-Quran berulang kali menegaskan bahwa dirinya bukan kitab yang dibuat-buat.{" "}
             <VerseLink surah={10} ayat={37}>
               Yunus 10:37
             </VerseLink>{" "}
@@ -162,7 +162,7 @@ export default function WaraqahDanWahyuArticle() {
               Al-An'am 6:19
             </VerseLink>{" "}
             muncul dalam konteks di mana Muhammad diminta membuktikan kenabian — dan responsnya
-            adalah bahwa Al-Quran diwahyukan untuk memperingatkan. Tapi teks ini tidak merespons
+            adalah bahwa Al-Quran diwahyukan untuk memperingatkan. Tapi Al-Quran tidak merespons
             tuduhan tentang sumber manusia secara langsung.
           </p>
 
@@ -193,7 +193,7 @@ export default function WaraqahDanWahyuArticle() {
           </p>
 
           <p>
-            Klaim integritas sumber memang bisa diuji dari dua arah. Pertama: apakah teks ini
+            Klaim integritas sumber memang bisa diuji dari dua arah. Pertama: apakah Al-Quran ini
             konsisten secara internal? Kedua: apakah narasinya berasal dari tradisi yang bisa
             dilacak? Pertanyaan kedua ini yang membuat Waraqah relevan — bukan sebagai "penulis
             asli", tapi sebagai titik kontak yang bisa diidentifikasi antara Muhammad dan tubuh
@@ -206,7 +206,7 @@ export default function WaraqahDanWahyuArticle() {
 
           <p>
             Apologetik standar mengatakan: Waraqah hanya mengkonfirmasi, bukan menciptakan. Dan
-            itu benar — tidak ada teks yang mencatat Waraqah mendiktekan sesuatu. Tapi mengkonfirmasi
+            itu benar — tidak ada naskah yang mencatat Waraqah mendiktekan sesuatu. Tapi mengkonfirmasi
             pengalaman dengan menggunakan kerangka interpretif tertentu juga membentuk cara
             pengalaman itu dipahami, diceritakan, dan diteruskan.
           </p>

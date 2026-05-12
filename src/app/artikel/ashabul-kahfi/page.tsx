@@ -64,7 +64,7 @@ export default function AshabAlKahfiArticle() {
           </h1>
           <p className="font-serif-reading mt-6 text-[1.12rem] italic leading-relaxed text-[var(--qurai-muted)] sm:text-[1.22rem]">
             Al-Kahf memperkenalkan kisah Ashabul Kahfi sebagai wahyu dan
-            keajaiban dari Allah. Tapi di ayat yang sama, teks merekam bahwa
+            keajaiban dari Allah. Tapi di ayat yang sama, Al-Quran merekam bahwa
             audiens sudah punya tiga versi berbeda tentang berapa jumlah
             pemudanya.
           </p>
@@ -96,7 +96,7 @@ export default function AshabAlKahfiArticle() {
             <VerseLink surah={18} ayat={22}>
               18:22
             </VerseLink>
-            , teks yang sama mencatat bahwa orang-orang sudah berdebat tentang
+            , surah yang sama mencatat bahwa orang-orang sudah berdebat tentang
             berapa jumlah para pemuda itu:
           </p>
 
@@ -111,7 +111,7 @@ export default function AshabAlKahfiArticle() {
 
           <p>
             Kalau ini wahyu baru dari Tuhan yang mengetahui segala sesuatu,
-            mengapa teks perlu merekam bahwa audiens sudah punya tiga versi
+            mengapa Al-Quran perlu merekam bahwa audiens sudah punya tiga versi
             berbeda tentang berapa orangnya?
           </p>
 
@@ -123,7 +123,7 @@ export default function AshabAlKahfiArticle() {
             Legenda "Tujuh Pemuda Efesus" sudah beredar luas di dunia Kristen
             sebelum Muhammad lahir. Versi paling terkenal ditulis oleh Jacob of
             Sarug, seorang uskup Suriah, sekitar tahun 521 M, hampir sembilan
-            puluh tahun sebelum Al-Kahf diwahyukan. Teksnya beredar dalam
+            puluh tahun sebelum Al-Kahf diwahyukan. Naskahnya beredar dalam
             bahasa Yunani, Latin, dan Syriac di seluruh Timur Tengah, termasuk
             jalur perdagangan yang menghubungkan Arabia dengan Levant.
           </p>
@@ -180,13 +180,13 @@ export default function AshabAlKahfiArticle() {
           </p>
 
           <p>
-            Ini persis yang dilakukan Jacob of Sarug dalam teksnya. Anjing yang
+            Ini persis yang dilakukan Jacob of Sarug dalam naskahnya. Anjing yang
             sama, posisi yang sama, fungsi naratif yang sama: tidak ada, tapi
             ada.
           </p>
 
           <p>
-            Satu detail yang tidak punya fungsi plot, muncul di dua teks dari
+            Satu detail yang tidak punya fungsi plot, muncul di dua naskah dari
             dua tradisi yang berbeda. Kalau ini kebetulan, kebetulan itu sangat
             spesifik.
           </p>
@@ -208,7 +208,7 @@ export default function AshabAlKahfiArticle() {
             <VerseLink surah={18} ayat={25}>
               Al-Kahf 18:25
             </VerseLink>{" "}
-            menyebut mereka tidur selama tiga ratus sembilan tahun. Teks Syriac
+            menyebut mereka tidur selama tiga ratus sembilan tahun. Naskah Syriac
             menyebut dua ratus tahun, tapi versi-versi lain dari legenda yang
             sama menyebutkan angka yang berbeda-beda, tergantung siapa yang
             menceritakannya dan di mana.
@@ -252,10 +252,10 @@ export default function AshabAlKahfiArticle() {
 
           <p>
             Tapi jalurnya ada. Kafilah pedagang Arab sering melintas ke Suriah
-            dan Levant, wilayah yang menjadi pusat penyebaran teks-teks Syriac.
+            dan Levant, wilayah yang menjadi pusat penyebaran naskah-naskah Syriac.
             Komunitas Kristen Arab yang tinggal di perbatasan Arabia sudah
             mengenal cerita-cerita itu sejak lama. Legenda Tujuh Pemuda Efesus
-            bukan teks akademik yang tersimpan di perpustakaan biara. Ia adalah
+            bukan naskah akademik yang tersimpan di perpustakaan biara. Ia adalah
             cerita yang diceritakan ulang, di jalan, di pasar, di antara
             orang-orang yang bepergian jauh.
           </p>
@@ -266,9 +266,9 @@ export default function AshabAlKahfiArticle() {
 
           <p>
             Waraqah bin Naufal adalah pendeta Kristen, sepupu Khadijah, istri
-            Muhammad. Ia fasih membaca teks-teks Syriac, dan ia adalah orang
+            Muhammad. Ia fasih membaca naskah-naskah Syriac, dan ia adalah orang
             pertama yang memvalidasi pengalaman Muhammad sebagai nabi. Ibn
-            Hisham mencatatnya dalam Sirah Nabawiyah. Teks Jacob of Sarug
+            Hisham mencatatnya dalam Sirah Nabawiyah. Naskah Jacob of Sarug
             tersedia dalam bahasa yang Waraqah baca, di wilayah yang terhubung
             langsung dengan jaringan sosialnya.
           </p>
@@ -283,9 +283,9 @@ export default function AshabAlKahfiArticle() {
             >
               Waraqah bin Naufal dan Asal-Usul Wahyu
             </Link>
-            . Tapi dalam konteks ini, satu hal cukup jelas: teks dengan detail
+            . Tapi dalam konteks ini, satu hal cukup jelas: naskah dengan detail
             yang sama sudah ada, orang yang bisa membacanya ada di lingkaran
-            dalam Muhammad, dan Al-Quran tidak mengklaim mengadaptasi teks itu.
+            dalam Muhammad, dan Al-Quran tidak mengklaim mengadaptasi naskah itu.
           </p>
 
           <p>

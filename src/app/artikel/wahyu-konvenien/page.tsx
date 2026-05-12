@@ -9,7 +9,7 @@ import { ArticleShare } from "@/components/article-share";
 export const metadata: Metadata = {
   title: "Ketika Wahyu Mengikuti Kepentingan Pribadi Nabi | Qurai",
   description:
-    "Ada pola di ayat-ayat Madaniyah: wahyu turun tepat saat Muhammad menghadapi masalah personal — konflik rumah tangga, ketertarikan seksual, kritik publik, atau kebutuhan finansial. Pola ini bisa diperiksa langsung dari teks.",
+    "Ada pola di ayat-ayat Madaniyah: wahyu turun tepat saat Muhammad menghadapi masalah personal — konflik rumah tangga, ketertarikan seksual, kritik publik, atau kebutuhan finansial. Pola ini bisa diperiksa langsung dari Al-Quran.",
   openGraph: {
     images: [
       {
@@ -65,7 +65,7 @@ export default function WahyuKonvenienArticle() {
             Ada pola di ayat-ayat Madaniyah: wahyu turun tepat saat Muhammad
             menghadapi masalah personal — konflik rumah tangga, ketertarikan pada
             perempuan tertentu, kritik publik, atau kebutuhan finansial. Pola ini
-            bisa diperiksa langsung dari teks.
+            bisa diperiksa langsung dari Al-Quran.
           </p>
         </header>
 
@@ -95,7 +95,7 @@ export default function WahyuKonvenienArticle() {
           </p>
 
           <p>
-            Ini bukan pola yang tersembunyi. Ini tersedia di teks — dan bisa
+            Ini bukan pola yang tersembunyi. Ini tersedia di Al-Quran — dan bisa
             diperiksa.
           </p>
 
@@ -115,7 +115,7 @@ export default function WahyuKonvenienArticle() {
           </p>
 
           <p>
-            Itu teks aslinya, bukan tafsiran.
+            Itu bunyi aslinya, bukan tafsiran.
           </p>
 
           <p>
@@ -136,7 +136,7 @@ export default function WahyuKonvenienArticle() {
               33:37
             </VerseLink>
             . Ini ayat tentang Zainab binti Jahsy — perempuan yang saat itu masih
-            istri Zaid, anak angkat Muhammad. Teks itu sendiri mencatat bahwa
+            istri Zaid, anak angkat Muhammad. Al-Quran mencatat bahwa
             Muhammad "menyembunyikan di dalam hatinya apa yang Allah akan
             menyatakannya" — pengakuan tekstual bahwa ada sesuatu yang
             disembunyikan sebelum pernikahan terjadi. Setelah Zaid menceraikan
@@ -349,7 +349,7 @@ export default function WahyuKonvenienArticle() {
           </p>
 
           <p>
-            Tapi ada yang menarik dalam struktur tegurannya. Teks itu dimulai
+            Tapi ada yang menarik dalam struktur tegurannya. Ayat itu dimulai
             dengan: "tidak ada (celaan) atasmu kalau dia tidak membersihkan
             diri." Kesalahan diakui tapi langsung dikemas ulang — Muhammad bukan
             bersikap diskriminatif, hanya salah prioritas. Citra tetap terlindungi
@@ -362,7 +362,7 @@ export default function WahyuKonvenienArticle() {
             </VerseLink>{" "}
             punya struktur serupa: "Allah memaafkanmu" — diucapkan sebelum
             tegurannya datang. Ini berbeda dengan bagaimana kesalahan pengikut
-            biasa direspons dalam teks yang sama, di mana ancaman langsung
+            biasa direspons dalam Al-Quran yang sama, di mana ancaman langsung
             mengikuti kesalahan tanpa pemaafan preemptive.
           </p>
 
