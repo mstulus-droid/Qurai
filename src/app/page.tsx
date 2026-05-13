@@ -1,4 +1,5 @@
 import { NavLink } from "@/components/nav-link";
+import { SiteMobileMenu } from "@/components/site-mobile-menu";
 import { ThemedWordmark, ThemeToggle } from "@/components/theme-toggle";
 import { redirect } from "next/navigation";
 import { DatabaseUnavailable } from "@/app/database-unavailable";
@@ -60,49 +61,6 @@ function RevelationBadge({ kind, size = "md" }: { kind: RevelationKind; size?: "
   );
 }
 
-function HomeMenu() {
-  return (
-    <details className="home-menu relative">
-      <summary
-        className="home-menu-trigger inline-grid h-10 w-10 cursor-pointer list-none place-items-center rounded-full border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_82%,transparent)] text-[var(--qurai-text)] shadow-[0_16px_38px_-28px_rgba(0,0,0,0.55)] transition hover:border-[var(--qurai-border-strong)] hover:text-[var(--qurai-green)]"
-        aria-label="Buka menu"
-      >
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
-          <path
-            d="M5 7h14M5 12h14M5 17h14"
-            stroke="currentColor"
-            strokeWidth="1.9"
-            strokeLinecap="round"
-          />
-        </svg>
-      </summary>
-      <div className="absolute right-0 top-12 z-30 min-w-40 overflow-hidden rounded-xl border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface)_94%,transparent)] p-1 shadow-[0_24px_70px_-34px_rgba(0,0,0,0.72)] backdrop-blur">
-        <span className="block rounded-lg px-3 py-2 text-sm font-semibold text-[var(--qurai-green)]">
-          Bedah Quran
-        </span>
-        <NavLink
-          href="/bedah-surat"
-          className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] hover:text-[var(--qurai-green)]"
-        >
-          Bedah Surat
-        </NavLink>
-        <NavLink
-          href="/artikel"
-          className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] hover:text-[var(--qurai-green)]"
-        >
-          Artikel
-        </NavLink>
-        <NavLink
-          href="/about"
-          className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--qurai-text)] transition hover:bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] hover:text-[var(--qurai-green)]"
-        >
-          Tentang
-        </NavLink>
-      </div>
-    </details>
-  );
-}
-
 export default async function Home({ searchParams }: HomePageProps) {
   const params = searchParams ? await searchParams : undefined;
   const surah = params?.surah?.trim() ?? "";
@@ -139,13 +97,16 @@ export default async function Home({ searchParams }: HomePageProps) {
     <main className="qurai-shell flex min-h-screen flex-col px-4 py-5 text-[var(--qurai-text)] sm:px-6 sm:py-8 lg:px-10">
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-4">
         <section className="px-1 pt-1">
-          <div className="flex items-center justify-between gap-4">
+          <div className="grid grid-cols-[2.5rem_minmax(0,1fr)_2.5rem] items-center gap-3 sm:flex sm:justify-between sm:gap-4">
+            <div className="sm:hidden">
+              <SiteMobileMenu active="quran" />
+            </div>
             <NavLink href="/about" aria-label="Tentang Qurai">
-              <div className="relative block h-[36px] w-[clamp(104px,12vw,150px)]">
-                <ThemedWordmark priority sizes="150px" className="object-contain object-left" />
+              <div className="relative mx-auto block h-[36px] w-[clamp(104px,34vw,150px)] sm:mx-0 sm:w-[clamp(104px,12vw,150px)]">
+                <ThemedWordmark priority sizes="150px" className="object-contain object-center sm:object-left" />
               </div>
             </NavLink>
-            <div className="flex items-center gap-4 sm:gap-[clamp(1.2rem,3vw,2.5rem)]">
+            <div className="flex items-center justify-end gap-4 sm:gap-[clamp(1.2rem,3vw,2.5rem)]">
               <div className="hidden items-center gap-[clamp(1.2rem,3vw,2.5rem)] font-mono text-[0.7rem] uppercase text-[var(--qurai-quiet)] sm:flex">
                 <span className="font-semibold text-[var(--qurai-green)]">Bedah Quran</span>
                 <NavLink
@@ -157,9 +118,6 @@ export default async function Home({ searchParams }: HomePageProps) {
                 <NavLink href="/artikel" className="transition hover:text-[var(--qurai-gold)]">
                   Artikel
                 </NavLink>
-              </div>
-              <div className="sm:hidden">
-                <HomeMenu />
               </div>
               <ThemeToggle />
             </div>

@@ -1,6 +1,6 @@
 export const GIT_INFO = {
-  "hash": "96b65bd",
-  "message": "Add article audio support and new articles",
-  "date": "2026-05-12 16:35:40 +0700",
+  "hash": "13f9222",
+  "message": "Update Qurai article images and navigation",
+  "date": "2026-05-13 11:53:37 +0700",
   "branch": "main"
 };

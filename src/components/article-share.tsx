@@ -232,12 +232,12 @@ export function ArticleShare({ title }: { title?: string }) {
                 Dukung Qurai
               </p>
               <p className="mt-2 font-serif-reading text-[1.25rem] italic leading-snug text-[var(--qurai-text)]">
-                Jadilah bagian kecil dari riset berikutnya.
+                Dukung kerja sunyi di balik setiap tulisan.
               </p>
               <p className="mt-3 text-sm leading-7 text-[var(--qurai-muted)]">
-                Kalau tulisan ini membantumu berpikir lebih jernih, dukunganmu
-                membuat arsip Qurai bisa terus ditulis, dirawat, dan dibuka
-                untuk pembaca lain.
+                Di balik tiap tulisan ada proses membaca, membandingkan, dan
+                merapikan jejak. Setiap dukungan ikut menjaga proses itu tetap
+                berjalan.
               </p>
             </div>
             <a
