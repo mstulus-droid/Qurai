@@ -26,8 +26,10 @@ function getOpacity(index: number, hoverIndex: number | null, isCurrent: boolean
 
 export function SurahShortcutSidebar({ surahs, currentSurahNumber }: Props) {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const [noticeSurah, setNoticeSurah] = useState<SurahListItem | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const currentRef = useRef<HTMLAnchorElement>(null);
+  const noticeRef = useRef<HTMLDivElement>(null);
   const availableByNumber = new Map(
     bedahSuratItems.map((bedahItem) => [bedahItem.surahNumber, bedahItem]),
   );
@@ -43,6 +45,22 @@ export function SurahShortcutSidebar({ surahs, currentSurahNumber }: Props) {
     const targetTop = currentTop - listRect.height / 2 + current.offsetHeight / 2;
     list.scrollTop = Math.max(0, targetTop);
   }, [currentSurahNumber]);
+
+  useEffect(() => {
+    if (!noticeSurah) return;
+
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target;
+      if (target instanceof Node && noticeRef.current?.contains(target)) {
+        return;
+      }
+
+      setNoticeSurah(null);
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown, true);
+    return () => document.removeEventListener("pointerdown", handlePointerDown, true);
+  }, [noticeSurah]);
 
   return (
     <aside className="relative hidden w-60 xl:block">
@@ -61,25 +79,15 @@ export function SurahShortcutSidebar({ surahs, currentSurahNumber }: Props) {
             const availableItem = availableByNumber.get(surah.id);
             const isCurrent = surah.id === currentSurahNumber;
             const isFocused = isCurrent || hoverIndex === index;
-            const href = availableItem
-              ? `/bedah-surat/${availableItem.slug}`
-              : `/surat/${surah.id}`;
-
-            return (
-              <Link
-                key={surah.id}
-                ref={isCurrent ? currentRef : undefined}
-                href={href}
-                onPointerEnter={() => setHoverIndex(index)}
-                style={{ opacity: getOpacity(index, hoverIndex, isCurrent) }}
-                className={`grid grid-cols-[2.35rem_minmax(0,1fr)] items-center gap-2 rounded-[0.7rem] px-2 text-left transition-all duration-200 ease-out ${
-                  isFocused ? "py-2.5" : "py-1.5"
-                } ${
-                  isCurrent
-                    ? "bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] text-[var(--qurai-green)]"
-                    : "text-[var(--qurai-muted)] hover:bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] hover:text-[var(--qurai-text)]"
-                }`}
-              >
+            const className = `grid w-full grid-cols-[2.35rem_minmax(0,1fr)] items-center gap-2 rounded-[0.7rem] px-2 text-left transition-all duration-200 ease-out ${
+              isFocused ? "py-2.5" : "py-1.5"
+            } ${
+              isCurrent
+                ? "bg-[color-mix(in_srgb,var(--qurai-green)_12%,transparent)] text-[var(--qurai-green)]"
+                : "text-[var(--qurai-muted)] hover:bg-[color-mix(in_srgb,var(--qurai-gold)_6%,transparent)] hover:text-[var(--qurai-text)]"
+            }`;
+            const content = (
+              <>
                 <span
                   className={`font-mono tabular-nums transition-all duration-200 ease-out ${
                     isFocused ? "text-[0.72rem]" : "text-[0.62rem]"
@@ -96,11 +104,68 @@ export function SurahShortcutSidebar({ surahs, currentSurahNumber }: Props) {
                     {surah.nameLatin}
                   </span>
                 </span>
+              </>
+            );
+
+            if (!availableItem) {
+              return (
+                <button
+                  key={surah.id}
+                  type="button"
+                  onClick={() => setNoticeSurah(surah)}
+                  onPointerEnter={() => setHoverIndex(index)}
+                  style={{ opacity: getOpacity(index, hoverIndex, isCurrent) }}
+                  className={className}
+                >
+                  {content}
+                </button>
+              );
+            }
+
+            return (
+              <Link
+                key={surah.id}
+                ref={isCurrent ? currentRef : undefined}
+                href={`/bedah-surat/${availableItem.slug}`}
+                onPointerEnter={() => setHoverIndex(index)}
+                style={{ opacity: getOpacity(index, hoverIndex, isCurrent) }}
+                className={className}
+              >
+                {content}
               </Link>
             );
           })}
         </div>
       </div>
+      {noticeSurah ? (
+        <div
+          ref={noticeRef}
+          role="status"
+          className="fixed right-6 bottom-6 z-[70] w-80 border border-[color-mix(in_srgb,var(--qurai-gold)_42%,var(--qurai-border))] bg-[color-mix(in_srgb,var(--qurai-surface-strong)_96%,transparent)] p-5 shadow-[0_28px_80px_-36px_rgba(0,0,0,0.9)] backdrop-blur"
+        >
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="font-mono text-[0.58rem] uppercase text-[var(--qurai-gold)]">
+                Belum tersedia
+              </p>
+              <p className="mt-2 font-serif-reading text-[1.08rem] italic leading-snug text-[var(--qurai-text)]">
+                Bedah {noticeSurah.nameLatin} belum masuk arsip.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[var(--qurai-muted)]">
+                Surat ini sudah ada di peta kerja Qurai. Saat naskahnya selesai,
+                shortcut ini akan langsung membuka pembacaan lengkapnya.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setNoticeSurah(null)}
+              className="shrink-0 border border-[var(--qurai-border)] px-3 py-1.5 font-mono text-[0.58rem] uppercase text-[var(--qurai-muted)] transition hover:border-[var(--qurai-gold)] hover:text-[var(--qurai-gold)]"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      ) : null}
     </aside>
   );
 }

@@ -43,10 +43,6 @@ export function VersePreviewLink({
   const finalAyat = endAyat ?? startAyat;
   const count = Math.max(1, finalAyat - startAyat + 1);
   const isRange = count > 1;
-  const visibleVerses =
-    verses.length > 3
-      ? [verses[0], verses[verses.length - 1]].filter(Boolean)
-      : verses;
 
   function clearCloseTimer() {
     if (closeTimerRef.current) {
@@ -189,14 +185,9 @@ export function VersePreviewLink({
           <span className="block font-mono text-[0.58rem] uppercase text-[var(--qurai-gold)]">
             {label}
           </span>
-          {count > 3 ? (
-            <span className="mt-2 block text-xs leading-5 text-[var(--qurai-quiet)]">
-              {count} ayat dirujuk. Preview menampilkan ayat awal dan akhir.
-            </span>
-          ) : null}
           <span className="mt-3 block space-y-3">
-            {visibleVerses.length > 0 ? (
-              visibleVerses.map((verse) => (
+            {verses.length > 0 ? (
+              verses.map((verse) => (
                 <span key={verse.ayahNumber} className="block">
                   <span className="block font-mono text-[0.62rem] text-[var(--qurai-green)]">
                     {surah}:{verse.ayahNumber}
