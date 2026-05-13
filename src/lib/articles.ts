@@ -554,6 +554,10 @@ export const articles: ArticleItem[] = [
     surah: "Hud 11:42 · Yunus 10:92 · Al-Baqarah 2:247",
     date: "Mei 2026",
     readTime: "8 menit",
+    image: {
+      src: "/article-images/39-ya-bunayya-illustration.png",
+      alt: "Ilustrasi editorial banjir purba dengan bahtera, siluet anak, dan simbol narasi di tepi air",
+    },
   },
   {
     slug: "saudara-harun",
@@ -564,6 +568,10 @@ export const articles: ArticleItem[] = [
     surah: "Maryam 19:28 · Taha 20:85 · At-Taubah 9:30",
     date: "Mei 2026",
     readTime: "9 menit",
+    image: {
+      src: "/article-images/40-saudara-harun-illustration.png",
+      alt: "Ilustrasi editorial panel kronologi retak dengan siluet Maryam, Harun, dan patung anak sapi",
+    },
   },
   {
     slug: "di-bawah-pohon-kurma",
@@ -574,6 +582,10 @@ export const articles: ArticleItem[] = [
     surah: "Maryam 19:23 · Ali Imran 3:37 · Maryam 19:29",
     date: "Mei 2026",
     readTime: "8 menit",
+    image: {
+      src: "/article-images/41-di-bawah-pohon-kurma-illustration.png",
+      alt: "Ilustrasi editorial pohon kurma, kain kosong, mata air, dan fragmen naskah Kristen kuno",
+    },
   },
   {
     slug: "luqman-sebelum-al-quran",
@@ -584,5 +596,9 @@ export const articles: ArticleItem[] = [
     surah: "Luqman 31:12 · 31:13",
     date: "Mei 2026",
     readTime: "10 menit",
+    image: {
+      src: "/article-images/42-luqman-sebelum-al-quran-illustration.png",
+      alt: "Ilustrasi editorial kursi hikmah kosong dengan tablet peribahasa dan kafilah di kejauhan",
+    },
   },
 ];

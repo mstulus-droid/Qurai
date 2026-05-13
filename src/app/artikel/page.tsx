@@ -58,8 +58,7 @@ export default function ArtikelPage() {
               </div>
               <div className="flex-1">
                 <p className="mb-3 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-                  {article.surah} &nbsp;·&nbsp; {article.date} &nbsp;·&nbsp;{" "}
-                  {article.readTime}
+                  {article.surah} &nbsp;·&nbsp; {article.readTime}
                 </p>
                 <h2 className="font-serif-reading text-[1.5rem] italic leading-snug text-[var(--qurai-text)] transition group-hover:text-[var(--qurai-gold)] sm:text-[1.85rem]">
                   {article.title}

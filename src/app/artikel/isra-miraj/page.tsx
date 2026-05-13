@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleAudio } from "@/components/article-audio";
+import { ArticleRecommendations } from "@/components/article-recommendations";
 import { ArticleNav } from "@/components/article-nav";
 import { ArticleShare } from "@/components/article-share";
 
@@ -56,8 +57,7 @@ export default function IsraMirajArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Al-Isra 17:1 · An-Najm 53:13 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 8 menit
+            Al-Isra 17:1 · An-Najm 53:13 &nbsp;·&nbsp; 8 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Malam yang Diceritakan Berbeda
@@ -221,8 +221,6 @@ export default function IsraMirajArticle() {
           </p>
         </div>
 
-        <ArticleShare />
-
         <div className="ornament-divider mt-16 mb-12" aria-hidden />
 
         <footer className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
@@ -252,6 +250,10 @@ export default function IsraMirajArticle() {
             ← Semua artikel
           </Link>
         </footer>
+
+        <ArticleShare />
+
+        <ArticleRecommendations currentSlug="isra-miraj" />
       </article>
     </main>
   );

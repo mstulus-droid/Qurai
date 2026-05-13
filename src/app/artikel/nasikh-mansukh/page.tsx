@@ -72,8 +72,7 @@ export default function NasikhMansukhArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Al-Mujadilah 58:12 · Al-Baqarah 2:106 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 9 menit
+            Al-Mujadilah 58:12 · Al-Baqarah 2:106 &nbsp;·&nbsp; 9 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Nasikh-Mansukh: Ketika Wahyu Butuh Koreksi

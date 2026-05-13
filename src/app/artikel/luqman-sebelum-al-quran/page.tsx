@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleAudio } from "@/components/article-audio";
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
   title: "Luqman Sebelum Al-Quran | Qurai",
   description:
     "Luqman sudah terkenal di Arabia sebagai figur kebijaksanaan dari suku 'Ad, dengan koleksi peribahasa yang beredar luas, jauh sebelum Islam. Luqman 31:12-19 mengambil nama dan reputasinya, lalu mengisi ulang hikmahnya dengan konten yang sama sekali berbeda — tauhid dan ketaatan, bukan kebijaksanaan duniawi yang membuatnya terkenal.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/42-luqman-sebelum-al-quran-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -49,7 +59,7 @@ export default function LuqmanSebelumAlQuranArticle() {
           </Link>
           <NarasiAlkitabSeriesNav current={4} />
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Luqman 31:12 · 31:13 &nbsp;·&nbsp; Mei 2026 &nbsp;·&nbsp; 10 menit
+            Luqman 31:12 · 31:13 &nbsp;·&nbsp; 10 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Luqman Sebelum Al-Quran
@@ -61,6 +71,18 @@ export default function LuqmanSebelumAlQuranArticle() {
             hikmahnya dengan konten yang berbeda.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/42-luqman-sebelum-al-quran-illustration.png"
+            alt="Ilustrasi editorial kursi hikmah kosong dengan tablet peribahasa dan kafilah di kejauhan"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <ArticleAudio slug="luqman-sebelum-al-quran" />
 

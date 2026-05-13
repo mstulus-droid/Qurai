@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleAudio } from "@/components/article-audio";
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
   title: "Di Bawah Pohon Kurma | Qurai",
   description:
     "Maryam 19:23 menempatkan Maryam di bawah pohon kurma saat melahirkan. Detail itu tidak ada dalam kisah Isa yang dikenal, tapi ada dalam naskah Kristen yang beredar di Arabia. Ali Imran 3:35-37 tentang Maryam di Bait Suci hampir identik dengan naskah abad ke-2. Maryam 19:29 menempatkan bayi Isa berbicara dari buaian.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/41-di-bawah-pohon-kurma-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -49,8 +59,7 @@ export default function DiBawahPohonKurmaArticle() {
           </Link>
           <NarasiAlkitabSeriesNav current={3} />
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Maryam 19:23 · Ali Imran 3:37 · Maryam 19:29 &nbsp;·&nbsp; Mei
-            2026 &nbsp;·&nbsp; 8 menit
+            Maryam 19:23 · Ali Imran 3:37 · Maryam 19:29 &nbsp;·&nbsp; 8 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Di Bawah Pohon Kurma
@@ -62,6 +71,18 @@ export default function DiBawahPohonKurmaArticle() {
             beredar di Arabia sebelum Islam.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/41-di-bawah-pohon-kurma-illustration.png"
+            alt="Ilustrasi editorial pohon kurma, kain kosong, mata air, dan fragmen naskah Kristen kuno"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <ArticleAudio slug="di-bawah-pohon-kurma" />
 

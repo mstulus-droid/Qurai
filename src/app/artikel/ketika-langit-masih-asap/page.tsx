@@ -57,8 +57,7 @@ export default function KetikaLangitMasihAsapArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Fussilat 41:9 · Al-Baqarah 2:29 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 9 menit
+            Fussilat 41:9 · Al-Baqarah 2:29 &nbsp;·&nbsp; 9 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Ketika Langit Masih Asap

@@ -57,8 +57,7 @@ export default function NikahMutahArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            An-Nisa 4:24 · Al-Tahrim 66:1 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 10 menit
+            An-Nisa 4:24 · Al-Tahrim 66:1 &nbsp;·&nbsp; 10 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Tentang Kawin Kontrak

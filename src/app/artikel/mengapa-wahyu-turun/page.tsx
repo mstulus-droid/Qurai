@@ -57,8 +57,7 @@ export default function MengapaWahyuTurunArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            At-Tahrim 66:1 · Al-Ahzab 33:59 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 10 menit
+            At-Tahrim 66:1 · Al-Ahzab 33:59 &nbsp;·&nbsp; 10 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Mengapa Wahyu Turun

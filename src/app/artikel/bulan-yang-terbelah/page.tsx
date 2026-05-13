@@ -57,8 +57,7 @@ export default function BulanYangTerbelahArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Al-Qamar 54:1 · Al-Isra 17:59 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 9 menit
+            Al-Qamar 54:1 · Al-Isra 17:59 &nbsp;·&nbsp; 9 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Bulan yang Terbelah

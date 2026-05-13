@@ -57,7 +57,7 @@ export default function PreservasiQuranArticle() {
             ← Artikel
           </Link>
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Yusuf 12:2 · Al-Hijr 15:9 &nbsp;·&nbsp; Mei 2026 &nbsp;·&nbsp; 15
+            Yusuf 12:2 · Al-Hijr 15:9 &nbsp;·&nbsp; 15
             menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">

@@ -59,8 +59,7 @@ export default function MaidahArticle() {
           </Link>
           <MukjizatSeriesNav current={3} />
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Al-Ma'idah 5:115 · Saba 34:10 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 8 menit
+            Al-Ma'idah 5:115 · Saba 34:10 &nbsp;·&nbsp; 8 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Ma'idah

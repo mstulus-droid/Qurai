@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleAudio } from "@/components/article-audio";
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
   title: "Ya Bunayya | Qurai",
   description:
     "Hud 11:42 menceritakan anak Nuh yang menolak naik kapal dan tenggelam. Namanya tidak disebut. Ibn Katsir menyebutnya Kanaan, At-Tabari menyebutnya Yam. Dalam kisah banjir yang lebih tua, anak seperti ini tidak ada sama sekali. Al-Baqarah 2:247-249 menggabungkan cara seleksi prajurit Gideon dengan kisah Talut dan Jalut menjadi satu narasi.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/39-ya-bunayya-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -49,8 +59,7 @@ export default function YaBunayyaArticle() {
           </Link>
           <NarasiAlkitabSeriesNav current={1} />
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Hud 11:42 · Yunus 10:92 · Al-Baqarah 2:247 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 8 menit
+            Hud 11:42 · Yunus 10:92 · Al-Baqarah 2:247 &nbsp;·&nbsp; 8 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Ya Bunayya
@@ -62,6 +71,18 @@ export default function YaBunayyaArticle() {
             dari satu kisah yang masuk ke kisah lain.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/39-ya-bunayya-illustration.png"
+            alt="Ilustrasi editorial banjir purba dengan bahtera, siluet anak, dan simbol narasi di tepi air"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <ArticleAudio slug="ya-bunayya" />
 

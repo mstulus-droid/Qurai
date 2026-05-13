@@ -1,12 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { MetadataRoute } from "next";
+import { bedahSuratItems } from "@/lib/bedah-surat";
 import { SITE_URL } from "@/lib/site-url";
 
 const staticRoutes = [
   { path: "/", priority: 1 },
   { path: "/about", priority: 0.7 },
   { path: "/artikel", priority: 0.9 },
+  { path: "/bedah-surat", priority: 0.9 },
 ] as const;
 
 function getArticleRoutes() {
@@ -36,6 +38,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    ...bedahSuratItems.map((item) => ({
+      url: `${SITE_URL}/bedah-surat/${item.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.82,
+    })),
   ];
 }
-

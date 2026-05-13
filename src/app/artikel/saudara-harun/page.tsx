@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArticleRecommendations } from "@/components/article-recommendations";
 import Link from "next/link";
 import { ArticleAudio } from "@/components/article-audio";
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
   title: "Saudara Harun | Qurai",
   description:
     "Maryam 19:28 menyebut Maryam ibu Isa sebagai saudara perempuan Harun — saudara Musa yang hidup sekitar 1300 tahun sebelumnya. Taha 20:85 menyebut Al-Samiri, nama yang berasal dari wilayah yang belum ada di masa Musa. At-Taubah 9:30 mengaitkan keyakinan kepada kelompok yang tidak memiliki keyakinan itu.",
+  openGraph: {
+    images: [
+      {
+        url: "/article-images/40-saudara-harun-illustration.png",
+        width: 1672,
+        height: 941,
+      },
+    ],
+  },
 };
 
 function VerseLink({
@@ -49,8 +59,7 @@ export default function SaudaraHarunArticle() {
           </Link>
           <NarasiAlkitabSeriesNav current={2} />
           <p className="mb-4 font-mono text-[0.6rem] uppercase text-[var(--qurai-quiet)]">
-            Maryam 19:28 · Taha 20:85 · At-Taubah 9:30 &nbsp;·&nbsp; Mei 2026
-            &nbsp;·&nbsp; 9 menit
+            Maryam 19:28 · Taha 20:85 · At-Taubah 9:30 &nbsp;·&nbsp; 9 menit
           </p>
           <h1 className="font-serif-reading text-[2.2rem] italic leading-[1.22] text-[var(--qurai-text)] sm:text-[2.85rem]">
             Saudara Harun
@@ -62,6 +71,18 @@ export default function SaudaraHarunArticle() {
             ada. Keyakinan dikaitkan kepada kelompok yang tidak memilikinya.
           </p>
         </header>
+
+        <figure className="mb-14 overflow-hidden rounded-[1.25rem] border border-[var(--qurai-border)] bg-[var(--qurai-surface-strong)] shadow-[0_24px_70px_-42px_rgba(0,0,0,0.7)]">
+          <Image
+            src="/article-images/40-saudara-harun-illustration.png"
+            alt="Ilustrasi editorial panel kronologi retak dengan siluet Maryam, Harun, dan patung anak sapi"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 768px) calc(100vw - 1.4rem), 740px"
+            className="h-auto w-full"
+          />
+        </figure>
 
         <ArticleAudio slug="saudara-harun" />
 
