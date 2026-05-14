@@ -127,7 +127,7 @@ export function BedahSuratClient({ surahs, availableItems }: Props) {
           const placeLabel = normalizePlace(surah.revelationPlace);
           const content = (
             <div
-              className="group flex min-h-[92px] items-center gap-4 border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface)_82%,var(--qurai-bg))] px-4 py-4 transition hover:border-[color-mix(in_srgb,var(--qurai-green)_42%,var(--qurai-border))] hover:bg-[color-mix(in_srgb,var(--qurai-green)_7%,var(--qurai-surface))]"
+              className="qurai-surah-card qurai-shine-hover group flex min-h-[92px] items-center gap-4 border border-[var(--qurai-border)] bg-[color-mix(in_srgb,var(--qurai-surface)_82%,var(--qurai-bg))] px-4 py-4 transition hover:border-[color-mix(in_srgb,var(--qurai-green)_42%,var(--qurai-border))] hover:bg-[color-mix(in_srgb,var(--qurai-green)_7%,var(--qurai-surface))]"
             >
               <div className="grid h-12 w-12 shrink-0 rotate-45 place-items-center bg-[color-mix(in_srgb,var(--qurai-text)_5%,transparent)] text-[var(--qurai-text)] transition group-hover:bg-[var(--qurai-green)] group-hover:text-[var(--qurai-ink)] group-hover:shadow-[0_14px_34px_-28px_var(--qurai-green)]">
                 <span className="-rotate-45 font-mono text-sm font-semibold">
@@ -136,7 +136,7 @@ export function BedahSuratClient({ surahs, availableItems }: Props) {
               </div>
               <div className="grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
                 <div className="min-w-0 self-center">
-                    <h2 className="truncate text-[0.98rem] font-semibold text-[var(--qurai-text)]">
+                    <h2 className="truncate text-[0.98rem] font-semibold text-[var(--qurai-text)] transition group-hover:text-[var(--qurai-gold)]">
                       {surah.nameLatin}
                     </h2>
                     <p className="mt-0.5 truncate text-xs text-[var(--qurai-muted)] transition group-hover:text-[var(--qurai-green)]">
@@ -144,7 +144,7 @@ export function BedahSuratClient({ surahs, availableItems }: Props) {
                     </p>
                 </div>
                 <div className="flex min-w-[5.4rem] shrink-0 flex-col items-end justify-center gap-2">
-                  <p className="font-arabic text-xl leading-none text-[var(--qurai-text)]">
+                  <p className="font-arabic text-xl leading-none text-[var(--qurai-text)] transition group-hover:text-[var(--qurai-gold)]">
                     {surah.nameArabic}
                   </p>
                   <span className="font-mono text-[0.56rem] uppercase text-[var(--qurai-quiet)] transition group-hover:text-[var(--qurai-green)]">

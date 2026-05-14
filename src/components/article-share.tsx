@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type CSSProperties, useEffect, useState } from "react";
 
 const siteOrigin = "https://qurai.rhadzor.id";
 const saweriaUrl = process.env.NEXT_PUBLIC_SAWERIA_URL || "https://saweria.co/";
+
+function shareStyle(backgroundColor: string, color: string): CSSProperties {
+  return {
+    "--shine-color": backgroundColor,
+    "--shine-text": color,
+  } as CSSProperties;
+}
 
 function makeShareUrl(
   service: "whatsapp" | "x" | "facebook",
@@ -158,7 +165,7 @@ export function ArticleShare({ title }: { title?: string }) {
   }
 
   const shareButtonClass =
-    "inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--qurai-border)] text-[var(--qurai-muted)] transition hover:border-[var(--qurai-gold)] hover:bg-[color-mix(in_srgb,var(--qurai-gold)_10%,transparent)] hover:text-[var(--qurai-gold)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--qurai-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--qurai-bg)]";
+    "qurai-share-button qurai-shine-hover inline-flex h-10 w-10 items-center justify-center rounded-full border focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--shine-color)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--qurai-bg)]";
 
   return (
     <section className="mt-16 border-y border-[var(--qurai-border)] py-7">
@@ -178,6 +185,8 @@ export function ArticleShare({ title }: { title?: string }) {
             onClick={shareNative}
             title="Bagikan"
             aria-label="Bagikan artikel"
+            data-share="native"
+            style={shareStyle("var(--qurai-gold)", "var(--qurai-ink)")}
             className={shareButtonClass}
           >
             <NativeShareIcon />
@@ -188,7 +197,9 @@ export function ArticleShare({ title }: { title?: string }) {
             rel="noopener noreferrer"
             title="Bagikan ke WhatsApp"
             aria-label="Bagikan ke WhatsApp"
-            className={`${shareButtonClass} hover:border-[var(--qurai-green)] hover:bg-[color-mix(in_srgb,var(--qurai-green)_10%,transparent)] hover:text-[var(--qurai-green)]`}
+            data-share="whatsapp"
+            style={shareStyle("#25D366", "#041b0b")}
+            className={shareButtonClass}
           >
             <WhatsAppIcon />
           </a>
@@ -198,6 +209,8 @@ export function ArticleShare({ title }: { title?: string }) {
             rel="noopener noreferrer"
             title="Bagikan ke X"
             aria-label="Bagikan ke X"
+            data-share="x"
+            style={shareStyle("#050505", "#ffffff")}
             className={shareButtonClass}
           >
             <XIcon />
@@ -208,6 +221,8 @@ export function ArticleShare({ title }: { title?: string }) {
             rel="noopener noreferrer"
             title="Bagikan ke Facebook"
             aria-label="Bagikan ke Facebook"
+            data-share="facebook"
+            style={shareStyle("#1877F2", "#ffffff")}
             className={shareButtonClass}
           >
             <FacebookIcon />
@@ -217,7 +232,9 @@ export function ArticleShare({ title }: { title?: string }) {
             onClick={copyLink}
             title={copied ? "Tautan tersalin" : "Salin tautan"}
             aria-label={copied ? "Tautan tersalin" : "Salin tautan"}
-            className={`${shareButtonClass} ${copied ? "border-[var(--qurai-green)] text-[var(--qurai-green)]" : ""}`}
+            data-share="copy"
+            style={shareStyle("#111815", "#c8a85a")}
+            className={shareButtonClass}
           >
             {copied ? <CheckIcon /> : <LinkIcon />}
           </button>
@@ -244,7 +261,7 @@ export function ArticleShare({ title }: { title?: string }) {
               href={saweriaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-[var(--qurai-gold)] bg-[var(--qurai-gold)] px-5 py-3 font-mono text-[0.62rem] uppercase text-[var(--qurai-bg)] shadow-[0_14px_34px_-24px_var(--qurai-gold)] transition hover:-translate-y-0.5 hover:bg-transparent hover:text-[var(--qurai-gold)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--qurai-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--qurai-bg)]"
+              className="qurai-saweria-button qurai-shine-hover inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-[var(--qurai-gold)] bg-[var(--qurai-gold)] px-5 py-3 font-mono text-[0.62rem] uppercase text-[var(--qurai-bg)] shadow-[0_14px_34px_-24px_var(--qurai-gold)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f6a623] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--qurai-bg)]"
             >
               <SaweriaIcon />
               Dukung via Saweria
