@@ -102,6 +102,20 @@ const essayLoaders: Record<string, () => Promise<{ default: EssayContent }>> =
   "al-bayyinah": () => import("./al-bayyinah"),
   "az-zalzalah": () => import("./az-zalzalah"),
   "al-adiyat": () => import("./al-adiyat"),
+  "al-qariah": () => import("./al-qariah"),
+  "at-takasur": () => import("./at-takasur"),
+  "al-asr": () => import("./al-asr"),
+  "al-humazah": () => import("./al-humazah"),
+  "al-fil": () => import("./al-fil"),
+  "quraisy": () => import("./quraisy"),
+  "al-maun": () => import("./al-maun"),
+  "al-kausar": () => import("./al-kausar"),
+  "al-kafirun": () => import("./al-kafirun"),
+  "an-nasr": () => import("./an-nasr"),
+  "al-masad": () => import("./al-masad"),
+  "al-ikhlas": () => import("./al-ikhlas"),
+  "al-falaq": () => import("./al-falaq"),
+  "an-nas": () => import("./an-nas"),
   };
 
 export async function getEssay(slug: string): Promise<EssayContent | null> {

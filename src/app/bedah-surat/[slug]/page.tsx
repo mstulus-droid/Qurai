@@ -42,6 +42,9 @@ const SURAH_NAME_MAP: Record<string, number> = {
   "At-Tariq": 86, "Al-A'la": 87, "Al-Ghasyiyah": 88, "Al-Fajr": 89, "Al-Balad": 90,
   "Asy-Syams": 91, "Al-Lail": 92, "Ad-Duha": 93, "Al-Insyirah": 94, "At-Tin": 95,
   "Al-'Alaq": 96, "Al-Qadr": 97, "Al-Bayyinah": 98, "Az-Zalzalah": 99, "Al-'Adiyat": 100,
+  "Al-Qari'ah": 101, "At-Takasur": 102, "Al-'Asr": 103, "Al-Humazah": 104, "Al-Fil": 105,
+  "Quraisy": 106, "Al-Ma'un": 107, "Al-Kausar": 108, "Al-Kafirun": 109, "An-Nasr": 110,
+  "Al-Masad": 111, "Al-Ikhlas": 112, "Al-Falaq": 113, "An-Nas": 114,
 };
 
 const SURAH_NAMES = Object.keys(SURAH_NAME_MAP);
